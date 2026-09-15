@@ -1,3 +1,30 @@
+<div align="center">
+
+<img src="assets/blitz-banner.svg" width="100%" alt="Blitz — Automated IoT Red Teaming Platform powered by Ares">
+
+**Automated IoT Red Teaming & Continuous Assessment Platform**
+
+Stop guessing whether your IoT and OT devices are actually secure.  
+Blitz continuously discovers, plans, tests, proves, and re-validates — with AI-driven intelligence and strict safety controls.
+
+[![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Docker](https://img.shields.io/badge/Docker-Supported-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
+[![Ares AI](https://img.shields.io/badge/Ares-IoT%20AI%20Engine-purple)](#what-is-ares)
+[![License](https://img.shields.io/badge/License-Commercial-red.svg)](LICENSE)
+[![Price](https://img.shields.io/badge/Starting%20at-%24299-brightgreen)]()
+
+[Overview](#overview) •
+[Architecture](#architecture) •
+[What is Blitz](#what-is-blitz) •
+[What is Ares](#what-is-ares) •
+[Capabilities](#capabilities) •
+[Installation](#installation--system-requirements) •
+[Best Practices](#best-practices--faqs)
+
+</div>
+
+---
+
 ## Overview
 
 ### The Real Risk
