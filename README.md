@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="assets/blitz-banner.svg" width="100%" alt="Blitz — Automated IoT Red Teaming Platform powered by Ares">
+<img src="https://raw.githubusercontent.com/giridharan-veda/threatforge-physical-iot/main/blitz-banner.svg" width="100%" alt="Blitz — Automated IoT Red Teaming Platform powered by Ares">
 
-**Automated IoT Red Teaming & Continuous Assessment Platform**
+**an Automated IoT Red Teaming & Continuous Assessment Platform**
 
 Stop guessing whether your IoT and OT devices are actually secure.  
 Blitz continuously discovers, plans, tests, proves, and re-validates — with AI-driven intelligence and strict safety controls.
