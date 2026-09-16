@@ -4,7 +4,7 @@
 
 ### ⚡ The Autonomous IoT/OT Red Teaming & Continuous Assessment Platform
 
-**Stop guessing whether your Internet of Things / Operational Technology devices are actually secure. Blitz autonomously hunts down every IoT/OT device on your network and, upon authorization, launches live attacks against them — delivering proof of what's actually vulnerable, every single day.**
+**Stop guessing whether your Internet of Things / Operational Technology devices are actually secure. Blitz autonomously hunts down every IoT/OT device on your network upon authorization, launches live attacks against them — delivering proof of what's actually vulnerable.**
 
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Docker](https://img.shields.io/badge/Docker-Supported-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
