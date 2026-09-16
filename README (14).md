@@ -99,7 +99,7 @@ Ares does not perform network attacks itself. That responsibility belongs to Bli
 
 The intelligence inside Ares is fine-tuned automatically when the decision points to choose the next tool. Ares understands IoT-specific contexts — cameras, brokers, routers, controllers, and their typical weaknesses — it can drive assessments that are more efficient than generic scanning. The result is a system that can progress through with minimal human intervention.
 
-## What is the Ares Bridge
+## Ares Bridge
 
 The **Ares Bridge** is the interface that sits between the intelligence layer (Ares) and the execution layer (Blitz). It is the component that makes the system extensible. Ares can decide what should happen, but the Bridge decides whether that request is allowed to proceed and how it is translated into an actual action.
 
@@ -111,7 +111,7 @@ Beyond AI integration, the Bridge also provides a clean path for connecting exte
 
 **Ollama** is the local model runtime that powers the intelligence inside Ares. The model used by Blitz is a 1.7-billion-parameter Qwen3 variant that was fine-tuned specifically for IoT Pen-testing. It does not attempt to plan entire attack chains or interact with the network. Its only role is to answer: the current state of a device, which tool should be used next.
 
-### How the Model Was Trained for IoT
+### How the Model Was Trained for automated IoT attacks?
 
 The model was fine-tuned using QLoRA on a dataset of 683 IoT-specific examples. The training data combined real session exports with synthetic scenarios built around common IoT device families — cameras, routers, MQTT brokers, controllers, and similar systems.
 
