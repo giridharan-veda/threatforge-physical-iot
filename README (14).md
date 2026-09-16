@@ -54,42 +54,35 @@ That somewhere is **IoT and OT**: the cameras, sensors, controllers, and gateway
   
 ### 🔍 Blitz vs. Established Open-Source IoT Security Tools
 
-| | **RouterSploit** | **HomePwn** | **EXPLIoT** | **IoTHackBot** | **Blitz** |
+| Capability | 🛠️ RouterSploit | 🏠 HomePwn | 💥 EXPLIoT | 🤖 IoTHackBot | ⚡ Blitz |
 |---|---|---|---|---|---|
-| **Type** | Open-source exploitation framework (489 modules, 29 vendor families) | Modular IoT pentesting toolkit (WiFi, BLE, NFC) | Python plugin-based IoT security testing & exploitation framework | Open-source IoT toolkit — CLI tools + AI-assisted (Claude Code) skills | Autonomous, continuous IoT/OT red-teaming platform |
-| **Protocol coverage** | HTTP, Telnet, SNMP, embedded/router services | BLE, WiFi, SSDP, mDNS, NFC | Most IoT communication protocols | ONVIF, network traffic, firmware | ARP, TCP, HTTP, RTSP, ONVIF, MQTT, UPnP, SNMP, SSH, Telnet, CoAP, TLS, DNS (48 modules) |
-| **Hardware-level access (JTAG / UART / SWD)** | ❌ | ❌ | ✅ Hardware interfacing supported | ✅ `jtagprobe`, `picocom` | ✅  Targeted vuln check for firmware cve's |
-| **Discovery** | Manual, targeted | Manual scan modules | Manual, plugin-based | Manual (`wsdiscovery`) | ✅ Continuous & automatic |
-| **Decision-making** | Human-selected modules | Human-selected modules | Human-selected plugins | AI-assisted, human-directed | Ares plans assessments autonomously |
-| **Safety / execution gating** | None documented | None documented | None documented | Disclaimer only, no built-in gate | ✅ Multi-condition authorization gate |
-| **Proof of impact** | Pass/fail, no evidence pipeline | Manual documentation | Manual documentation | Manual output compilation | ✅ "Attempted vs. Proven," evidence-backed |
-| **Re-validation after fix** | ❌ Manual re-run | ❌ | ❌ | ❌ Manual re-run | ✅ Automatic |
-| **Operation model** | Manual, single session | Manual, single session | Manual, single session | Human/AI-guided, command by command | Autonomous, continuous |
----
+| **Category** | Embedded/router exploitation framework | Local-proximity IoT pentest toolkit | IoT security testing & exploitation framework | AI-assisted IoT recon & hardware toolkit | Autonomous IoT/OT red-teaming platform |
+| **Runs without a human at the keyboard** | ❌ Manual, one session at a time | ❌ Manual, one session at a time | ❌ Manual, one session at a time | ❌ Human/AI, command-by-command | ✅ **Fully autonomous, continuous operation** |
+| **Finds new devices on its own** | ❌ You point it at a known target | ❌ You run discovery modules yourself | ❌ You select a target manually | ❌ You run `wsdiscovery` per session | ✅ **Continuous, automatic discovery** |
+| **Decides what's worth testing** | ❌ You choose the exploit module | ❌ You choose the module | ❌ You choose the plugin | ⚠️ AI-assisted, but you drive it | ✅ **Ares plans the assessment itself** |
+| **Stops unsafe actions before they run** | ❌ No gating — a misfire can crash the device | ❌ No gating | ❌ No gating | ⚠️ Disclaimer only, not enforced | ✅ **Multi-condition authorization gate, every action** |
+| **Proves impact instead of guessing** | ❌ Pass/fail, no evidence trail | ❌ Manual write-up | ❌ Manual write-up | ❌ Manual output review | ✅ **"Attempted vs. Proven," evidence-backed** |
+| **Confirms a fix actually worked** | ❌ Requires a fresh manual run | ❌ Requires a fresh manual run | ❌ Requires a fresh manual run | ❌ Requires a fresh manual run | ✅ **Automatic re-validation** |
+| Protocol coverage | HTTP, Telnet, SNMP | BLE, WiFi, SSDP, mDNS, NFC | Broad, plugin-extensible | ONVIF, network traffic, firmware | 13 protocols, 48 modules |
+| Hardware access (JTAG/UART/SWD) | ❌ | ❌ | ✅ | ✅ | ✅  Targeted vuln check for firmware cve's |
 
-- Where Blitz differs is the operating model, not the toolset: every tool above is **driven by a human**, command by command, session by session.
+- Where Blitz stands out is the operating model, not the toolset: every tool above is **driven by a human**, command by command, session by session.
 - Blitz is built to make discovery, decision-making, execution, and proof **continuous and autonomous** running every day across the network.
 - Blitz has the intelligence that decides when, where, and how to use them — running without needing someone at the keyboard for every test.
 
 It first determines what is actually present in the target environment—devices, ports, services, protocols, authentication mechanisms, and exposed interfaces—and then selects assessment modules relevant to those specific surfaces.
 
-### What Makes Blitz Different
-
-Traditional IoT scanners often stop at statements such as:
+### What Makes Blitz Different - Traditional IoT scanners often stop at statements such as:
 
 > "Port 554 is open."
 
 or:
 
-> "This device appears to expose HTTP."
-
-Blitz goes further by determining:
+> "This device appears to expose HTTP." Blitz goes further by determining,
 
 > **"What does that service expose, how does it behave, what security controls protect it, and can the observed weakness be safely demonstrated?"**
 
-For example, discovering an RTSP service is only the beginning. Blitz can identify the RTSP implementation, inspect its authentication behaviour, enumerate permitted stream endpoints where authorized, examine transport configuration, and determine whether an observed exposure can be validated without disrupting the camera or its video service.
-
-The same protocol-aware approach is applied across **HTTP/HTTPS, RTSP, ONVIF, MQTT, CoAP, UPnP/SSDP, SSH, Telnet, SNMP, TLS**, and other IoT-facing services.
+For example, discovering an RTSP service is only the beginning. Blitz can identify the RTSP implementation, inspect its authentication behaviour, enumerate permitted stream endpoints where authorized, examine transport configuration, and determine whether an observed exposure can be validated without disrupting the camera or its video service. The same protocol-aware approach is applied across **HTTP/HTTPS, RTSP, ONVIF, MQTT, CoAP, UPnP/SSDP, SSH, Telnet, SNMP, TLS**, and other IoT-facing services.
 
 ### Technology Stack
 
