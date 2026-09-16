@@ -375,24 +375,23 @@ Blitz is distributed as an enterprise-grade, perpetual commercial package under 
 
 Payment processing, tax compliance, and repository access are automated through our Merchant of Record partner, **Polar.sh** (powered by Stripe). Fulfillment is programmatic—there is no manual verification queue or waiting period.
 
-[ 1. One-Click Checkout ] ──► [ 2. Link GitHub Account ] ──► [ 3. Instant Repo Access & Zip Download ]
+[ 1. Link GitHub Account ] ──► [ 2. One-Click Checkout  ] ──► [ 3. Instant Repo Access & Zip Download ]
 
 
 
 # Blitz — Installation Guide
 
-### System Requirements
+## 🖥️ System Requirements
 
-| Requirement | Minimum | Recommended |
-|-------------|---------|-------------|
-| OS | Linux / macOS / Windows (WSL2) | Ubuntu 22.04 LTS |
-| CPU | 4 cores | 8 cores |
-| RAM | 8 GB | 16 GB |
-| Disk | 20 GB free | 40 GB free (SSD) |
-| Docker Engine | 24.x | Latest stable |
-| Docker Compose | v2 | v2 |
-| Python | 3.11+ | 3.11+ |
-
+| Requirement | Minimum | Recommended | Why It Matters |
+|---|---|---|---|
+| **OS** | Linux / macOS / Windows (WSL2) | Ubuntu 22.04 LTS | Blitz's core services and Docker networking are tested and most stable on Linux; WSL2 gives Windows users the same kernel-level container support. Ubuntu 22.04 LTS is the reference environment for long-term compatibility and support. |
+| **CPU** | 4 cores | 8 cores | Ares' reasoning layer, Blitz Core's execution engine, and concurrent protocol scans (RTSP, ONVIF, MQTT, etc.) run as parallel workloads — more cores mean faster assessment cycles and the ability to test multiple devices simultaneously without queuing. |
+| **RAM** | 8 GB | 16 GB | Local AI inference (via Ollama), persistent state storage, and live WebSocket event streaming all hold data in memory. 16 GB gives headroom for larger device inventories and longer-running continuous assessments without swapping. |
+| **Disk** | 20 GB free | 40 GB free (SSD) | Persistent state (devices, jobs, findings, audit history) and locally-run AI models take real disk space — SSD is recommended because model loading and database I/O are latency-sensitive, especially under continuous operation. |
+| **Docker Engine** | 24.x | Latest stable | Blitz's components (Operator Console, Ares Agent, Ares Bridge, Blitz Core) run as containerized services — Docker Engine is the runtime that isolates and orchestrates them. |
+| **Docker Compose** | v2 | v2 | Used to define and launch the full multi-container stack (Console, Agent, Bridge, Core, Ollama) as a single coordinated deployment. |
+| **Python** | 3.11+ | 3.11+ | Required for Blitz Core and supporting tooling — 3.11+ ensures compatibility with current dependency versions and performance improvements over earlier releases. |
 
 ## Two ways to install blitz:
 
@@ -428,9 +427,6 @@ docker compose build --no-cache
 docker compose up -d
 
 ```
-
-
----
 
 ## Contributing to Blitz
 
