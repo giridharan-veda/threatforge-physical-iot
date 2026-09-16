@@ -1,0 +1,56 @@
+cff-version: 1.2.0
+message: >-
+  If you use Blitz or the Ares AI reasoning engine in academic research,
+  technical whitepapers, security assessments, or publications, please
+  cite this work using the metadata below. See LICENSE.md for the terms
+  governing use of the software itself; citation of this work does not
+  grant any rights under that license.
+type: software
+title: "Blitz: Automated IoT Red Teaming & Continuous Assessment Platform"
+abstract: >-
+  Blitz is a commercial, closed-loop automated red teaming and
+  continuous assessment platform purpose-built for IoT and OT
+  environments. It combines multi-protocol device discovery, an
+  IoT-specific AI reasoning engine (Ares) for assessment planning, and
+  a capability-gated authorization boundary (Ares Bridge) that enforces
+  that only authorized actions reach real devices (see SECURITY.md,
+  "Security Model — How Blitz Is Designed to Fail Safely"). Blitz runs
+  a 12-stage closed-loop lifecycle spanning discovery, fingerprinting,
+  planning, authorization, execution, evidence collection, findings
+  generation, remediation, and automated re-validation. Ares is powered
+  by a locally-run, fine-tuned Qwen3 (1.7B) model served via Ollama,
+  keeping inference on-premises.
+authors:
+  - name: "ApexPredator Security"
+    website: "https://github.com/giridharan-veda/threatforge-physical-iot"
+    # Replace the org entry above with the individual author(s) if you
+    # want personal academic credit, e.g.:
+    # - family-names: Veda
+    #   given-names: Giridharan
+    #   affiliation: ApexPredator Security
+    #   orcid: "https://orcid.org/0000-0000-0000-0000"
+repository-code: "https://github.com/giridharan-veda/threatforge-physical-iot"
+url: "https://github.com/giridharan-veda/threatforge-physical-iot"
+license: LicenseRef-ApexPredator-Commercial
+license-url: "https://github.com/giridharan-veda/threatforge-physical-iot/blob/main/LICENSE.md"
+contact:
+  - name: "ApexPredator Security"
+    # Security vulnerabilities in Blitz itself: do NOT report via
+    # citation contact — follow the private disclosure process in
+    # SECURITY.md instead.
+keywords:
+  - iot-security
+  - ot-security
+  - red-teaming
+  - penetration-testing
+  - autonomous-agents
+  - artificial-intelligence
+  - vulnerability-assessment
+  - continuous-security-testing
+  - capability-gating
+  - mqtt
+  - rtsp
+  - onvif
+  - coap
+version: "1.0.0"
+date-released: "2026-09-16"
