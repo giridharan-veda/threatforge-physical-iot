@@ -10,6 +10,8 @@
 [![Docker](https://img.shields.io/badge/Docker-Supported-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
 [![Ares AI](https://img.shields.io/badge/Ares-IoT%20AI%20Engine-purple)](#ares-ai)
 [![License](https://img.shields.io/badge/License-Commercial-red.svg)](LICENSE)
+[![LLM](https://img.shields.io/badge/LLM-qwen3--1.7b--iot-blue)](#ares-ai)
+[![Community](https://img.shields.io/badge/ApexPredator-Community-orange)](#who-this-is-for)
 [![Price](https://img.shields.io/badge/Early%20Adopter-%24299-brightgreen)](https://polar.sh/apexpredator-security/products/blitz?discount_code=EARLYBIRD)
 
 **🔥 Early Adopter Cohort — $299, first 25 licenses only, code `EARLYBIRD`**
@@ -28,8 +30,6 @@
 [Authorized Use](#authorized-use) •
 [About](#about) •
 [Installation](#installation--system-requirements)
-
-**🛡️ For authorized security testing only.** Blitz must only be run against devices and networks you own or have explicit written authorization to test. See [Authorized Use](#authorized-use).
 
 </div>
 
