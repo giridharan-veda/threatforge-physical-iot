@@ -44,24 +44,13 @@ That somewhere is **IoT and OT**: the cameras, sensors, controllers, and gateway
 > The devices you trust the most are the ones you've tested the least. That's not bad luck. That's an open invitation.
 ---
 
-### 🛡️ Enter Blitz
+## 🛡️ Enter Blitz
 
-an **autonomous system** built to test IoT/OT the way it actually needs to be tested:
+an **autonomous system** built to test IoT/OT security the way it actually needs to be tested:
 
-🔍 **It understands before it acts.** profiles each device first: what it is, what it speaks, what it's exposed to. Then it plans an assessment built for *that* device.
-🔒 **Nothing runs unchecked.** Every attack action passes an **authorization gate** before execution which makes it safe to run continuously on live production infrastructure.
-📊 **Proof, not promises.** Every result is evidence-backed and clearly labeled **attempted** or **proven**. Once a fix ships, Blitz goes back and revalidates automatically.
-
----
-
-
-## What is Blitz
-
-**Blitz** is a commercial automated red teaming and continuous assessment platform built specifically for IoT and OT environments.
-
-Most traditional red team tools were designed for Windows and Linux endpoints. They struggle with the realities of IoT — diverse protocols, constrained devices, fragile firmware, and the need for strict safety controls. Blitz was created to solve this gap.
-
-At its core, Blitz runs a controlled **12-stage closed-loop assessment lifecycle**. It begins by discovering devices and building real security context for each one. It then uses AI to generate intelligent assessment plans, enforces strict authorization before any test is allowed to run, executes only approved actions, verifies the results, stores evidence, generates findings, and can re-validate after remediation.
+- 🔍 Profiles each device first: what it is, what it speaks, what it's exposed to. Then it plans an attack built for that device.
+- 🔒 Attack action passes an **authorization gate** before execution, safer to run continuously on live production infrastructure.
+- 📊 Results are evidence-backed & labeled **attempted** or **proven**. Once a fix ships, Blitz goes back and revalidates automatically.
 
 <img src="https://github.com/giridharan-veda/threatforge-physical-iot/blob/main/blitz.png" width="100%" alt="Blitz — Automated IoT Red Teaming Platform powered by Ares">
 
