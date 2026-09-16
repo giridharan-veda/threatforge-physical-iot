@@ -50,6 +50,80 @@ For **$299** you receive a complete operational system that:
 - Generates reviewable, evidence-backed findings
 - Supports remediation and automatically re-validates that fixes actually held
 
+## ⚠️ The Risk
+
+Security teams have spent two decades getting good at defending laptops and servers. Attackers noticed — and moved somewhere easier. 🎯
+
+That somewhere is **IoT and OT**: the cameras, sensors, controllers, and gateways quietly running your buildings, your factories, your hospitals. They're on the same network as everything you actually protect — but almost none of the same rigor applies to them.
+
+Here's what that gap actually looks like in practice:
+
+- 🕵️ **You can't defend what you can't see.** Most orgs don't have a full, current inventory of their IoT/OT assets — these devices don't announce themselves like a managed endpoint does.
+- 🔑 **The manufacturer's password is still the password.** `admin:admin` survives the entire operational life of a device, because no rotation policy ever reaches this far.
+- 🚪 **Half these services don't even ask who you are.** Video feeds and control panels are frequently left wide open by design.
+- 📡 **The traffic is unprotected.** No encryption means anything on the wire — including credentials — is visible to anyone watching.
+- 🧱 **"Segmented" is usually a belief, not a fact.** Flat networks and misconfigured VLANs put a compromised device one hop from something critical.
+- 🛠️ **Nothing here gets patched.** No update lifecycle exists for most embedded firmware — known weaknesses just persist.
+- 👴 **Decades-old protocols are still running in prod.** Telnet, SNMP with default strings — quietly alive because nobody dared turn them off.
+- 🙈 **Detection tooling doesn't cover this layer.** Built for IT traffic, blind to IoT/OT — compromise here often goes unnoticed.
+- 🎯 **The riskiest devices are tested the least**, because testing them safely takes expertise most teams don't have to spare.
+- ✅❌ **"Fixed" is usually an assumption, not a fact.** Fixes rarely get re-verified, so "resolved" risk often isn't.
+
+> 🚨 **None of this is rare. It's the baseline.** An attack surface that keeps growing, gets tested the least, and is trusted the most by default — exactly what makes it valuable to an attacker.
+
+---
+
+## 🛡️ Enter Blitz
+
+Blitz exists to close that gap — not with another scanner, but with an **autonomous system** built to test IoT/OT the way it actually needs to be tested: carefully, intelligently, continuously.
+
+🔍 **It understands before it acts.** Ares — Blitz's IoT-specific AI engine — profiles each device first: what it is, what it speaks, what it's exposed to. Then it plans an assessment built for *that* device, not a generic checklist.
+
+🔒 **Nothing runs unchecked.** Every planned action passes a **strict, multi-condition authorization gate** before execution — which is exactly what makes it safe to run continuously on live, production infrastructure.
+
+📊 **Proof, not promises.** Every result is evidence-backed and clearly labeled **attempted** or **proven** — no blurred findings, ever.
+
+🔁 **It closes the loop.** Once a fix ships, Blitz goes back and **re-validates** it — automatically.
+
+---
+
+### 💰 Why $499 Is the Right Number
+
+| | 🧑‍💻 Manual Pentest | ⚡ Blitz |
+|---|---|---|
+| Cost | $15K–$50K+ | **$499** |
+| Frequency | Once or twice a year | **Continuous** |
+| Built for IoT/OT | Depends on the tester | **Purpose-built** |
+| Safe on production | Depends on the tester | **Gated, every time** |
+| Findings | Reported | **Proven** ✅ |
+| Fix verification | Rarely, extra cost | **Automatic** 🔁 |
+
+### 💰 Blitz vs. Everything Else You've Tried
+
+| | 🧑‍💻 Manual Pentest | 🖥️ Generic Scanner / AI Tool | ⚡ Blitz |
+|---|---|---|---|
+| **Cost** | $15K–$50K+ per engagement | "Free" — until it misses everything that matters | **$499** |
+| **Frequency** | Once or twice a year, if budget allows | Runs often, tells you nothing useful | **Continuous — every day, every new device** |
+| **Understands IoT/OT protocols** | Depends entirely on who you hired | ❌ Built for IT, blind to RTSP/ONVIF/MQTT/CoAP | ✅ **Purpose-built for IoT/OT from the ground up** |
+| **Safe on fragile production devices** | Depends on the tester's experience | ❌ Aggressive, generic actions — can crash a device | ✅ **Gated execution, every single action** |
+| **Context-aware before acting** | Yes, but slow and manual | ❌ No device context — fires blind | ✅ **Ares profiles each device before testing it** |
+| **Findings you can trust** | Expert-validated, but only that one day | ❌ Alerts and false positives, no proof | ✅ **Attempted vs. Proven — always evidence-backed** |
+| **Re-checks that fixes actually worked** | Rarely — costs extra, needs re-engagement | ❌ Never | ✅ **Automatic re-validation, built in** |
+| **Scales across your entire estate** | ❌ Limited by human hours | ⚠️ Scales, but shallow | ✅ **Scales without losing depth** |
+| **Audit / compliance ready** | One static report, stale in weeks | ❌ Raw output, not evidence | ✅ **Living, dated, defensible record** |
+| **What you're really left with** | A snapshot from one day, months ago | A dashboard full of noise | 🎯 **Continuous, proven, actionable truth** |
+
+> 🔥 A manual pentest gives you a moment. A scanner gives you noise. **Blitz gives you an autonomous red team that never stops working — for less than the cost of one hour of a contracted tester's time.**
+
+A manual IoT/OT pentest costs **$15,000–$50,000+** for one snapshot — stale the moment a new device joins your network. One unpatched IoT device is often the entry point behind breaches costing **millions**.
+
+**$499 doesn't buy a scan. It buys a red team that never clocks out.** ⏱️
+
+---
+
+> 🔥 **The devices are already connected. Already exposed. Already being looked at.**
+> The only open question — **who finds the weakness first?**
+
 ## What is Blitz
 
 **Blitz** is a commercial automated red teaming and continuous assessment platform built specifically for IoT and OT environments.
