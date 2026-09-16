@@ -37,17 +37,15 @@
 
 ## Overview
 
-### ⚠️ The Risk
-
-Security teams have spent two decades getting good at defending laptops and servers. Attackers noticed, and moved somewhere easier. 🎯
+### ⚠️ The Risk - Security teams have spent two decades getting good at defending laptops and servers. Attackers noticed, and moved somewhere easier. 🎯
 
 That somewhere is **IoT and OT**: the cameras, sensors, controllers, and gateways quietly running your buildings, your factories, your hospitals. They're on the same network as everything you actually protect — but almost none of the same rigor applies to them. Here's what that gap looks like in practice:
 
 - 🕵️ **You can't defend what you can't see.** Most orgs don't have a full inventory of their IoT/OT assets.
 - 🔑 **The manufacturer's password is still the password.** `admin:admin`, default and unchanged, for the life of the device.
-- 🚪 **A service requires no authentication at all.** Video streams, control interfaces, and management panels built to "just work," without a security layer.
+- 🚪 **Services that requires no authentication.** Video streams, ctrl interfaces, and mgt panels built to "just work," without a security layer.
 - 📡 **The traffic is unprotected.** No encryption means anything on the wire — credentials, keys — is visible to anyone with access to it.
-- 🧱 **"Segmented" is usually a belief, not a fact.** Flat networks and misconfigured VLANs turn one compromised device into a path to everything else.
+- 🧱 **"Segmented" is just a belief.** Flat networks and misconfigured VLANs turn one compromised device into a path to everything else.
 - 🛠️ **Nothing here gets patched.** No update lifecycle exists for most embedded firmware; known weaknesses just persist.
 - 🙈 **Detection tooling doesn't cover this layer.** Built for IT traffic, blind to IoT/OT — compromise here often goes unnoticed.
 - 🎯 **The riskiest devices are tested the least**, because testing them safely takes expertise most teams don't staff for.
@@ -66,7 +64,7 @@ That somewhere is **IoT and OT**: the cameras, sensors, controllers, and gateway
 - 🔍 **Profiles each device first** — what it is, what it speaks, what it's exposed to — then plans an attack built for that device.
 - 🔒 **Every action passes an authorization gate** before execution, so it's safe to run continuously against live production infrastructure.
 - 📊 **Results are evidence-backed**, labeled *attempted* or *proven*. Once a fix ships, Blitz revalidates it automatically.
-- ⚖️ **The real difference is the operating model, not the toolset.** Every comparable tool on the market is driven by a human, command by command.
+- ⚖️ **The real difference is the operating model, not the toolset.** Every comparable tool on the market is driven by a human.
 - 🕵️ **Discovery, decision-making, execution, and proof run continuously and autonomously** — every day, across the whole network.
 - 🧠 **An intelligence layer decides when, where, and how to act**, without needing someone at the keyboard for every test.
 
@@ -108,7 +106,7 @@ Discovering an RTSP service, for example, is only the beginning. Blitz identifie
 
 ---
 
-## 🧠 Ares AI
+### 🧠 Ares AI
 
 **Ares** is the autonomous intelligence layer of the Blitz platform — the component that turns a collection of IoT security tools into a system capable of independent assessment.
 
@@ -116,17 +114,17 @@ Discovering an RTSP service, for example, is only the beginning. Blitz identifie
 
 Most security tools require a human to decide what to scan, which credentials to try, which protocols to probe, and what to do next. Ares removes that dependency: it observes the current state of a target, reasons about what the device appears to be, and decides the next appropriate action from a defined list of attacks and capabilities.
 
-Ares does not perform network attacks itself — that responsibility belongs to Blitz Core. Ares acts purely as a decision engine. It maintains a structured knowledge base of device profiles, protocol behaviors, known attack surfaces, and tool mappings. When new information is discovered — open ports, banners, services, vendor signatures — Ares classifies the device and builds a ranked plan of what should be tested next.
+Ares does not perform network attacks itself — that responsibility belongs to Blitz Core. Ares acts purely as a decision engine. It maintains a structured knowledge base of device profiles, protocol behaviors, known attack surfaces, and tool mappings. When new information is discovered — open ports, banners, services, vendor signatures — Ares classifies the device and builds a plan of what should be done next.
 
-The model powering Ares is fine-tuned specifically to make that call — which tool is the right next step at each decision point. Because Ares understands IoT-specific context (cameras, brokers, routers, controllers, and their typical weaknesses), it drives assessments that are meaningfully more efficient than generic scanning. The result is a system that can move through an assessment with minimal human intervention.
+The model powering Ares is fine-tuned specifically to make that call — which tool is the right next step at each decision point. Because Ares understands IoT-specific context (cameras, brokers, routers, controllers, and their typical weaknesses), it drives assessments that are meaningful than generic scanning. The result is a system that can move through an assessment with minimal human intervention.
 
 ### 🔌 Ares Bridge
 
-The **Ares Bridge** sits between the intelligence layer (Ares) and the execution layer (Blitz). It's the component that makes the system extensible: Ares decides what should happen, but the Bridge decides whether that request is allowed to proceed and how it's translated into an actual action.
+The **Ares Bridge** sits between the intelligence layer (Ares) and the execution layer (Blitz). It's the component that makes the system extensible: Ares decides what should happen, but the Bridge decides whether that request is allowed to proceed and turn it into an actual action.
 
 During development, the Bridge was tested against external AI backends — including RedAmon paired with StrikeGPT (`q4-k-m` quantization) — to confirm the interface can accept decisions from third-party planning systems without any change to the underlying execution engine. As a result, the Bridge connects Blitz to other AI APIs and LLMs beyond the default stack.
 
-Beyond AI integration, the Bridge also provides a clean path for connecting external systems such as SIEM platforms. Because every capability request and result flows through a single, well-defined interface, events and findings can be forwarded to monitoring tools without touching the core engine.
+Beyond AI integration, the Bridge also provides a clean path for connecting external systems such as SIEM platforms. Because every request and result flows through a single interface, events and findings can be forwarded to monitoring tools without touching the core engine.
 
 ### 🖥️ Ollama LLM in Blitz
 
@@ -471,9 +469,11 @@ Payment processing, tax compliance, and repository access are automated through 
 ## 🙏 Acknowledgements
 
 <div align="center">
+  <img src="https://example.com/your-image.png" alt="Description" width="600">
+</div>
+
+<div align="center">
 
 **Blitz — Autonomous IoT Red Teaming & Continuous Assessment.**
-
-*[ApexPredator — add current product/README version and last-updated date here, e.g. "v1.0 — September 2026", so buyers can confirm they're reading the current terms.]*
 
 </div>
