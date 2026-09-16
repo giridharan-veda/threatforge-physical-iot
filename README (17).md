@@ -469,7 +469,7 @@ Payment processing, tax compliance, and repository access are automated through 
 ## 🙏 Acknowledgements
 
 <div align="center">
-  <img src="https://example.com/your-image.png" alt="Description" width="600">
+  <img src="https://github.com/giridharan-veda/threatforge-physical-iot/blob/main/apexpredator-logo-bottom.png" alt="Description" width="600">
 </div>
 
 <div align="center">
