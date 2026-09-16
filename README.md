@@ -346,7 +346,7 @@ The same protocol-aware approach is applied across **HTTP/HTTPS, RTSP, ONVIF, MQ
 
 ### ATT&CK Matrix
 
-<img src="https://raw.githubusercontent.com/giridharan-veda/threatforge-physical-iot/main/aresai.png" width="100%" alt="Blitz — Automated IoT Red Teaming Platform powered by Ares">
+<img src="https://github.com/giridharan-veda/threatforge-physical-iot/blob/main/ares-attack-matrix.svg" width="100%" alt="Blitz — Automated IoT Red Teaming Platform powered by Ares">
 
 
 | # | Module | Protocol / Surface | What It Does |
