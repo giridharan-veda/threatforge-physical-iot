@@ -415,50 +415,8 @@ Configure the values required by the supplied Blitz deployment, including servic
 docker compose down -v
 docker compose build --no-cache
 docker compose up -d
-
-```
-
-## Contributing to Blitz
-
-### Priority Contribution Tracks
-
-* **New Protocol Modules (`blitz-core/`):** Add native decoders and active probes for unmapped embedded interfaces (e.g., BACnet, Modbus, Zigbee over IP, or proprietary camera APIs).
-* **Ares AI Reasoning & Heuristics (`ares/`):** Refine planning prompts, fine-tuning datasets, and tool-selection heuristics to improve decision velocity on complex target states.
-* **Gateway & Blast-Radius Safety (`ares/bridge/`):** Strengthen the Ares Bridge to catch erratic AI behavior, prevent cyclic planning loops, and enforce strict execution boundaries.
-* **Target Hardware Signatures (`configs/`):** Expand device identification matrices and service fingerprint rules in `capabilities.yaml`.
 ---
-
-## Citation
-
-If you reference Blitz or the Ares AI architecture in academic research, technical whitepapers, security assessments, or publications, please cite this repository using the included. BibTeX and standard citation formats are generated automatically by GitHub.
-
----
-
-## Disclaimer
-
-- Blitz is engineered strictly for authorized security assessment, defensive evaluation, vulnerability research, and continuous risk validation on networks, devices, and firmware where explicit written authorization has been.
-- It is designed to be deployed in controlled staging labs, isolated target ranges, and approved client assessment scopes.
-- ApexPredator Security and the project authors assume no liability and are not responsible for any misuse, operational disruption, device malfunction, or unauthorized deployment of this software.
-- Operators are solely responsible for maintaining compliance with all applicable local, national, and international cybersecurity legislation, organizational policies, and statutory frameworks prior to executing any discovery, assessment, or validation workflow.
-
----
-
-## License
-
-- Blitz is proprietary commercial software distributed under the terms of the ApexPredator Security Commercial License. 
-- A valid commercial license purchase is required to install, deploy, and operate the platform for internal estate assessments or commercial client engagements.
-- Redistribution, sublicensing, unauthorized mirroring, or public sharing of the core binaries, source repositories, or fine-tuned model artifacts is strictly prohibited.
-  
----
-
 ## Acknowledgements
-
-Blitz and the Ares AI orchestration framework build upon outstanding open-source software, protocols, and developer communities[cite: 1]:
-
-* **Ollama** — Enabling private, efficient, on-premises language model execution[cite: 1].
-* **Qwen Team** — The foundational model architecture supporting the fine-tuned `qwen3-iot:1.7b` reasoning engine[cite: 1].
-* **Docker** — Delivering reliable, isolated, and containerized deployment across host environments[cite: 1].
-* **Python Community** — Providing the network engineering, asynchronous I/O, and testing libraries powering Blitz Core[cite: 1].
 
 <div align="center">
 
