@@ -44,7 +44,7 @@ That somewhere is **IoT and OT**: the cameras, sensors, controllers, and gateway
 > The devices you trust the most are the ones you've tested the least. That's not bad luck. That's an open invitation.
 ---
 
-## 🛡️ Enter --- **Blitz** - an **autonomous system** built to test IoT/OT security the way it actually needs to be tested!
+## 🛡️ Enter - **Blitz** : an **autonomous system** built to test IoT/OT security the way it actually needs to be tested!
 
 <img src="https://github.com/giridharan-veda/threatforge-physical-iot/blob/main/blitz.png" width="100%" alt="Blitz — Automated IoT Red Teaming Platform powered by Ares">
 
@@ -55,20 +55,6 @@ That somewhere is **IoT and OT**: the cameras, sensors, controllers, and gateway
 - 🕵️ Makes discovery, decision-making, execution, and proof **continuous and autonomous** running every day across the network.
 - 🧠 Intelligence that decides when, where, and how to use them running without needing someone at the keyboard for every test.
   
-### 🔍 Blitz vs. Established Open-Source IoT Security Tools
-
-| Capability | 🛠️ RouterSploit | 🏠 HomePwn | 💥 EXPLIoT | 🤖 IoTHackBot | ⚡ Blitz |
-|---|---|---|---|---|---|
-| **Category** | Embedded/router exploitation framework | Local-proximity IoT pentest toolkit | IoT security testing & exploitation framework | AI-assisted IoT recon & hardware toolkit | Autonomous IoT/OT red-teaming platform |
-| **Runs without a human at the keyboard** | ❌ Manual, one session at a time | ❌ Manual, one session at a time | ❌ Manual, one session at a time | ❌ Human/AI, command-by-command | ✅ **Fully autonomous, continuous operation** |
-| **Finds new devices on its own** | ❌ You point it at a known target | ❌ You run discovery modules yourself | ❌ You select a target manually | ❌ You run `wsdiscovery` per session | ✅ **Continuous, automatic discovery** |
-| **Decides what's worth testing** | ❌ You choose the exploit module | ❌ You choose the module | ❌ You choose the plugin | ⚠️ AI-assisted, but you drive it | ✅ **Ares plans the assessment itself** |
-| **Stops unsafe actions before they run** | ❌ No gating — a misfire can crash the device | ❌ No gating | ❌ No gating | ⚠️ Disclaimer only, not enforced | ✅ **Multi-condition authorization gate, every action** |
-| **Proves impact instead of guessing** | ❌ Pass/fail, no evidence trail | ❌ Manual write-up | ❌ Manual write-up | ❌ Manual output review | ✅ **"Attempted vs. Proven," evidence-backed** |
-| **Confirms a fix actually worked** | ❌ Requires a fresh manual run | ❌ Requires a fresh manual run | ❌ Requires a fresh manual run | ❌ Requires a fresh manual run | ✅ **Automatic re-validation** |
-| Protocol coverage | HTTP, Telnet, SNMP | BLE, WiFi, SSDP, mDNS, NFC | Broad, plugin-extensible | ONVIF, network traffic, firmware | 13 protocols, 48 modules |
-| Hardware access (JTAG/UART/SWD) | ❌ | ❌ | ✅ | ✅ | ✅  Targeted vuln check for firmware cve's |
-
 It first determines what is actually present in the target environment—devices, ports, services, protocols, authentication mechanisms, and exposed interfaces—and then selects assessment modules relevant to those specific surfaces.
 
 ### What Makes Blitz Different - Traditional IoT scanners often stop at statements such as:
@@ -274,6 +260,22 @@ Engineered for repeatable experimentation in staging and competitive environment
 Converts automated test data into verifiable technical artifacts:
 * **Attempted vs. Proven Telemetry:** Eliminates speculative findings by strictly separating an initial service probe from a cryptographically or functionally confirmed vulnerability.
 * **Closed-Loop Re-Validation:** Following remediation, execute Stage 12 (**Re-validate**) to automatically replay the verified exploit chain and confirm whether the vulnerability was mitigated without running an entire re-scan.
+
+---
+
+### 🔍 Blitz vs. Established Open-Source IoT Security Tools
+
+| Capability | 🛠️ RouterSploit | 🏠 HomePwn | 💥 EXPLIoT | 🤖 IoTHackBot | ⚡ Blitz |
+|---|---|---|---|---|---|
+| **Category** | Embedded/router exploitation framework | Local-proximity IoT pentest toolkit | IoT security testing & exploitation framework | AI-assisted IoT recon & hardware toolkit | Autonomous IoT/OT red-teaming platform |
+| **Runs without a human at the keyboard** | ❌ Manual, one session at a time | ❌ Manual, one session at a time | ❌ Manual, one session at a time | ❌ Human/AI, command-by-command | ✅ **Fully autonomous, continuous operation** |
+| **Finds new devices on its own** | ❌ You point it at a known target | ❌ You run discovery modules yourself | ❌ You select a target manually | ❌ You run `wsdiscovery` per session | ✅ **Continuous, automatic discovery** |
+| **Decides what's worth testing** | ❌ You choose the exploit module | ❌ You choose the module | ❌ You choose the plugin | ⚠️ AI-assisted, but you drive it | ✅ **Ares plans the assessment itself** |
+| **Stops unsafe actions before they run** | ❌ No gating — a misfire can crash the device | ❌ No gating | ❌ No gating | ⚠️ Disclaimer only, not enforced | ✅ **Multi-condition authorization gate, every action** |
+| **Proves impact instead of guessing** | ❌ Pass/fail, no evidence trail | ❌ Manual write-up | ❌ Manual write-up | ❌ Manual output review | ✅ **"Attempted vs. Proven," evidence-backed** |
+| **Confirms a fix actually worked** | ❌ Requires a fresh manual run | ❌ Requires a fresh manual run | ❌ Requires a fresh manual run | ❌ Requires a fresh manual run | ✅ **Automatic re-validation** |
+| Protocol coverage | HTTP, Telnet, SNMP | BLE, WiFi, SSDP, mDNS, NFC | Broad, plugin-extensible | ONVIF, network traffic, firmware | 13 protocols, 48 modules |
+| Hardware access (JTAG/UART/SWD) | ❌ | ❌ | ✅ | ✅ | ✅  Targeted vuln check for firmware cve's |
 
 ---
 
