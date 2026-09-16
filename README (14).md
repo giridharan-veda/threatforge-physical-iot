@@ -51,6 +51,9 @@ That somewhere is **IoT and OT**: the cameras, sensors, controllers, and gateway
 - 🔍 Profiles each device first: what it is, what it speaks, what it's exposed to. Then it plans an attack built for that device.
 - 🔒 Attack action passes an **authorization gate** before execution, safer to run continuously on live production infrastructure.
 - 📊 Results are evidence-backed & labeled **attempted** or **proven**. Once a fix ships, Blitz goes back and revalidates automatically.
+- ⚖️ Where Blitz stands out is the operating model, not the toolset: every tool above is **driven by a human**, cmd by cmd.
+- 🕵️ Makes discovery, decision-making, execution, and proof **continuous and autonomous** running every day across the network.
+- 🧠 Intelligence that decides when, where, and how to use them running without needing someone at the keyboard for every test.
   
 ### 🔍 Blitz vs. Established Open-Source IoT Security Tools
 
@@ -65,10 +68,6 @@ That somewhere is **IoT and OT**: the cameras, sensors, controllers, and gateway
 | **Confirms a fix actually worked** | ❌ Requires a fresh manual run | ❌ Requires a fresh manual run | ❌ Requires a fresh manual run | ❌ Requires a fresh manual run | ✅ **Automatic re-validation** |
 | Protocol coverage | HTTP, Telnet, SNMP | BLE, WiFi, SSDP, mDNS, NFC | Broad, plugin-extensible | ONVIF, network traffic, firmware | 13 protocols, 48 modules |
 | Hardware access (JTAG/UART/SWD) | ❌ | ❌ | ✅ | ✅ | ✅  Targeted vuln check for firmware cve's |
-
-- Where Blitz stands out is the operating model, not the toolset: every tool above is **driven by a human**, command by command, session by session.
-- Blitz is built to make discovery, decision-making, execution, and proof **continuous and autonomous** running every day across the network.
-- Blitz has the intelligence that decides when, where, and how to use them — running without needing someone at the keyboard for every test.
 
 It first determines what is actually present in the target environment—devices, ports, services, protocols, authentication mechanisms, and exposed interfaces—and then selects assessment modules relevant to those specific surfaces.
 
