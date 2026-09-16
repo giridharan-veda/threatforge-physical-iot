@@ -1,0 +1,318 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1998 1150" font-family="Arial, Helvetica, sans-serif" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTo5YmYxZTdiNi04YzIxLTRhYjUtOTQ5NS0yYzRjODRmNmE0ODkAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaMYR0Z4iFz6KsM9Lyjju6XwAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDpjYTBhYTA0Yi1jOWIzLTRjYjMtOThlMi1hYzQ1MjNlNjUzMTFscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoCBK8cW/SqOXWMYvoMAEVsAAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggjgBjF3+rtOXKxedjqLQe6bhAgn7yA6NQTglRe16B2SWkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaDFXbiCtbCQbL/z+4stRT2EAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCC4vzSrQkthQVwOWLt3S00gHjVeVtRO4NsFrH2t01BNhmRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBiqZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjliZjFlN2I2LThjMjEtNGFiNS05NDk1LTJjNGM4NGY2YTQ4OS9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOmM5MzRiMDdiLWRhZGMtNGJhMy05MTMwLWE5ODg5MjkwNzRhMHJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCCOAGMXf6u05crF52OotB7puECCfvIDo1BOCVF7XoHZJaJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFgg7N2WiVI4IZgmml+crVJF5RhmWOuJZqUEHog6zOohHDWiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggApvCCu86DEt45tqS9qZOx3WYMZzeR9G3ZWJ3318Slgx0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQHNa3W9o6UtstDkjQ/dKUZsyamP65/omYG6i+0OVq6ThtoB+81AU5ijr+/OdOsfDCj7dHqcuvIj+g8SvI01zfNw=</c2pa:manifest></metadata>
+<rect x="0" y="0" width="1998" height="1150" fill="#FFFFFF"/>
+<text x="999.0" y="42" text-anchor="middle" font-size="24" font-weight="700" fill="#111111">Ares Autonomous IoT Security Assessment Framework</text>
+<text x="999.0" y="70" text-anchor="middle" font-size="15" fill="#333333">Taxonomy of 48 Assessment Modules across Nine Sequential Phases and Ten Protocol Domains</text>
+<defs><marker id="arrowhead" markerWidth="9" markerHeight="9" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#555555"/></marker></defs>
+<line x1="48" y1="164.0" x2="48" y2="884.0" stroke="#AAAAAA" stroke-width="2.5" stroke-dasharray="2,5"/>
+<circle cx="48" cy="164.0" r="4" fill="#777777"/>
+<text x="66" y="156.0" font-size="13.5" font-weight="700" fill="#111111">Phase I</text>
+<text x="66" y="174.0" font-size="12.5" fill="#333333">Discovery &amp; Reconnaissance</text>
+<text x="66" y="192.0" font-size="11" fill="#777777" font-style="italic">(9 modules)</text>
+<line x1="370" y1="121" x2="1978" y2="121" stroke="#EAEAEA" stroke-width="1"/>
+<rect x="370" y="130" width="148" height="68" rx="8" ry="8" fill="#0072B2" fill-opacity="0.14" stroke="#0072B2" stroke-width="1.6"/>
+<rect x="370" y="130" width="6" height="68" rx="3" ry="3" fill="#0072B2"/>
+<text x="386" y="150" font-size="13" font-weight="700" fill="#0072B2">M01</text>
+<text x="386" y="174" font-size="10.3" fill="#1A1A1A">ARP Discovery</text>
+<rect x="530" y="130" width="148" height="68" rx="8" ry="8" fill="#0072B2" fill-opacity="0.14" stroke="#0072B2" stroke-width="1.6"/>
+<rect x="530" y="130" width="6" height="68" rx="3" ry="3" fill="#0072B2"/>
+<text x="546" y="150" font-size="13" font-weight="700" fill="#0072B2">M02</text>
+<text x="546" y="174" font-size="10.3" fill="#1A1A1A">TCP Discovery</text>
+<rect x="690" y="130" width="148" height="68" rx="8" ry="8" fill="#E69F00" fill-opacity="0.14" stroke="#E69F00" stroke-width="1.6"/>
+<rect x="690" y="130" width="6" height="68" rx="3" ry="3" fill="#E69F00"/>
+<text x="706" y="150" font-size="13" font-weight="700" fill="#E69F00">M05</text>
+<text x="706" y="174" font-size="10.3" fill="#1A1A1A">HTTP Discovery</text>
+<rect x="850" y="130" width="148" height="68" rx="8" ry="8" fill="#009E73" fill-opacity="0.14" stroke="#009E73" stroke-width="1.6"/>
+<rect x="850" y="130" width="6" height="68" rx="3" ry="3" fill="#009E73"/>
+<text x="866" y="150" font-size="13" font-weight="700" fill="#009E73">M12</text>
+<text x="866" y="174" font-size="10.3" fill="#1A1A1A">RTSP Discovery</text>
+<rect x="1010" y="130" width="148" height="68" rx="8" ry="8" fill="#D55E00" fill-opacity="0.14" stroke="#D55E00" stroke-width="1.6"/>
+<rect x="1010" y="130" width="6" height="68" rx="3" ry="3" fill="#D55E00"/>
+<text x="1026" y="150" font-size="13" font-weight="700" fill="#D55E00">M17</text>
+<text x="1026" y="174" font-size="10.3" fill="#1A1A1A">ONVIF Discovery</text>
+<rect x="1170" y="130" width="148" height="68" rx="8" ry="8" fill="#CC79A7" fill-opacity="0.14" stroke="#CC79A7" stroke-width="1.6"/>
+<rect x="1170" y="130" width="6" height="68" rx="3" ry="3" fill="#CC79A7"/>
+<text x="1186" y="150" font-size="13" font-weight="700" fill="#CC79A7">M23</text>
+<text x="1186" y="168" font-size="10.3" fill="#1A1A1A">MQTT Broker</text>
+<text x="1186" y="181" font-size="10.3" fill="#1A1A1A">Discovery</text>
+<rect x="1330" y="130" width="148" height="68" rx="8" ry="8" fill="#56B4E9" fill-opacity="0.14" stroke="#56B4E9" stroke-width="1.6"/>
+<rect x="1330" y="130" width="6" height="68" rx="3" ry="3" fill="#56B4E9"/>
+<text x="1346" y="150" font-size="13" font-weight="700" fill="#56B4E9">M29</text>
+<text x="1346" y="168" font-size="10.3" fill="#1A1A1A">UPnP/SSDP</text>
+<text x="1346" y="181" font-size="10.3" fill="#1A1A1A">Discovery</text>
+<rect x="1490" y="130" width="148" height="68" rx="8" ry="8" fill="#3B3B3B" fill-opacity="0.14" stroke="#3B3B3B" stroke-width="1.6"/>
+<rect x="1490" y="130" width="6" height="68" rx="3" ry="3" fill="#3B3B3B"/>
+<text x="1506" y="150" font-size="13" font-weight="700" fill="#3B3B3B">M45</text>
+<text x="1506" y="168" font-size="10.3" fill="#1A1A1A">Passive</text>
+<text x="1506" y="181" font-size="10.3" fill="#1A1A1A">Reconnaissance</text>
+<rect x="1650" y="130" width="148" height="68" rx="8" ry="8" fill="#3B3B3B" fill-opacity="0.14" stroke="#3B3B3B" stroke-width="1.6"/>
+<rect x="1650" y="130" width="6" height="68" rx="3" ry="3" fill="#3B3B3B"/>
+<text x="1666" y="150" font-size="13" font-weight="700" fill="#3B3B3B">M46</text>
+<text x="1666" y="168" font-size="10.3" fill="#1A1A1A">Active</text>
+<text x="1666" y="181" font-size="10.3" fill="#1A1A1A">Reconnaissance</text>
+<circle cx="48" cy="198.0" r="4" fill="#777777"/>
+<circle cx="48" cy="254.0" r="4" fill="#777777"/>
+<text x="66" y="246.0" font-size="13.5" font-weight="700" fill="#111111">Phase II</text>
+<text x="66" y="264.0" font-size="12.5" fill="#333333">Device / Service</text>
+<text x="66" y="279.0" font-size="12.5" fill="#333333">Fingerprinting</text>
+<text x="66" y="297.0" font-size="11" fill="#777777" font-style="italic">(2 modules)</text>
+<line x1="370" y1="211" x2="1978" y2="211" stroke="#EAEAEA" stroke-width="1"/>
+<rect x="370" y="220" width="148" height="68" rx="8" ry="8" fill="#0072B2" fill-opacity="0.14" stroke="#0072B2" stroke-width="1.6"/>
+<rect x="370" y="220" width="6" height="68" rx="3" ry="3" fill="#0072B2"/>
+<text x="386" y="240" font-size="13" font-weight="700" fill="#0072B2">M03</text>
+<text x="386" y="258" font-size="10.3" fill="#1A1A1A">Device</text>
+<text x="386" y="271" font-size="10.3" fill="#1A1A1A">Fingerprinting</text>
+<rect x="530" y="220" width="148" height="68" rx="8" ry="8" fill="#0072B2" fill-opacity="0.14" stroke="#0072B2" stroke-width="1.6"/>
+<rect x="530" y="220" width="6" height="68" rx="3" ry="3" fill="#0072B2"/>
+<text x="546" y="240" font-size="13" font-weight="700" fill="#0072B2">M04</text>
+<text x="546" y="258" font-size="10.3" fill="#1A1A1A">Service</text>
+<text x="546" y="271" font-size="10.3" fill="#1A1A1A">Fingerprinting</text>
+<circle cx="48" cy="288.0" r="4" fill="#777777"/>
+<circle cx="48" cy="344.0" r="4" fill="#777777"/>
+<text x="66" y="336.0" font-size="13.5" font-weight="700" fill="#111111">Phase III</text>
+<text x="66" y="354.0" font-size="12.5" fill="#333333">Service &amp; Resource Enumeration</text>
+<text x="66" y="372.0" font-size="11" fill="#777777" font-style="italic">(10 modules)</text>
+<line x1="370" y1="301" x2="1978" y2="301" stroke="#EAEAEA" stroke-width="1"/>
+<rect x="370" y="310" width="148" height="68" rx="8" ry="8" fill="#E69F00" fill-opacity="0.14" stroke="#E69F00" stroke-width="1.6"/>
+<rect x="370" y="310" width="6" height="68" rx="3" ry="3" fill="#E69F00"/>
+<text x="386" y="330" font-size="13" font-weight="700" fill="#E69F00">M06</text>
+<text x="386" y="348" font-size="10.3" fill="#1A1A1A">HTTP Path</text>
+<text x="386" y="361" font-size="10.3" fill="#1A1A1A">Discovery</text>
+<rect x="530" y="310" width="148" height="68" rx="8" ry="8" fill="#009E73" fill-opacity="0.14" stroke="#009E73" stroke-width="1.6"/>
+<rect x="530" y="310" width="6" height="68" rx="3" ry="3" fill="#009E73"/>
+<text x="546" y="330" font-size="13" font-weight="700" fill="#009E73">M14</text>
+<text x="546" y="348" font-size="10.3" fill="#1A1A1A">RTSP Stream</text>
+<text x="546" y="361" font-size="10.3" fill="#1A1A1A">Enumeration</text>
+<rect x="690" y="310" width="148" height="68" rx="8" ry="8" fill="#009E73" fill-opacity="0.14" stroke="#009E73" stroke-width="1.6"/>
+<rect x="690" y="310" width="6" height="68" rx="3" ry="3" fill="#009E73"/>
+<text x="706" y="330" font-size="13" font-weight="700" fill="#009E73">M16</text>
+<text x="706" y="348" font-size="10.3" fill="#1A1A1A">RTSP Capability</text>
+<text x="706" y="361" font-size="10.3" fill="#1A1A1A">Enum.</text>
+<rect x="850" y="310" width="148" height="68" rx="8" ry="8" fill="#D55E00" fill-opacity="0.14" stroke="#D55E00" stroke-width="1.6"/>
+<rect x="850" y="310" width="6" height="68" rx="3" ry="3" fill="#D55E00"/>
+<text x="866" y="330" font-size="13" font-weight="700" fill="#D55E00">M18</text>
+<text x="866" y="348" font-size="10.3" fill="#1A1A1A">ONVIF Service</text>
+<text x="866" y="361" font-size="10.3" fill="#1A1A1A">Enum.</text>
+<rect x="1010" y="310" width="148" height="68" rx="8" ry="8" fill="#D55E00" fill-opacity="0.14" stroke="#D55E00" stroke-width="1.6"/>
+<rect x="1010" y="310" width="6" height="68" rx="3" ry="3" fill="#D55E00"/>
+<text x="1026" y="330" font-size="13" font-weight="700" fill="#D55E00">M19</text>
+<text x="1026" y="348" font-size="10.3" fill="#1A1A1A">ONVIF Device</text>
+<text x="1026" y="361" font-size="10.3" fill="#1A1A1A">Enum.</text>
+<rect x="1170" y="310" width="148" height="68" rx="8" ry="8" fill="#D55E00" fill-opacity="0.14" stroke="#D55E00" stroke-width="1.6"/>
+<rect x="1170" y="310" width="6" height="68" rx="3" ry="3" fill="#D55E00"/>
+<text x="1186" y="330" font-size="13" font-weight="700" fill="#D55E00">M22</text>
+<text x="1186" y="348" font-size="10.3" fill="#1A1A1A">ONVIF Profile</text>
+<text x="1186" y="361" font-size="10.3" fill="#1A1A1A">Enum.</text>
+<rect x="1330" y="310" width="148" height="68" rx="8" ry="8" fill="#CC79A7" fill-opacity="0.14" stroke="#CC79A7" stroke-width="1.6"/>
+<rect x="1330" y="310" width="6" height="68" rx="3" ry="3" fill="#CC79A7"/>
+<text x="1346" y="330" font-size="13" font-weight="700" fill="#CC79A7">M25</text>
+<text x="1346" y="348" font-size="10.3" fill="#1A1A1A">MQTT Topic</text>
+<text x="1346" y="361" font-size="10.3" fill="#1A1A1A">Enumeration</text>
+<rect x="1490" y="310" width="148" height="68" rx="8" ry="8" fill="#56B4E9" fill-opacity="0.14" stroke="#56B4E9" stroke-width="1.6"/>
+<rect x="1490" y="310" width="6" height="68" rx="3" ry="3" fill="#56B4E9"/>
+<text x="1506" y="330" font-size="13" font-weight="700" fill="#56B4E9">M30</text>
+<text x="1506" y="348" font-size="10.3" fill="#1A1A1A">UPnP Service</text>
+<text x="1506" y="361" font-size="10.3" fill="#1A1A1A">Enum.</text>
+<rect x="1650" y="310" width="148" height="68" rx="8" ry="8" fill="#999999" fill-opacity="0.14" stroke="#999999" stroke-width="1.6"/>
+<rect x="1650" y="310" width="6" height="68" rx="3" ry="3" fill="#999999"/>
+<text x="1666" y="330" font-size="13" font-weight="700" fill="#999999">M35</text>
+<text x="1666" y="354" font-size="10.3" fill="#1A1A1A">CoAP Enumeration</text>
+<rect x="1810" y="310" width="148" height="68" rx="8" ry="8" fill="#0072B2" fill-opacity="0.14" stroke="#0072B2" stroke-width="1.6"/>
+<rect x="1810" y="310" width="6" height="68" rx="3" ry="3" fill="#0072B2"/>
+<text x="1826" y="330" font-size="13" font-weight="700" fill="#0072B2">M40</text>
+<text x="1826" y="354" font-size="10.3" fill="#1A1A1A">DNS Enumeration</text>
+<circle cx="48" cy="378.0" r="4" fill="#777777"/>
+<circle cx="48" cy="434.0" r="4" fill="#777777"/>
+<text x="66" y="426.0" font-size="13.5" font-weight="700" fill="#111111">Phase IV</text>
+<text x="66" y="444.0" font-size="12.5" fill="#333333">Authentication Testing</text>
+<text x="66" y="462.0" font-size="11" fill="#777777" font-style="italic">(5 modules)</text>
+<line x1="370" y1="391" x2="1978" y2="391" stroke="#EAEAEA" stroke-width="1"/>
+<rect x="370" y="400" width="148" height="68" rx="8" ry="8" fill="#E69F00" fill-opacity="0.14" stroke="#E69F00" stroke-width="1.6"/>
+<rect x="370" y="400" width="6" height="68" rx="3" ry="3" fill="#E69F00"/>
+<text x="386" y="420" font-size="13" font-weight="700" fill="#E69F00">M07</text>
+<text x="386" y="438" font-size="10.3" fill="#1A1A1A">HTTP Authentication</text>
+<text x="386" y="451" font-size="10.3" fill="#1A1A1A">Test</text>
+<rect x="530" y="400" width="148" height="68" rx="8" ry="8" fill="#009E73" fill-opacity="0.14" stroke="#009E73" stroke-width="1.6"/>
+<rect x="530" y="400" width="6" height="68" rx="3" ry="3" fill="#009E73"/>
+<text x="546" y="420" font-size="13" font-weight="700" fill="#009E73">M13</text>
+<text x="546" y="438" font-size="10.3" fill="#1A1A1A">RTSP Authentication</text>
+<text x="546" y="451" font-size="10.3" fill="#1A1A1A">Test</text>
+<rect x="690" y="400" width="148" height="68" rx="8" ry="8" fill="#D55E00" fill-opacity="0.14" stroke="#D55E00" stroke-width="1.6"/>
+<rect x="690" y="400" width="6" height="68" rx="3" ry="3" fill="#D55E00"/>
+<text x="706" y="420" font-size="13" font-weight="700" fill="#D55E00">M20</text>
+<text x="706" y="438" font-size="10.3" fill="#1A1A1A">ONVIF Authentication</text>
+<text x="706" y="451" font-size="10.3" fill="#1A1A1A">Test</text>
+<rect x="850" y="400" width="148" height="68" rx="8" ry="8" fill="#CC79A7" fill-opacity="0.14" stroke="#CC79A7" stroke-width="1.6"/>
+<rect x="850" y="400" width="6" height="68" rx="3" ry="3" fill="#CC79A7"/>
+<text x="866" y="420" font-size="13" font-weight="700" fill="#CC79A7">M24</text>
+<text x="866" y="438" font-size="10.3" fill="#1A1A1A">MQTT Authentication</text>
+<text x="866" y="451" font-size="10.3" fill="#1A1A1A">Test</text>
+<rect x="1010" y="400" width="148" height="68" rx="8" ry="8" fill="#3B3B3B" fill-opacity="0.14" stroke="#3B3B3B" stroke-width="1.6"/>
+<rect x="1010" y="400" width="6" height="68" rx="3" ry="3" fill="#3B3B3B"/>
+<text x="1026" y="420" font-size="13" font-weight="700" fill="#3B3B3B">M39</text>
+<text x="1026" y="438" font-size="10.3" fill="#1A1A1A">Credential</text>
+<text x="1026" y="451" font-size="10.3" fill="#1A1A1A">Validation</text>
+<circle cx="48" cy="468.0" r="4" fill="#777777"/>
+<circle cx="48" cy="524.0" r="4" fill="#777777"/>
+<text x="66" y="516.0" font-size="13.5" font-weight="700" fill="#111111">Phase V</text>
+<text x="66" y="534.0" font-size="12.5" fill="#333333">Authorization / Access-Control</text>
+<text x="66" y="549.0" font-size="12.5" fill="#333333">Testing</text>
+<text x="66" y="567.0" font-size="11" fill="#777777" font-style="italic">(7 modules)</text>
+<line x1="370" y1="481" x2="1978" y2="481" stroke="#EAEAEA" stroke-width="1"/>
+<rect x="370" y="490" width="148" height="68" rx="8" ry="8" fill="#E69F00" fill-opacity="0.14" stroke="#E69F00" stroke-width="1.6"/>
+<rect x="370" y="490" width="6" height="68" rx="3" ry="3" fill="#E69F00"/>
+<text x="386" y="510" font-size="13" font-weight="700" fill="#E69F00">M08</text>
+<text x="386" y="528" font-size="10.3" fill="#1A1A1A">HTTP Access-</text>
+<text x="386" y="541" font-size="10.3" fill="#1A1A1A">Control Test</text>
+<rect x="530" y="490" width="148" height="68" rx="8" ry="8" fill="#009E73" fill-opacity="0.14" stroke="#009E73" stroke-width="1.6"/>
+<rect x="530" y="490" width="6" height="68" rx="3" ry="3" fill="#009E73"/>
+<text x="546" y="510" font-size="13" font-weight="700" fill="#009E73">M15</text>
+<text x="546" y="528" font-size="10.3" fill="#1A1A1A">RTSP Access-</text>
+<text x="546" y="541" font-size="10.3" fill="#1A1A1A">Control Test</text>
+<rect x="690" y="490" width="148" height="68" rx="8" ry="8" fill="#D55E00" fill-opacity="0.14" stroke="#D55E00" stroke-width="1.6"/>
+<rect x="690" y="490" width="6" height="68" rx="3" ry="3" fill="#D55E00"/>
+<text x="706" y="510" font-size="13" font-weight="700" fill="#D55E00">M21</text>
+<text x="706" y="528" font-size="10.3" fill="#1A1A1A">ONVIF Authorization</text>
+<text x="706" y="541" font-size="10.3" fill="#1A1A1A">Test</text>
+<rect x="850" y="490" width="148" height="68" rx="8" ry="8" fill="#CC79A7" fill-opacity="0.14" stroke="#CC79A7" stroke-width="1.6"/>
+<rect x="850" y="490" width="6" height="68" rx="3" ry="3" fill="#CC79A7"/>
+<text x="866" y="510" font-size="13" font-weight="700" fill="#CC79A7">M26</text>
+<text x="866" y="528" font-size="10.3" fill="#1A1A1A">MQTT Subscribe</text>
+<text x="866" y="541" font-size="10.3" fill="#1A1A1A">Test</text>
+<rect x="1010" y="490" width="148" height="68" rx="8" ry="8" fill="#CC79A7" fill-opacity="0.14" stroke="#CC79A7" stroke-width="1.6"/>
+<rect x="1010" y="490" width="6" height="68" rx="3" ry="3" fill="#CC79A7"/>
+<text x="1026" y="510" font-size="13" font-weight="700" fill="#CC79A7">M27</text>
+<text x="1026" y="534" font-size="10.3" fill="#1A1A1A">MQTT Publish Test</text>
+<rect x="1170" y="490" width="148" height="68" rx="8" ry="8" fill="#56B4E9" fill-opacity="0.14" stroke="#56B4E9" stroke-width="1.6"/>
+<rect x="1170" y="490" width="6" height="68" rx="3" ry="3" fill="#56B4E9"/>
+<text x="1186" y="510" font-size="13" font-weight="700" fill="#56B4E9">M31</text>
+<text x="1186" y="528" font-size="10.3" fill="#1A1A1A">UPnP Exposure</text>
+<text x="1186" y="541" font-size="10.3" fill="#1A1A1A">Test</text>
+<rect x="1330" y="490" width="148" height="68" rx="8" ry="8" fill="#999999" fill-opacity="0.14" stroke="#999999" stroke-width="1.6"/>
+<rect x="1330" y="490" width="6" height="68" rx="3" ry="3" fill="#999999"/>
+<text x="1346" y="510" font-size="13" font-weight="700" fill="#999999">M36</text>
+<text x="1346" y="528" font-size="10.3" fill="#1A1A1A">CoAP Access-</text>
+<text x="1346" y="541" font-size="10.3" fill="#1A1A1A">Control Test</text>
+<circle cx="48" cy="558.0" r="4" fill="#777777"/>
+<circle cx="48" cy="614.0" r="4" fill="#777777"/>
+<text x="66" y="606.0" font-size="13.5" font-weight="700" fill="#111111">Phase VI</text>
+<text x="66" y="624.0" font-size="12.5" fill="#333333">Input Validation &amp;</text>
+<text x="66" y="639.0" font-size="12.5" fill="#333333">Configuration Review</text>
+<text x="66" y="657.0" font-size="11" fill="#777777" font-style="italic">(6 modules)</text>
+<line x1="370" y1="571" x2="1978" y2="571" stroke="#EAEAEA" stroke-width="1"/>
+<rect x="370" y="580" width="148" height="68" rx="8" ry="8" fill="#E69F00" fill-opacity="0.14" stroke="#E69F00" stroke-width="1.6"/>
+<rect x="370" y="580" width="6" height="68" rx="3" ry="3" fill="#E69F00"/>
+<text x="386" y="600" font-size="13" font-weight="700" fill="#E69F00">M09</text>
+<text x="386" y="618" font-size="10.3" fill="#1A1A1A">HTTP Input</text>
+<text x="386" y="631" font-size="10.3" fill="#1A1A1A">Validation</text>
+<rect x="530" y="580" width="148" height="68" rx="8" ry="8" fill="#E69F00" fill-opacity="0.14" stroke="#E69F00" stroke-width="1.6"/>
+<rect x="530" y="580" width="6" height="68" rx="3" ry="3" fill="#E69F00"/>
+<text x="546" y="600" font-size="13" font-weight="700" fill="#E69F00">M10</text>
+<text x="546" y="618" font-size="10.3" fill="#1A1A1A">HTTP Configuration</text>
+<text x="546" y="631" font-size="10.3" fill="#1A1A1A">Check</text>
+<rect x="690" y="580" width="148" height="68" rx="8" ry="8" fill="#E69F00" fill-opacity="0.14" stroke="#E69F00" stroke-width="1.6"/>
+<rect x="690" y="580" width="6" height="68" rx="3" ry="3" fill="#E69F00"/>
+<text x="706" y="600" font-size="13" font-weight="700" fill="#E69F00">M11</text>
+<text x="706" y="618" font-size="10.3" fill="#1A1A1A">HTTP Info.</text>
+<text x="706" y="631" font-size="10.3" fill="#1A1A1A">Disclosure</text>
+<rect x="850" y="580" width="148" height="68" rx="8" ry="8" fill="#E69F00" fill-opacity="0.14" stroke="#E69F00" stroke-width="1.6"/>
+<rect x="850" y="580" width="6" height="68" rx="3" ry="3" fill="#E69F00"/>
+<text x="866" y="600" font-size="13" font-weight="700" fill="#E69F00">M42</text>
+<text x="866" y="618" font-size="10.3" fill="#1A1A1A">Command-Injection</text>
+<text x="866" y="631" font-size="10.3" fill="#1A1A1A">Val.</text>
+<rect x="1010" y="580" width="148" height="68" rx="8" ry="8" fill="#E69F00" fill-opacity="0.14" stroke="#E69F00" stroke-width="1.6"/>
+<rect x="1010" y="580" width="6" height="68" rx="3" ry="3" fill="#E69F00"/>
+<text x="1026" y="600" font-size="13" font-weight="700" fill="#E69F00">M43</text>
+<text x="1026" y="618" font-size="10.3" fill="#1A1A1A">Path-Traversal</text>
+<text x="1026" y="631" font-size="10.3" fill="#1A1A1A">Val.</text>
+<rect x="1170" y="580" width="148" height="68" rx="8" ry="8" fill="#E69F00" fill-opacity="0.14" stroke="#E69F00" stroke-width="1.6"/>
+<rect x="1170" y="580" width="6" height="68" rx="3" ry="3" fill="#E69F00"/>
+<text x="1186" y="600" font-size="13" font-weight="700" fill="#E69F00">M44</text>
+<text x="1186" y="618" font-size="10.3" fill="#1A1A1A">CGI/Web-Interface</text>
+<text x="1186" y="631" font-size="10.3" fill="#1A1A1A">Val.</text>
+<circle cx="48" cy="648.0" r="4" fill="#777777"/>
+<circle cx="48" cy="704.0" r="4" fill="#777777"/>
+<text x="66" y="696.0" font-size="13.5" font-weight="700" fill="#111111">Phase VII</text>
+<text x="66" y="714.0" font-size="12.5" fill="#333333">Transport-Layer &amp;</text>
+<text x="66" y="729.0" font-size="12.5" fill="#333333">Cryptographic Assessment</text>
+<text x="66" y="747.0" font-size="11" fill="#777777" font-style="italic">(3 modules)</text>
+<line x1="370" y1="661" x2="1978" y2="661" stroke="#EAEAEA" stroke-width="1"/>
+<rect x="370" y="670" width="148" height="68" rx="8" ry="8" fill="#CC79A7" fill-opacity="0.14" stroke="#CC79A7" stroke-width="1.6"/>
+<rect x="370" y="670" width="6" height="68" rx="3" ry="3" fill="#CC79A7"/>
+<text x="386" y="690" font-size="13" font-weight="700" fill="#CC79A7">M28</text>
+<text x="386" y="708" font-size="10.3" fill="#1A1A1A">MQTT Transport</text>
+<text x="386" y="721" font-size="10.3" fill="#1A1A1A">Check</text>
+<rect x="530" y="670" width="148" height="68" rx="8" ry="8" fill="#006D6D" fill-opacity="0.14" stroke="#006D6D" stroke-width="1.6"/>
+<rect x="530" y="670" width="6" height="68" rx="3" ry="3" fill="#006D6D"/>
+<text x="546" y="690" font-size="13" font-weight="700" fill="#006D6D">M37</text>
+<text x="546" y="708" font-size="10.3" fill="#1A1A1A">TLS Configuration</text>
+<text x="546" y="721" font-size="10.3" fill="#1A1A1A">Test</text>
+<rect x="690" y="670" width="148" height="68" rx="8" ry="8" fill="#006D6D" fill-opacity="0.14" stroke="#006D6D" stroke-width="1.6"/>
+<rect x="690" y="670" width="6" height="68" rx="3" ry="3" fill="#006D6D"/>
+<text x="706" y="690" font-size="13" font-weight="700" fill="#006D6D">M38</text>
+<text x="706" y="708" font-size="10.3" fill="#1A1A1A">Certificate</text>
+<text x="706" y="721" font-size="10.3" fill="#1A1A1A">Inspection</text>
+<circle cx="48" cy="738.0" r="4" fill="#777777"/>
+<circle cx="48" cy="794.0" r="4" fill="#777777"/>
+<text x="66" y="786.0" font-size="13.5" font-weight="700" fill="#111111">Phase VIII</text>
+<text x="66" y="804.0" font-size="12.5" fill="#333333">Legacy Management-Protocol</text>
+<text x="66" y="819.0" font-size="12.5" fill="#333333">Assessment</text>
+<text x="66" y="837.0" font-size="11" fill="#777777" font-style="italic">(3 modules)</text>
+<line x1="370" y1="751" x2="1978" y2="751" stroke="#EAEAEA" stroke-width="1"/>
+<rect x="370" y="760" width="148" height="68" rx="8" ry="8" fill="#8B4513" fill-opacity="0.14" stroke="#8B4513" stroke-width="1.6"/>
+<rect x="370" y="760" width="6" height="68" rx="3" ry="3" fill="#8B4513"/>
+<text x="386" y="780" font-size="13" font-weight="700" fill="#8B4513">M32</text>
+<text x="386" y="804" font-size="10.3" fill="#1A1A1A">SNMP Assessment</text>
+<rect x="530" y="760" width="148" height="68" rx="8" ry="8" fill="#8B4513" fill-opacity="0.14" stroke="#8B4513" stroke-width="1.6"/>
+<rect x="530" y="760" width="6" height="68" rx="3" ry="3" fill="#8B4513"/>
+<text x="546" y="780" font-size="13" font-weight="700" fill="#8B4513">M33</text>
+<text x="546" y="804" font-size="10.3" fill="#1A1A1A">SSH Assessment</text>
+<rect x="690" y="760" width="148" height="68" rx="8" ry="8" fill="#8B4513" fill-opacity="0.14" stroke="#8B4513" stroke-width="1.6"/>
+<rect x="690" y="760" width="6" height="68" rx="3" ry="3" fill="#8B4513"/>
+<text x="706" y="780" font-size="13" font-weight="700" fill="#8B4513">M34</text>
+<text x="706" y="804" font-size="10.3" fill="#1A1A1A">Telnet Assessment</text>
+<circle cx="48" cy="828.0" r="4" fill="#777777"/>
+<circle cx="48" cy="884.0" r="4" fill="#777777"/>
+<path d="M 44,890.0 L 48,900.0 L 52,890.0 Z" fill="#555555"/>
+<text x="66" y="876.0" font-size="13.5" font-weight="700" fill="#111111">Phase IX</text>
+<text x="66" y="894.0" font-size="12.5" fill="#333333">Correlation &amp; Autonomous</text>
+<text x="66" y="909.0" font-size="12.5" fill="#333333">Validation</text>
+<text x="66" y="927.0" font-size="11" fill="#777777" font-style="italic">(3 modules)</text>
+<line x1="370" y1="841" x2="1978" y2="841" stroke="#EAEAEA" stroke-width="1"/>
+<rect x="370" y="850" width="148" height="68" rx="8" ry="8" fill="#3B3B3B" fill-opacity="0.14" stroke="#3B3B3B" stroke-width="1.6"/>
+<rect x="370" y="850" width="6" height="68" rx="3" ry="3" fill="#3B3B3B"/>
+<text x="386" y="870" font-size="13" font-weight="700" fill="#3B3B3B">M41</text>
+<text x="386" y="888" font-size="10.3" fill="#1A1A1A">Vulnerability</text>
+<text x="386" y="901" font-size="10.3" fill="#1A1A1A">Correlation</text>
+<rect x="530" y="850" width="148" height="68" rx="8" ry="8" fill="#3B3B3B" fill-opacity="0.14" stroke="#3B3B3B" stroke-width="1.6"/>
+<rect x="530" y="850" width="6" height="68" rx="3" ry="3" fill="#3B3B3B"/>
+<text x="546" y="870" font-size="13" font-weight="700" fill="#3B3B3B">M47</text>
+<text x="546" y="888" font-size="10.3" fill="#1A1A1A">Autonomous</text>
+<text x="546" y="901" font-size="10.3" fill="#1A1A1A">AutoPwn Val.</text>
+<rect x="690" y="850" width="148" height="68" rx="8" ry="8" fill="#3B3B3B" fill-opacity="0.14" stroke="#3B3B3B" stroke-width="1.6"/>
+<rect x="690" y="850" width="6" height="68" rx="3" ry="3" fill="#3B3B3B"/>
+<text x="706" y="870" font-size="13" font-weight="700" fill="#3B3B3B">M48</text>
+<text x="706" y="894" font-size="10.3" fill="#1A1A1A">Re-Validation</text>
+<line x1="40" y1="954" x2="1978" y2="954" stroke="#CCCCCC" stroke-width="1"/>
+<text x="40" y="974" font-size="13.5" font-weight="700" fill="#111111">Protocol Domain Legend</text>
+<rect x="40.0" y="981" width="16" height="16" rx="3" fill="#0072B2"/>
+<text x="64.0" y="994" font-size="11.5" fill="#222222">Network / Transport (ARP, TCP, DNS)</text>
+<rect x="999.0" y="981" width="16" height="16" rx="3" fill="#E69F00"/>
+<text x="1023.0" y="994" font-size="11.5" fill="#222222">HTTP / HTTPS &amp; Embedded Web</text>
+<rect x="40.0" y="1007" width="16" height="16" rx="3" fill="#009E73"/>
+<text x="64.0" y="1020" font-size="11.5" fill="#222222">RTSP (Video Streaming)</text>
+<rect x="999.0" y="1007" width="16" height="16" rx="3" fill="#D55E00"/>
+<text x="1023.0" y="1020" font-size="11.5" fill="#222222">ONVIF (Camera Management)</text>
+<rect x="40.0" y="1033" width="16" height="16" rx="3" fill="#CC79A7"/>
+<text x="64.0" y="1046" font-size="11.5" fill="#222222">MQTT (IoT Messaging)</text>
+<rect x="999.0" y="1033" width="16" height="16" rx="3" fill="#56B4E9"/>
+<text x="1023.0" y="1046" font-size="11.5" fill="#222222">UPnP / SSDP</text>
+<rect x="40.0" y="1059" width="16" height="16" rx="3" fill="#8B4513"/>
+<text x="64.0" y="1072" font-size="11.5" fill="#222222">Legacy Mgmt (SNMP / SSH / Telnet)</text>
+<rect x="999.0" y="1059" width="16" height="16" rx="3" fill="#999999"/>
+<text x="1023.0" y="1072" font-size="11.5" fill="#222222">CoAP (Constrained Devices)</text>
+<rect x="40.0" y="1085" width="16" height="16" rx="3" fill="#006D6D"/>
+<text x="64.0" y="1098" font-size="11.5" fill="#222222">TLS / Certificates</text>
+<rect x="999.0" y="1085" width="16" height="16" rx="3" fill="#3B3B3B"/>
+<text x="1023.0" y="1098" font-size="11.5" fill="#222222">Cross-Cutting / Multiple Protocols</text>
+<text x="40" y="1138" font-size="10.8" fill="#666666" font-style="italic">Dashed vertical line (left margin) indicates the general execution sequence; modules within a phase may run in parallel and later phases can be re-entered adaptively (e.g., Phase IX feeding back into earlier phases during autonomous validation).</text>
+</svg>
