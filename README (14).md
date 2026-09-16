@@ -67,7 +67,9 @@ or:
 
 > **"What does that service expose, how does it behave, what security controls protect it, and can the observed weakness be safely demonstrated?"**
 
-For example, discovering an RTSP service is only the beginning. Blitz can identify the RTSP implementation, inspect its authentication behaviour, enumerate permitted stream endpoints where authorized, examine transport configuration, and determine whether an observed exposure can be validated without disrupting the camera or its video service. The same protocol-aware approach is applied across **HTTP/HTTPS, RTSP, ONVIF, MQTT, CoAP, UPnP/SSDP, SSH, Telnet, SNMP, TLS**, and other IoT-facing services.
+For example, discovering an RTSP service is only the beginning. Blitz can identify the RTSP implementation, inspect its authentication behaviour, enumerate permitted stream endpoints where authorized, examine transport configuration, and determine whether an observed exposure can be validate the camera or its video service. The same protocol-aware approach is applied across: 
+
+**HTTP/HTTPS, RTSP, ONVIF, MQTT, CoAP, UPnP/SSDP, SSH, Telnet, SNMP, TLS**, and other IoT-facing services.
 
 ### Technology Stack
 
@@ -95,9 +97,7 @@ Most security tools require a human to decide what to scan, which credentials to
 
 Ares does not perform network attacks itself. That responsibility belongs to Blitz. Instead, Ares acts as a decision engine. It maintains a structured knowledge base of device profiles, protocol behaviours, known attack surfaces, and tool mappings. When new information is discovered — open ports, banners, services, or vendor signatures — Ares classifies the device and builds a ranked plan of what should be tested next.
 
-The intelligence inside Ares is fine-tuned automatically when the decision points to choose the next tool, Surrounding that model is a loop that enforces workflow order, records every decision. This design keeps the system autonomous without making it unpredictable.
-
-Ares understands IoT-specific contexts — cameras, brokers, routers, controllers, and their typical weaknesses — it can drive assessments that are more efficient than generic scanning. The result is a system that can progress through with minimal human intervention.
+The intelligence inside Ares is fine-tuned automatically when the decision points to choose the next tool. Ares understands IoT-specific contexts — cameras, brokers, routers, controllers, and their typical weaknesses — it can drive assessments that are more efficient than generic scanning. The result is a system that can progress through with minimal human intervention.
 
 ## What is the Ares Bridge
 
@@ -109,9 +109,7 @@ Beyond AI integration, the Bridge also provides a clean path for connecting exte
 
 ## Ollama LLM in Blitz
 
-**Ollama** is the local model runtime that powers the intelligence inside Ares. It runs a fine-tuned language model specialised for IoT security decisions.
-
-The model used by Blitz is a 1.7-billion-parameter Qwen3 variant that was fine-tuned specifically for IoT assessment planning. It does not attempt to plan entire attack chains or interact with the network. Its only role is to answer one focused question at each step: given the current state of a device, which tool should be used next.
+**Ollama** is the local model runtime that powers the intelligence inside Ares. The model used by Blitz is a 1.7-billion-parameter Qwen3 variant that was fine-tuned specifically for IoT Pen-testing. It does not attempt to plan entire attack chains or interact with the network. Its only role is to answer: the current state of a device, which tool should be used next.
 
 ### How the Model Was Trained for IoT
 
