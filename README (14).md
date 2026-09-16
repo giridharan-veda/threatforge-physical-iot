@@ -67,7 +67,29 @@ That somewhere is **IoT and OT**: the cameras, sensors, controllers, and gateway
 | **Operation model** | Manual, single session | Manual, single session | Manual, single session | Human/AI-guided, command by command | Autonomous, continuous |
 ---
 
-### The Takeaway - Where Blitz differs is the operating model, not the toolset: every tool above is **driven by a human**, command by command, session by session. Blitz is built to make discovery, decision-making, execution, and proof **continuous and autonomous** — running every day across the network, not once per manual session. These tools are weapons in a skilled operator's hands. Blitz has the intelligence that decides when, where, and how to use them — running without needing someone at the keyboard for every test.
+- Where Blitz differs is the operating model, not the toolset: every tool above is **driven by a human**, command by command, session by session.
+- Blitz is built to make discovery, decision-making, execution, and proof **continuous and autonomous** running every day across the network.
+- Blitz has the intelligence that decides when, where, and how to use them — running without needing someone at the keyboard for every test.
+
+It first determines what is actually present in the target environment—devices, ports, services, protocols, authentication mechanisms, and exposed interfaces—and then selects assessment modules relevant to those specific surfaces.
+
+### What Makes Blitz Different
+
+Traditional IoT scanners often stop at statements such as:
+
+> "Port 554 is open."
+
+or:
+
+> "This device appears to expose HTTP."
+
+Blitz goes further by determining:
+
+> **"What does that service expose, how does it behave, what security controls protect it, and can the observed weakness be safely demonstrated?"**
+
+For example, discovering an RTSP service is only the beginning. Blitz can identify the RTSP implementation, inspect its authentication behaviour, enumerate permitted stream endpoints where authorized, examine transport configuration, and determine whether an observed exposure can be validated without disrupting the camera or its video service.
+
+The same protocol-aware approach is applied across **HTTP/HTTPS, RTSP, ONVIF, MQTT, CoAP, UPnP/SSDP, SSH, Telnet, SNMP, TLS**, and other IoT-facing services.
 
 ### Technology Stack
 
@@ -121,55 +143,13 @@ Each training example presented the model with a compact device state (open port
 
 This design of the LLM model contributes judgment at decision points, while the surrounding systems in Ares handle sequencing, thinking, persistence, and execution.
 
-
-### Key Features
-
-| Category | Capability |
-|----------|------------|
-| **Discovery & Context** | Continuous multi-protocol discovery (ARP, mDNS, SSDP, ONVIF, TCP and more) with per-device identity resolution and security context correlation |
-| **AI-Driven Planning** | Ares generates ranked, applicability-aware assessment plans based on live device context |
-| **Safety Controls** | Multi-condition authorization gate (Authorized? In scope? Capability allowed?) — any “No” blocks execution |
-| **Controlled Execution** | Prepare → Execute → Cleanup lifecycle with full audit trail |
-| **Evidence & Proof** | Clear distinction between attempted and proven results + persistent evidence storage |
-| **Findings & Remediation** | Evidence-backed findings + remediation support + automatic re-validation of fixes |
-| **Operator Experience** | Real-time WebSocket event streaming and live narrative updates |
-| **Deployment** | Docker-supported, designed for controlled and auditable environments |
-| **Audience** | Red teams, purple teams, IoT/OT security programmes, and detection engineering teams |
-
 ## Architecture
+
+Blitz is designed as a **closed-loop automated red teaming system** specifically for IoT and OT environments.
 
 <p align="center">
 <img src="https://github.com/giridharan-veda/threatforge-physical-iot/blob/main/blitz-architecture.svg" width="100%" alt="Blitz — Automated IoT Red Teaming Platform powered by Ares">  
 </p>
-
-Blitz is designed as a **closed-loop automated red teaming system** specifically for IoT and OT environments.  
-It separates intelligent planning from safe execution, and every action is authorized, logged, and verifiable.
-
-### How Blitz Operates (High-Level Flow)
-
-1. The **Operator** launches an assessment or continuous monitoring job.
-2. The request goes to the **Ares Reasoning & Orchestration Layer**.
-3. **Ares** (using the local Ollama model) analyzes the environment and generates an intelligent assessment plan.
-4. The plan is passed through the **Ares Bridge** (capability gateway), which strictly controls what the AI is allowed to request.
-5. Only approved plans are sent to **Blitz Core** (`:8088`).
-6. Blitz Core executes the full **12-stage closed-loop assessment lifecycle**.
-7. Results, evidence, and findings are stored in **Persistent State**.
-8. Live progress and results are streamed back to the Operator in real time via **WebSocket**.
-
-This separation of concerns (AI planning → gated capabilities → controlled execution → evidence → re-validation) is the core design principle of Blitz.
-
----
-
-### Service Topology
-
-| Layer | Components | Responsibility |
-|-------|------------|----------------|
-| **Operator** | Human operator / console | Starts assessments, monitors live results, reviews findings |
-| **Ares – Reasoning & Orchestration** | Ares Agent (`:9010`), Ares Bridge (`:8089`), Ollama (`:11435`) | AI-driven planning and strict capability control |
-| **Blitz Core** | Assessment & Execution Engine (`:8088` – REST + WebSocket) | Runs the complete 12-stage closed-loop lifecycle |
-| **State & Feedback** | Persistent State + Live Event Stream | Stores everything + streams real-time updates |
-
----
 
 ### Data Flow & Ports
 
@@ -182,50 +162,6 @@ This separation of concerns (AI planning → gated capabilities → controlled e
 | Blitz Core → Target Devices | Multi-protocol (ARP, mDNS, SSDP, ONVIF, TCP, etc.) | Discovery, fingerprinting, and authorized test execution |
 | Blitz Core → Persistent State | Internal | Devices, jobs, findings, incidents, and full audit trail |
 | Blitz Core → Operator | WebSocket | Live events, progress, narratives, and results |
-
----
-
-### Blitz Core – 12-Stage Closed-Loop Assessment Lifecycle
-
-1.Discover → 2.Resolve Identity → 3.Fingerprint → 4.Correlate Context →
-5.Build Plan → 6.Authorization Gate → 7.Execute → 8.Verify Result →
-9.Persist Evidence → 10.Generate Finding → 11.Remediate → 12.Re-validate ↺
-
-This closed-loop design is what makes Blitz fundamentally different from traditional scanners or open-ended AI agents.
-
----
-
-### Ares – Reasoning & Orchestration Layer
-
-Ares is the intelligence layer of Blitz. It is responsible for **thinking**, not for executing.
-
-- **Ares Agent** (`:9010`)  
-  Orchestrates high-level assessment planning and sequencing.
-
-- **Ares Bridge** (`:8089`)  
-  Acts as a capability gateway. It strictly controls what the AI is allowed to request. This is a critical safety boundary.
-
-- **Ollama** (`:11435`)  
-  Runs the local language model for private, on-premises AI inference. No data leaves the environment.
-
-**Important design rule:**  
-Ares never directly touches target devices. It only plans and requests. All actual execution is performed by Blitz Core after authorization.
-
-Every decision, every test, and every result is recorded. The operator always has full visibility.
-
----
-
-### System Requirements
-
-| Requirement | Minimum | Recommended |
-|-------------|---------|-------------|
-| OS | Linux / macOS / Windows (WSL2) | Ubuntu 22.04 LTS |
-| CPU | 4 cores | 8 cores |
-| RAM | 8 GB | 16 GB |
-| Disk | 20 GB free | 40 GB free (SSD) |
-| Docker Engine | 24.x | Latest stable |
-| Docker Compose | v2 | v2 |
-| Python | 3.11+ | 3.11+ |
 
 ---
 
@@ -272,18 +208,7 @@ Blitz/
 └── requirements.txt              # Python dependencies
 
  ```
----
-
-
-## Attack & Validation Capabilities
-
-Blitz is an IoT security assessment engine built around **device-aware testing**, rather than a collection of generic scanners. It first determines what is actually present in the target environment—devices, ports, services, protocols, authentication mechanisms, and exposed interfaces—and then selects assessment modules relevant to those specific surfaces.
-
-The result is a structured assessment pipeline:
-
-**Discover → Identify → Enumerate → Assess → Validate → Correlate → Report → Re-validate**
-
-Every operation is executed through **Blitz Core** and is subject to the **Authorization Gate**. The autonomous planner cannot directly execute arbitrary actions. **Ares** analyses the discovered environment and proposes the most relevant assessment sequence, while the execution layer determines which actions are permitted before they are sent to the target.
+It first determines what is actually present in the target environment—devices, ports, services, protocols, authentication mechanisms, and exposed interfaces—and then selects assessment modules relevant to those specific surfaces.
 
 ### What Makes Blitz Different
 
@@ -424,12 +349,24 @@ Blitz is distributed as an enterprise-grade, perpetual commercial package under 
 
 Payment processing, tax compliance, and repository access are automated through our Merchant of Record partner, **Polar.sh** (powered by Stripe). Fulfillment is programmatic—there is no manual verification queue or waiting period.
 
-```text
 [ 1. One-Click Checkout ] ──► [ 2. Link GitHub Account ] ──► [ 3. Instant Repo Access & Zip Download ]
 
 
 
 # Blitz — Installation Guide
+
+### System Requirements
+
+| Requirement | Minimum | Recommended |
+|-------------|---------|-------------|
+| OS | Linux / macOS / Windows (WSL2) | Ubuntu 22.04 LTS |
+| CPU | 4 cores | 8 cores |
+| RAM | 8 GB | 16 GB |
+| Disk | 20 GB free | 40 GB free (SSD) |
+| Docker Engine | 24.x | Latest stable |
+| Docker Compose | v2 | v2 |
+| Python | 3.11+ | 3.11+ |
+
 
 ## Two ways to install blitz:
 
