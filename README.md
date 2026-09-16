@@ -58,7 +58,7 @@ Most traditional red team tools were designed for Windows and Linux endpoints. T
 
 At its core, Blitz runs a controlled **12-stage closed-loop assessment lifecycle**. It begins by discovering devices and building real security context for each one. It then uses AI to generate intelligent assessment plans, enforces strict authorization before any test is allowed to run, executes only approved actions, verifies the results, stores evidence, generates findings, and can re-validate after remediation.
 
-<img src="https://raw.githubusercontent.com/giridharan-veda/threatforge-physical-iot/main/aresai.png" width="100%" alt="Blitz — Automated IoT Red Teaming Platform powered by Ares">
+<img src="https://github.com/giridharan-veda/threatforge-physical-iot/blob/main/blitz.png" width="100%" alt="Blitz — Automated IoT Red Teaming Platform powered by Ares">
 
 Blitz is not a vulnerability scanner.  
 It is not a generic AI agent that freely interacts with devices.  
