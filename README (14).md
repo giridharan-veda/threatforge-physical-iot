@@ -210,29 +210,6 @@ Blitz/
  ```
 It first determines what is actually present in the target environment—devices, ports, services, protocols, authentication mechanisms, and exposed interfaces—and then selects assessment modules relevant to those specific surfaces.
 
-### What Makes Blitz Different
-
-Traditional IoT scanners often stop at statements such as:
-
-> "Port 554 is open."
-
-or:
-
-> "This device appears to expose HTTP."
-
-Blitz goes further by determining:
-
-> **"What does that service expose, how does it behave, what security controls protect it, and can the observed weakness be safely demonstrated?"**
-
-For example, discovering an RTSP service is only the beginning. Blitz can identify the RTSP implementation, inspect its authentication behaviour, enumerate permitted stream endpoints where authorized, examine transport configuration, and determine whether an observed exposure can be validated without disrupting the camera or its video service.
-
-The same protocol-aware approach is applied across **HTTP/HTTPS, RTSP, ONVIF, MQTT, CoAP, UPnP/SSDP, SSH, Telnet, SNMP, TLS**, and other IoT-facing services.
-
-> **Blitz does not simply identify what is exposed—it determines how the service behaves, where its security boundaries are, and whether a weakness can be safely validated with evidence.**
-
-
-
-
 ### Protocol-Specific Attack Coverage
 
 | Protocol | What It Tests | Common IoT Devices | Real-Time Validation |
@@ -248,34 +225,65 @@ The same protocol-aware approach is applied across **HTTP/HTTPS, RTSP, ONVIF, MQ
 | **SNMP** | Management access and information exposure | Routers, switches, printers, UPS, cameras | Identifies SNMP, tests authorized credentials/community strings and checks what management information is accessible. |
 | **TLS** | Encryption, certificates and cryptographic configuration | HTTPS cameras, routers, gateways, MQTT services, APIs | Establishes a TLS connection, examines supported versions/ciphers and validates certificate and transport security. |
 
-
-### ATT&CK Matrix
+## ATT&CK Matrix
 
 <img src="https://github.com/giridharan-veda/threatforge-physical-iot/blob/main/ares-attack-matrix.svg" width="100%" alt="Blitz — Automated IoT Red Teaming Platform powered by Ares">
 
-## How Ares Guides the Attack
+### The Ultimate Autonomous IoT Red Teaming Arsenal
 
-**Ares is Blitz's AI reasoning layer.** It analyses the target's devices, services, protocols and previous results, then guides Blitz toward the most relevant next action.
+Blitz transforms fragmented IoT assessment tasks into a high-speed, automated offensive workbench. Whether auditing physical facilities, competing in CTF arenas, or stress-testing hardware in a staging lab, Blitz and the Ares AI engine deliver seven integrated operational capabilities:
 
-Ares continuously:
+### Operational Modes Matrix
 
-- **Understands the target** — identifies device type, exposed services and attack surface.
-- **Selects modules** — chooses the appropriate HTTP, RTSP, ONVIF, MQTT, SSH, SNMP and other tests.
-- **Builds the attack path** — determines the logical sequence of checks instead of blindly running all modules.
-- **Adapts in real time** — uses each module's result to decide what should be tested next.
-- **Correlates evidence** — connects findings across multiple services on the same device.
-- **Guides validation** — selects the safest relevant validation when a weakness appears exploitable.
+| Mode / Feature | Primary Target Surface | Autonomy Level | Primary Output |
+|---|---|---|---|
+| **Autonomous AutoPwn** | Multi-protocol IoT subnets | Fully Autonomous | Chained compromise proofs |
+| **Protocol Fuzzing** | MQTT, CoAP, RTSP, ONVIF | Configurable concurrency | Crash logs & input boundary flaws |
+| **Firmware Carving** | Raw embedded binary images | Automated batch | Extracted secrets & CGI vulnerabilities |
+| **Ghost Recon** | Layer 2 broadcast domains | Passive to high-throughput | Device topology & identity maps |
+| **BYO-Brain Engine** | Planning & reasoning layer | AI-Directed | Execution plans & tool selection |
+| **CTF Arena Mode** | Staging labs & QEMU images | Real-Time Interactive | Live streaming WebSocket feed |
+| **Re-Validation Loop** | Post-remediation targets | Targeted automated replay | Fix attestation & regression reports |
 
-Discover → Ares Analyzes → Selects Module → Blitz Executes
-                         ↑                  ↓
-                         └── Result / Evidence
-AutoPwn does not mean uncontrolled exploitation. In Blitz, AutoPwn is an autonomous validation workflow.
 
-Ares analyses the discovered attack surface and selects relevant modules. Blitz then executes only the actions permitted by the Authorization Gate.
+---
 
-AutoPwn is intended to safely demonstrate security impact—for example, confirming that an unauthenticated RTSP stream is accessible, that an HTTP administrative resource bypasses its expected authorization, or that an MQTT account can access a restricted topic.
+### 1. Autonomous AutoPwn & Exploit Chaining Loop
+Eliminate disjointed scripts and manual credential handoffs. The Ares AI reasoning engine analyzes device state, correlates exposure vectors, and chains multi-stage validation paths automatically:
+* **Dynamic Pivoting:** Ares identifies an anonymous MQTT broker, subscribes to wildcard topics (`#`), extracts credentials from broadcast device telemetry, and validates access against exposed administrative or RTSP services on adjacent subnets.
+* **Impact Verification:** Extracts cryptographic and operational proof (video frame captures, broker ACL write confirmations, or directory listings) into persistent state storage without human intervention.
 
-It is not intended to destroy devices, deploy persistence, intentionally crash services, perform uncontrolled denial-of-service, or propagate automatically beyond the authorized scope.
+### 2. Multi-Protocol Chaos Fuzzing Engine
+Generic web application scanners fail when probing constrained hardware protocols. Blitz deploys native protocol engines across all 48 specialized testing modules simultaneously:
+* **Protocol Diversity:** Native query and assessment engines for MQTT, CoAP, RTSP, ONVIF, UPnP/SSDP, embedded CGI, raw TCP sockets, and legacy Telnet/SSH services.
+* **Boundary Validation:** Detects malformed packet handling, memory exhaustion conditions, and logic flaws across embedded network stacks (such as lwIP, FreeRTOS, and Zephyr).
+
+### 3. Automated Firmware Decapitation & Taint Mining
+Ingest raw `.bin`, `.img`, or firmware packages directly into the analysis pipeline for automated inspection:
+* **Automated Extraction:** Decompresses and extracts standard embedded file systems, including SquashFS, CramFS, UBIFS, and JFFS2.
+* **Secret & Vulnerability Extraction:** Scans the extracted root filesystem for hardcoded private cryptographic keys, embedded credentials, default tokens, and debug CGI binaries.
+
+### 4. Ghost Recon (Zero-Noise Stealth to High-Velocity Sweeps)
+Configure discovery intensity anywhere from silent network sniffing to high-throughput active scanning:
+* **Passive Listener Mode:** Passively maps local environments by monitoring ambient mDNS, UPnP, SSDP, and ARP broadcasts without transmitting packets on the wire.
+* **High-Speed Network Sweep:** Executes parallel multi-protocol host discovery with Layer 2 adjacency, identifying device vendor, model, firmware revision, and exposed surfaces.
+
+### 5. BYO-Brain: Hot-Swappable AI Model Engine
+Ares utilizes an open, modular capability bridge rather than a locked AI provider:
+* **Air-Gapped Local Inference:** Ships configured with the fine-tuned `qwen3-iot:1.7b` model running offline via local Ollama (`:11435`) to ensure zero external telemetry and zero per-token API costs.
+* **Model Hot-Swapping:** Route requests through the Ares Bridge (`:8089`) to alternate local or remote model endpoints (such as DeepSeek-Coder, Llama, or Mistral) to evaluate different reasoning models against identical targets.
+
+### 6. Hardware Lab & CTF Arena Mode
+Engineered for repeatable experimentation in staging and competitive environments:
+* **Live WebSocket Telemetry:** Streams raw operational decision graphs and execution telemetry directly to terminal consoles or custom dashboards over WebSocket port `:8088`.
+* **Target Emulation Compatibility:** Deploy against virtualized or physical targets (via Docker, QEMU, or hardware test benches) to run repeatable attack simulations against simulated camera arrays, smart meters, and industrial IoT controllers.
+
+### 7. Instant Proof-of-Impact & Remediation Diffs
+Converts automated test data into verifiable technical artifacts:
+* **Attempted vs. Proven Telemetry:** Eliminates speculative findings by strictly separating an initial service probe from a cryptographically or functionally confirmed vulnerability.
+* **Closed-Loop Re-Validation:** Following remediation, execute Stage 12 (**Re-validate**) to automatically replay the verified exploit chain and confirm whether the vulnerability was mitigated without running an entire re-scan.
+
+---
 
 ### 💸 The Real Cost of "Waiting for Your Next Pentest"
 
@@ -317,6 +325,24 @@ That's not a tool. That's a **red team that works while you sleep.** 🌙
 > 🔓 **$499 decides who finds the weakness first — you, or them.**
 > ⚡ **Blitz. The autonomous red team the IoT era needed yesterday.**
 
+## The Ultimate Autonomous IoT Red Teaming Arsenal
+
+### 💰 Blitz vs. Whatever You've Tried Before
+
+| | 🧑‍💻 Manual Pentest | 🖥️ Generic Scanner / AI Tool | ⚡ Blitz |
+|---|---|---|---|
+| **Cost** | $15K–$50K+ per engagement | "Free" — until it misses everything that matters | **$499** |
+| **Frequency** | Once or twice a year, if budget allows | Runs often, tells you nothing useful | **Continuous — every day, every new device** |
+| **Understands IoT/OT protocols** | Depends entirely on who you hired | ❌ Built for IT, blind to RTSP/ONVIF/MQTT/CoAP | ✅ **Purpose-built for IoT/OT from the ground up** |
+| **Safe on fragile production devices** | Depends on the tester's experience | ❌ Aggressive, generic actions — can crash a device | ✅ **Gated execution, every single action** |
+| **Context-aware before acting** | Yes, but slow and manual | ❌ No device context — fires blind | ✅ **Ares profiles each device before testing it** |
+| **Findings you can trust** | Expert-validated, but only that one day | ❌ Alerts and false positives, no proof | ✅ **Attempted vs. Proven — always evidence-backed** |
+| **Re-checks that fixes actually worked** | Rarely — costs extra, needs re-engagement | ❌ Never | ✅ **Automatic re-validation, built in** |
+| **Scales across your entire estate** | ❌ Limited by human hours | ⚠️ Scales, but shallow | ✅ **Scales without losing depth** |
+| **Audit / compliance ready** | One static report, stale in weeks | ❌ Raw output, not evidence | ✅ **Living, dated, defensible record** |
+| **What you're really left with** | A snapshot from one day, months ago | A dashboard full of noise | 🎯 **Continuous, proven, actionable truth** |
+
+---
 
 ## Commercial Licensing & Access
 
@@ -403,87 +429,10 @@ docker compose up -d
 
 ```
 
-## The Ultimate Autonomous IoT Red Teaming Arsenal
-
-Blitz transforms fragmented IoT assessment tasks into a high-speed, automated offensive workbench. Whether auditing physical facilities, competing in CTF arenas, or stress-testing hardware in a staging lab, Blitz and the Ares AI engine deliver seven integrated operational capabilities:
-
----
-
-### 1. Autonomous AutoPwn & Exploit Chaining Loop
-Eliminate disjointed scripts and manual credential handoffs. The Ares AI reasoning engine analyzes device state, correlates exposure vectors, and chains multi-stage validation paths automatically:
-* **Dynamic Pivoting:** Ares identifies an anonymous MQTT broker, subscribes to wildcard topics (`#`), extracts credentials from broadcast device telemetry, and validates access against exposed administrative or RTSP services on adjacent subnets.
-* **Impact Verification:** Extracts cryptographic and operational proof (video frame captures, broker ACL write confirmations, or directory listings) into persistent state storage without human intervention.
-
-### 2. Multi-Protocol Chaos Fuzzing Engine
-Generic web application scanners fail when probing constrained hardware protocols. Blitz deploys native protocol engines across all 48 specialized testing modules simultaneously:
-* **Protocol Diversity:** Native query and assessment engines for MQTT, CoAP, RTSP, ONVIF, UPnP/SSDP, embedded CGI, raw TCP sockets, and legacy Telnet/SSH services.
-* **Boundary Validation:** Detects malformed packet handling, memory exhaustion conditions, and logic flaws across embedded network stacks (such as lwIP, FreeRTOS, and Zephyr).
-
-### 3. Automated Firmware Decapitation & Taint Mining
-Ingest raw `.bin`, `.img`, or firmware packages directly into the analysis pipeline for automated inspection:
-* **Automated Extraction:** Decompresses and extracts standard embedded file systems, including SquashFS, CramFS, UBIFS, and JFFS2.
-* **Secret & Vulnerability Extraction:** Scans the extracted root filesystem for hardcoded private cryptographic keys, embedded credentials, default tokens, and debug CGI binaries.
-
-### 4. Ghost Recon (Zero-Noise Stealth to High-Velocity Sweeps)
-Configure discovery intensity anywhere from silent network sniffing to high-throughput active scanning:
-* **Passive Listener Mode:** Passively maps local environments by monitoring ambient mDNS, UPnP, SSDP, and ARP broadcasts without transmitting packets on the wire.
-* **High-Speed Network Sweep:** Executes parallel multi-protocol host discovery with Layer 2 adjacency, identifying device vendor, model, firmware revision, and exposed surfaces.
-
-### 5. BYO-Brain: Hot-Swappable AI Model Engine
-Ares utilizes an open, modular capability bridge rather than a locked AI provider:
-* **Air-Gapped Local Inference:** Ships configured with the fine-tuned `qwen3-iot:1.7b` model running offline via local Ollama (`:11435`) to ensure zero external telemetry and zero per-token API costs.
-* **Model Hot-Swapping:** Route requests through the Ares Bridge (`:8089`) to alternate local or remote model endpoints (such as DeepSeek-Coder, Llama, or Mistral) to evaluate different reasoning models against identical targets.
-
-### 6. Hardware Lab & CTF Arena Mode
-Engineered for repeatable experimentation in staging and competitive environments:
-* **Live WebSocket Telemetry:** Streams raw operational decision graphs and execution telemetry directly to terminal consoles or custom dashboards over WebSocket port `:8088`.
-* **Target Emulation Compatibility:** Deploy against virtualized or physical targets (via Docker, QEMU, or hardware test benches) to run repeatable attack simulations against simulated camera arrays, smart meters, and industrial IoT controllers.
-
-### 7. Instant Proof-of-Impact & Remediation Diffs
-Converts automated test data into verifiable technical artifacts:
-* **Attempted vs. Proven Telemetry:** Eliminates speculative findings by strictly separating an initial service probe from a cryptographically or functionally confirmed vulnerability.
-* **Closed-Loop Re-Validation:** Following remediation, execute Stage 12 (**Re-validate**) to automatically replay the verified exploit chain and confirm whether the vulnerability was mitigated without running an entire re-scan.
-
----
-
-### Operational Modes Matrix
-
-| Mode / Feature | Primary Target Surface | Autonomy Level | Primary Output |
-|---|---|---|---|
-| **Autonomous AutoPwn** | Multi-protocol IoT subnets | Fully Autonomous | Chained compromise proofs |
-| **Protocol Fuzzing** | MQTT, CoAP, RTSP, ONVIF | Configurable concurrency | Crash logs & input boundary flaws |
-| **Firmware Carving** | Raw embedded binary images | Automated batch | Extracted secrets & CGI vulnerabilities |
-| **Ghost Recon** | Layer 2 broadcast domains | Passive to high-throughput | Device topology & identity maps |
-| **BYO-Brain Engine** | Planning & reasoning layer | AI-Directed | Execution plans & tool selection |
-| **CTF Arena Mode** | Staging labs & QEMU images | Real-Time Interactive | Live streaming WebSocket feed |
-| **Re-Validation Loop** | Post-remediation targets | Targeted automated replay | Fix attestation & regression reports |
-
-## The Ultimate Autonomous IoT Red Teaming Arsenal
-
-Blitz transforms fragmented IoT assessment tasks into a high-speed, automated offensive workbench. Whether auditing physical facilities, competing in CTF arenas, or stress-testing hardware in a staging lab, Blitz and the Ares AI engine deliver seven integrated operational capabilities:
-
-### 💰 Blitz vs. Whatever You've Tried Before
-
-| | 🧑‍💻 Manual Pentest | 🖥️ Generic Scanner / AI Tool | ⚡ Blitz |
-|---|---|---|---|
-| **Cost** | $15K–$50K+ per engagement | "Free" — until it misses everything that matters | **$499** |
-| **Frequency** | Once or twice a year, if budget allows | Runs often, tells you nothing useful | **Continuous — every day, every new device** |
-| **Understands IoT/OT protocols** | Depends entirely on who you hired | ❌ Built for IT, blind to RTSP/ONVIF/MQTT/CoAP | ✅ **Purpose-built for IoT/OT from the ground up** |
-| **Safe on fragile production devices** | Depends on the tester's experience | ❌ Aggressive, generic actions — can crash a device | ✅ **Gated execution, every single action** |
-| **Context-aware before acting** | Yes, but slow and manual | ❌ No device context — fires blind | ✅ **Ares profiles each device before testing it** |
-| **Findings you can trust** | Expert-validated, but only that one day | ❌ Alerts and false positives, no proof | ✅ **Attempted vs. Proven — always evidence-backed** |
-| **Re-checks that fixes actually worked** | Rarely — costs extra, needs re-engagement | ❌ Never | ✅ **Automatic re-validation, built in** |
-| **Scales across your entire estate** | ❌ Limited by human hours | ⚠️ Scales, but shallow | ✅ **Scales without losing depth** |
-| **Audit / compliance ready** | One static report, stale in weeks | ❌ Raw output, not evidence | ✅ **Living, dated, defensible record** |
-| **What you're really left with** | A snapshot from one day, months ago | A dashboard full of noise | 🎯 **Continuous, proven, actionable truth** |
 
 ---
 
 ## Contributing to Blitz
-
-Contributions from security researchers, reverse engineers, and distributed systems developers are welcome. Whether you are adding protocol modules, refining Ares AI reasoning templates, or enhancing the Authorization Gate, follow the operational guidelines below.
-
----
 
 ### Priority Contribution Tracks
 
@@ -491,38 +440,29 @@ Contributions from security researchers, reverse engineers, and distributed syst
 * **Ares AI Reasoning & Heuristics (`ares/`):** Refine planning prompts, fine-tuning datasets, and tool-selection heuristics to improve decision velocity on complex target states.
 * **Gateway & Blast-Radius Safety (`ares/bridge/`):** Strengthen the Ares Bridge to catch erratic AI behavior, prevent cyclic planning loops, and enforce strict execution boundaries.
 * **Target Hardware Signatures (`configs/`):** Expand device identification matrices and service fingerprint rules in `capabilities.yaml`.
-
 ---
 
-### Development Workflow
+## Citation
 
-1. **Fork & Branch:** Create a focused feature branch off `main`:
-   ```bash
-   git checkout -b feat/add-bacnet-enumeration
-
-   ## Citation
-
-If you reference Blitz or the Ares AI architecture in academic research, technical whitepapers, security assessments, or publications, please cite this repository using the included [`CITATION.cff`](CITATION.cff). BibTeX and standard citation formats are generated automatically by GitHub.
-
-For details regarding the autonomous planning engine, 12-stage closed-loop assessment lifecycle, and domain-specific model fine-tuning, refer to the [Blitz Architecture Documentation](docs/)[cite: 1].
+If you reference Blitz or the Ares AI architecture in academic research, technical whitepapers, security assessments, or publications, please cite this repository using the included. BibTeX and standard citation formats are generated automatically by GitHub.
 
 ---
 
 ## Disclaimer
 
-Blitz is engineered strictly for authorized security assessment, defensive evaluation, vulnerability research, and continuous risk validation on networks, devices, and firmware where explicit written authorization has been granted[cite: 1]. It is designed to be deployed in controlled staging labs, isolated target ranges, and approved client assessment scopes[cite: 1].
-
-ApexPredator Security and the project authors assume no liability and are not responsible for any misuse, operational disruption, device malfunction, or unauthorized deployment of this software. Operators are solely responsible for maintaining compliance with all applicable local, national, and international cybersecurity legislation, organizational policies, and statutory frameworks prior to executing any discovery, assessment, or validation workflow.
+- Blitz is engineered strictly for authorized security assessment, defensive evaluation, vulnerability research, and continuous risk validation on networks, devices, and firmware where explicit written authorization has been.
+- It is designed to be deployed in controlled staging labs, isolated target ranges, and approved client assessment scopes.
+- ApexPredator Security and the project authors assume no liability and are not responsible for any misuse, operational disruption, device malfunction, or unauthorized deployment of this software.
+- Operators are solely responsible for maintaining compliance with all applicable local, national, and international cybersecurity legislation, organizational policies, and statutory frameworks prior to executing any discovery, assessment, or validation workflow.
 
 ---
 
 ## License
 
-Blitz is proprietary commercial software distributed under the terms of the ApexPredator Security Commercial License[cite: 1]. A valid commercial license purchase is required to install, deploy, and operate the platform for internal estate assessments or commercial client engagements.
-
-* Redistribution, sublicensing, unauthorized mirroring, or public sharing of the core binaries, source repositories, or fine-tuned model artifacts is strictly prohibited.
-* For the full commercial agreement, operational rights, and usage boundaries, see the [`LICENSE`](LICENSE) file[cite: 1].
-
+- Blitz is proprietary commercial software distributed under the terms of the ApexPredator Security Commercial License. 
+- A valid commercial license purchase is required to install, deploy, and operate the platform for internal estate assessments or commercial client engagements.
+- Redistribution, sublicensing, unauthorized mirroring, or public sharing of the core binaries, source repositories, or fine-tuned model artifacts is strictly prohibited.
+  
 ---
 
 ## Acknowledgements
