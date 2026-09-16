@@ -50,6 +50,20 @@ For **$299** you receive a complete operational system that:
 - Generates reviewable, evidence-backed findings
 - Supports remediation and automatically re-validates that fixes actually held
 
+## What is Blitz
+
+**Blitz** is a commercial automated red teaming and continuous assessment platform built specifically for IoT and OT environments.
+
+Most traditional red team tools were designed for Windows and Linux endpoints. They struggle with the realities of IoT — diverse protocols, constrained devices, fragile firmware, and the need for strict safety controls. Blitz was created to solve this gap.
+
+At its core, Blitz runs a controlled **12-stage closed-loop assessment lifecycle**. It begins by discovering devices and building real security context for each one. It then uses AI to generate intelligent assessment plans, enforces strict authorization before any test is allowed to run, executes only approved actions, verifies the results, stores evidence, generates findings, and can re-validate after remediation.
+
+Blitz is not a vulnerability scanner.  
+It is not a generic AI agent that freely interacts with devices.  
+It is an operational system that separates **intelligent planning** from **safe, authorized execution**.
+
+This design allows security teams to perform repeatable, auditable, and authorized adversary simulation against IoT and OT assets — without the operational risk that usually comes with testing these environments.
+
 ### How Blitz Is Different
 
 Most existing tools fall into one of three categories — and all of them fall short for serious IoT red teaming:
@@ -79,27 +93,11 @@ Blitz is composed of seven tightly integrated components:
 | **Persistent State** | Stores devices, jobs, findings, incidents, and complete audit history |
 | **Live Event Stream** | Real-time WebSocket feed of progress, results, and narratives back to the operator through the gui |
 
----
-
-## What is Blitz
-
-**Blitz** is a commercial automated red teaming and continuous assessment platform built specifically for IoT and OT environments.
-
-Most traditional red team tools were designed for Windows and Linux endpoints. They struggle with the realities of IoT — diverse protocols, constrained devices, fragile firmware, and the need for strict safety controls. Blitz was created to solve this gap.
-
-At its core, Blitz runs a controlled **12-stage closed-loop assessment lifecycle**. It begins by discovering devices and building real security context for each one. It then uses AI to generate intelligent assessment plans, enforces strict authorization before any test is allowed to run, executes only approved actions, verifies the results, stores evidence, generates findings, and can re-validate after remediation.
-
-Blitz is not a vulnerability scanner.  
-It is not a generic AI agent that freely interacts with devices.  
-It is an operational system that separates **intelligent planning** from **safe, authorized execution**.
-
-This design allows security teams to perform repeatable, auditable, and authorized adversary simulation against IoT and OT assets — without the operational risk that usually comes with testing these environments.
-
 ## What is Ares
 
 **Ares** is the autonomous intelligence layer of the Blitz platform. It is the component that turns a collection of IoT security tools into a system capable of independent assessment.
 
-<img src="https://raw.githubusercontent.com/giridharan-veda/threatforge-physical-iot/main/blitz-banner.svg" width="100%" alt="Blitz — Automated IoT Red Teaming Platform powered by Ares">
+<img src="https://raw.githubusercontent.com/giridharan-veda/threatforge-physical-iot/main/aresai.png" width="100%" alt="Blitz — Automated IoT Red Teaming Platform powered by Ares">
 
 Most security tools require a human to decide what to scan, which credentials to try, which protocols to probe, and what to do next. Ares removes that dependency. It observes the current state of a target, reasons about what the device appears to be, and decides the next appropriate action from a controlled set of capabilities.
 
@@ -161,7 +159,7 @@ This design keeps the AI contribution small, fast, and domain-specific. The mode
 ## Architecture
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/giridharan-veda/threatforge-physical-iot/main/blitz-architecture.png" width="900" alt="Blitz full operational architecture — Service topology and 12-stage closed-loop assessment lifecycle">
+<img src="https://raw.githubusercontent.com/giridharan-veda/threatforge-physical-iot/main/blitz-architecture.svg" width="100%" alt="Blitz — Automated IoT Red Teaming Platform powered by Ares">  
 </p>
 
 Blitz is designed as a **closed-loop automated red teaming system** specifically for IoT and OT environments.  
