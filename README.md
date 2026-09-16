@@ -471,6 +471,40 @@ AutoPwn is intended to safely demonstrate security impact—for example, confirm
 
 It is not intended to destroy devices, deploy persistence, intentionally crash services, perform uncontrolled denial-of-service, or propagate automatically beyond the authorized scope.
 
+## Commercial Licensing & Access
+
+Blitz is distributed as an enterprise-grade, perpetual commercial package under **ApexPredator Security**. A single license grants perpetual operational rights to deploy the full autonomous stack on internal corporate infrastructure and authorized client engagements.
+
+### License Tiers & Real-Time Availability
+
+| Tier | Price | Availability | License Scope |
+|---|---|---|---|
+| **Early Adopter Cohort** | **$299** ~~$499~~ | **Active Now** (Code: `EARLYBIRD`) | **First 25 Licenses Only** • Perpetual commercial rights |
+| **Standard Commercial** | **$499** | Standard List Price | Perpetual commercial rights • Unlimited targets & audits |
+
+[![Purchase Blitz Commercial License](https://img.shields.io/badge/Purchase%20Blitz-%24299%20Early%20Adopter-brightgreen?style=for-the-badge&logo=github)](https://polar.sh/apexpredator-security/products/blitz?discount_code=EARLYBIRD)
+
+---
+
+### What Is Included in the License
+
+* **Complete Autonomous Stack:** Blitz Core execution engine (`:8088`), Ares Agent reasoning layer (`:9010`), and Ares Bridge capability gateway (`:8089`).
+* **Local, Air-Gapped AI Model:** Dedicated `qwen3-iot:1.7b` weights fine-tuned on 683 IoT attack scenarios. Runs offline on local hardware via Ollama (`:11435`) with zero telemetry leaving your network and zero recurring API token costs.
+* **All 48 Protocol & Validation Modules:** Full coverage across RTSP, ONVIF, MQTT, CoAP, UPnP/SSDP, embedded HTTP/CGI, SSH, Telnet, SNMP, and automated proof verification.
+* **12-Stage Closed-Loop Lifecycle:** Complete execution pipeline with multi-condition authorization gating (Authorized? In scope? Capability allowed?), distinction between "attempted" vs. "proven" results, and persistent SQLite evidence storage[cite: 1].
+* **Automated Deployment:** Ready-to-run `blitz-setup.sh` installer script and production `docker-compose.yml` configurations[cite: 1].
+* **Perpetual Commercial Rights:** Unlimited internal asset coverage and external client penetration tests with zero per-target, per-scan, or per-seat metering fees.
+* **Continuous Updates:** Lifetime access to new protocol modules, CVE detection profiles, and engine enhancements.
+
+---
+
+### Step-by-Step Payment & Automated Delivery Walkthrough
+
+Payment processing, tax compliance, and repository access are automated through our Merchant of Record partner, **Polar.sh** (powered by Stripe). Fulfillment is programmatic—there is no manual verification queue or waiting period.
+
+```text
+[ 1. One-Click Checkout ] ──► [ 2. Link GitHub Account ] ──► [ 3. Instant Repo Access & Zip Download ]
+
 
 
 # Blitz — Installation Guide
@@ -509,3 +543,124 @@ docker compose build --no-cache
 docker compose up -d
 
 ```
+
+## The Ultimate Autonomous IoT Red Teaming Arsenal
+
+Blitz transforms fragmented IoT assessment tasks into a high-speed, automated offensive workbench. Whether auditing physical facilities, competing in CTF arenas, or stress-testing hardware in a staging lab, Blitz and the Ares AI engine deliver seven integrated operational capabilities:
+
+---
+
+### 1. Autonomous AutoPwn & Exploit Chaining Loop
+Eliminate disjointed scripts and manual credential handoffs. The Ares AI reasoning engine analyzes device state, correlates exposure vectors, and chains multi-stage validation paths automatically:
+* **Dynamic Pivoting:** Ares identifies an anonymous MQTT broker, subscribes to wildcard topics (`#`), extracts credentials from broadcast device telemetry, and validates access against exposed administrative or RTSP services on adjacent subnets.
+* **Impact Verification:** Extracts cryptographic and operational proof (video frame captures, broker ACL write confirmations, or directory listings) into persistent state storage without human intervention.
+
+### 2. Multi-Protocol Chaos Fuzzing Engine
+Generic web application scanners fail when probing constrained hardware protocols. Blitz deploys native protocol engines across all 48 specialized testing modules simultaneously:
+* **Protocol Diversity:** Native query and assessment engines for MQTT, CoAP, RTSP, ONVIF, UPnP/SSDP, embedded CGI, raw TCP sockets, and legacy Telnet/SSH services.
+* **Boundary Validation:** Detects malformed packet handling, memory exhaustion conditions, and logic flaws across embedded network stacks (such as lwIP, FreeRTOS, and Zephyr).
+
+### 3. Automated Firmware Decapitation & Taint Mining
+Ingest raw `.bin`, `.img`, or firmware packages directly into the analysis pipeline for automated inspection:
+* **Automated Extraction:** Decompresses and extracts standard embedded file systems, including SquashFS, CramFS, UBIFS, and JFFS2.
+* **Secret & Vulnerability Extraction:** Scans the extracted root filesystem for hardcoded private cryptographic keys, embedded credentials, default tokens, and debug CGI binaries.
+
+### 4. Ghost Recon (Zero-Noise Stealth to High-Velocity Sweeps)
+Configure discovery intensity anywhere from silent network sniffing to high-throughput active scanning:
+* **Passive Listener Mode:** Passively maps local environments by monitoring ambient mDNS, UPnP, SSDP, and ARP broadcasts without transmitting packets on the wire.
+* **High-Speed Network Sweep:** Executes parallel multi-protocol host discovery with Layer 2 adjacency, identifying device vendor, model, firmware revision, and exposed surfaces.
+
+### 5. BYO-Brain: Hot-Swappable AI Model Engine
+Ares utilizes an open, modular capability bridge rather than a locked AI provider:
+* **Air-Gapped Local Inference:** Ships configured with the fine-tuned `qwen3-iot:1.7b` model running offline via local Ollama (`:11435`) to ensure zero external telemetry and zero per-token API costs.
+* **Model Hot-Swapping:** Route requests through the Ares Bridge (`:8089`) to alternate local or remote model endpoints (such as DeepSeek-Coder, Llama, or Mistral) to evaluate different reasoning models against identical targets.
+
+### 6. Hardware Lab & CTF Arena Mode
+Engineered for repeatable experimentation in staging and competitive environments:
+* **Live WebSocket Telemetry:** Streams raw operational decision graphs and execution telemetry directly to terminal consoles or custom dashboards over WebSocket port `:8088`.
+* **Target Emulation Compatibility:** Deploy against virtualized or physical targets (via Docker, QEMU, or hardware test benches) to run repeatable attack simulations against simulated camera arrays, smart meters, and industrial IoT controllers.
+
+### 7. Instant Proof-of-Impact & Remediation Diffs
+Converts automated test data into verifiable technical artifacts:
+* **Attempted vs. Proven Telemetry:** Eliminates speculative findings by strictly separating an initial service probe from a cryptographically or functionally confirmed vulnerability.
+* **Closed-Loop Re-Validation:** Following remediation, execute Stage 12 (**Re-validate**) to automatically replay the verified exploit chain and confirm whether the vulnerability was mitigated without running an entire re-scan.
+
+---
+
+### Operational Modes Matrix
+
+| Mode / Feature | Primary Target Surface | Autonomy Level | Primary Output |
+|---|---|---|---|
+| **Autonomous AutoPwn** | Multi-protocol IoT subnets | Fully Autonomous | Chained compromise proofs |
+| **Protocol Fuzzing** | MQTT, CoAP, RTSP, ONVIF | Configurable concurrency | Crash logs & input boundary flaws |
+| **Firmware Carving** | Raw embedded binary images | Automated batch | Extracted secrets & CGI vulnerabilities |
+| **Ghost Recon** | Layer 2 broadcast domains | Passive to high-throughput | Device topology & identity maps |
+| **BYO-Brain Engine** | Planning & reasoning layer | AI-Directed | Execution plans & tool selection |
+| **CTF Arena Mode** | Staging labs & QEMU images | Real-Time Interactive | Live streaming WebSocket feed |
+| **Re-Validation Loop** | Post-remediation targets | Targeted automated replay | Fix attestation & regression reports |
+
+## The Ultimate Autonomous IoT Red Teaming Arsenal
+
+Blitz transforms fragmented IoT assessment tasks into a high-speed, automated offensive workbench. Whether auditing physical facilities, competing in CTF arenas, or stress-testing hardware in a staging lab, Blitz and the Ares AI engine deliver seven integrated operational capabilities:
+
+---
+
+## Contributing to Blitz
+
+Contributions from security researchers, reverse engineers, and distributed systems developers are welcome. Whether you are adding protocol modules, refining Ares AI reasoning templates, or enhancing the Authorization Gate, follow the operational guidelines below.
+
+---
+
+### Priority Contribution Tracks
+
+* **New Protocol Modules (`blitz-core/`):** Add native decoders and active probes for unmapped embedded interfaces (e.g., BACnet, Modbus, Zigbee over IP, or proprietary camera APIs).
+* **Ares AI Reasoning & Heuristics (`ares/`):** Refine planning prompts, fine-tuning datasets, and tool-selection heuristics to improve decision velocity on complex target states.
+* **Gateway & Blast-Radius Safety (`ares/bridge/`):** Strengthen the Ares Bridge to catch erratic AI behavior, prevent cyclic planning loops, and enforce strict execution boundaries.
+* **Target Hardware Signatures (`configs/`):** Expand device identification matrices and service fingerprint rules in `capabilities.yaml`.
+
+---
+
+### Development Workflow
+
+1. **Fork & Branch:** Create a focused feature branch off `main`:
+   ```bash
+   git checkout -b feat/add-bacnet-enumeration
+
+   ## Citation
+
+If you reference Blitz or the Ares AI architecture in academic research, technical whitepapers, security assessments, or publications, please cite this repository using the included [`CITATION.cff`](CITATION.cff). BibTeX and standard citation formats are generated automatically by GitHub.
+
+For details regarding the autonomous planning engine, 12-stage closed-loop assessment lifecycle, and domain-specific model fine-tuning, refer to the [Blitz Architecture Documentation](docs/)[cite: 1].
+
+---
+
+## Disclaimer
+
+Blitz is engineered strictly for authorized security assessment, defensive evaluation, vulnerability research, and continuous risk validation on networks, devices, and firmware where explicit written authorization has been granted[cite: 1]. It is designed to be deployed in controlled staging labs, isolated target ranges, and approved client assessment scopes[cite: 1].
+
+ApexPredator Security and the project authors assume no liability and are not responsible for any misuse, operational disruption, device malfunction, or unauthorized deployment of this software. Operators are solely responsible for maintaining compliance with all applicable local, national, and international cybersecurity legislation, organizational policies, and statutory frameworks prior to executing any discovery, assessment, or validation workflow.
+
+---
+
+## License
+
+Blitz is proprietary commercial software distributed under the terms of the ApexPredator Security Commercial License[cite: 1]. A valid commercial license purchase is required to install, deploy, and operate the platform for internal estate assessments or commercial client engagements.
+
+* Redistribution, sublicensing, unauthorized mirroring, or public sharing of the core binaries, source repositories, or fine-tuned model artifacts is strictly prohibited.
+* For the full commercial agreement, operational rights, and usage boundaries, see the [`LICENSE`](LICENSE) file[cite: 1].
+
+---
+
+## Acknowledgements
+
+Blitz and the Ares AI orchestration framework build upon outstanding open-source software, protocols, and developer communities[cite: 1]:
+
+* **Ollama** — Enabling private, efficient, on-premises language model execution[cite: 1].
+* **Qwen Team** — The foundational model architecture supporting the fine-tuned `qwen3-iot:1.7b` reasoning engine[cite: 1].
+* **Docker** — Delivering reliable, isolated, and containerized deployment across host environments[cite: 1].
+* **Python Community** — Providing the network engineering, asynchronous I/O, and testing libraries powering Blitz Core[cite: 1].
+
+<div align="center">
+
+**Blitz — Autonomous IoT Red Teaming & Continuous Assessment.**
+</div>
