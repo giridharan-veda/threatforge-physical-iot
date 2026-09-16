@@ -159,7 +159,7 @@ This design keeps the AI contribution small, fast, and domain-specific. The mode
 ## Architecture
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/giridharan-veda/threatforge-physical-iot/main/blitz-architecture.svg" width="100%" alt="Blitz — Automated IoT Red Teaming Platform powered by Ares">  
+<img src="https://github.com/giridharan-veda/threatforge-physical-iot/blob/main/blitz-architecture.svg" width="100%" alt="Blitz — Automated IoT Red Teaming Platform powered by Ares">  
 </p>
 
 Blitz is designed as a **closed-loop automated red teaming system** specifically for IoT and OT environments.  
