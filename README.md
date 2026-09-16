@@ -27,11 +27,7 @@ Blitz continuously discovers, plans, tests, proves, and re-validates — with AI
 
 ## Overview
 
-### The Real Risk
-
-IoT and OT devices now sit inside the same networks that security teams already defend — cameras, sensors, gateways, industrial controllers, smart-home hubs, medical devices, and embedded systems. These devices are rarely tested properly.
-
-Most organizations face the same problems:
+### The Risk - IoT and OT devices now sit inside the same networks that security teams already defend — cameras, sensors, gateways, industrial controllers, smart-home hubs, medical devices, and embedded systems. These devices are rarely tested properly. Most organizations face the same problems:
 
 - Traditional red team tools were built for Windows and Linux endpoints, not for fragile IoT protocols and constrained devices
 - Manual testing is slow, expensive, and does not scale
@@ -41,9 +37,7 @@ Most organizations face the same problems:
 
 The result is a dangerous gap: organizations either avoid testing these assets entirely, or they run shallow scans that provide little real security value.
 
-### The Solution — Blitz
-
-**Blitz** is a purpose-built automated red teaming and continuous assessment platform designed specifically for IoT and OT environments.
+### The Solution — **Blitz** is a purpose-built automated red teaming and continuous assessment platform designed specifically for IoT and OT environments.
 
 For **$299** you receive a complete operational system that:
 
@@ -56,8 +50,6 @@ For **$299** you receive a complete operational system that:
 - Generates reviewable, evidence-backed findings
 - Supports remediation and automatically re-validates that fixes actually held
 
-Blitz turns IoT security testing from a high-risk, manual activity into a controlled, repeatable, and auditable process.
-
 ### How Blitz Is Different
 
 Most existing tools fall into one of three categories — and all of them fall short for serious IoT red teaming:
@@ -69,11 +61,13 @@ Most existing tools fall into one of three categories — and all of them fall s
 | Generic AI agents | Lack domain context and safety controls | Ares is purpose-built for IoT reasoning and sits behind a capability gateway |
 | Manual testing | Expensive, non-repeatable, hard to audit | Fully automated 12-stage lifecycle with persistent state and live event streaming |
 
-Blitz is the only platform that combines **IoT-specific AI planning**, **strict authorization controls**, **evidence-backed execution**, and **closed-loop re-validation** in a single commercial product.
+Blitz is the only platform that combines **IoT-specific AI planning**, **evidence-backed execution**, and **closed-loop re-validation** in a single commercial product.
 
 ### Core Components of Blitz
 
 Blitz is composed of seven tightly integrated components:
+
+### Technology Stack
 
 | Component | Role |
 |-----------|------|
@@ -83,9 +77,70 @@ Blitz is composed of seven tightly integrated components:
 | **Ollama** | Local model runtime for private, on-premises AI inference |
 | **Blitz Core** | Assessment & execution engine (REST + WebSocket) that runs the full closed-loop lifecycle |
 | **Persistent State** | Stores devices, jobs, findings, incidents, and complete audit history |
-| **Live Event Stream** | Real-time WebSocket feed of progress, results, and narratives back to the operator |
+| **Live Event Stream** | Real-time WebSocket feed of progress, results, and narratives back to the operator through the gui |
 
-Together these components deliver continuous, authorized, evidence-backed adversary simulation against IoT and OT estates — without the cost and risk of traditional manual engagements.
+---
+
+## What is Blitz
+
+**Blitz** is a commercial automated red teaming and continuous assessment platform built specifically for IoT and OT environments.
+
+Most traditional red team tools were designed for Windows and Linux endpoints. They struggle with the realities of IoT — diverse protocols, constrained devices, fragile firmware, and the need for strict safety controls. Blitz was created to solve this gap.
+
+At its core, Blitz runs a controlled **12-stage closed-loop assessment lifecycle**. It begins by discovering devices and building real security context for each one. It then uses AI to generate intelligent assessment plans, enforces strict authorization before any test is allowed to run, executes only approved actions, verifies the results, stores evidence, generates findings, and can re-validate after remediation.
+
+Blitz is not a vulnerability scanner.  
+It is not a generic AI agent that freely interacts with devices.  
+It is an operational system that separates **intelligent planning** from **safe, authorized execution**.
+
+This design allows security teams to perform repeatable, auditable, and authorized adversary simulation against IoT and OT assets — without the operational risk that usually comes with testing these environments.
+
+## What is Ares
+
+**Ares** is the autonomous intelligence layer of the Blitz platform. It is the component that turns a collection of IoT security tools into a system capable of independent assessment.
+
+Most security tools require a human to decide what to scan, which credentials to try, which protocols to probe, and what to do next. Ares removes that dependency. It observes the current state of a target, reasons about what the device appears to be, and decides the next appropriate action from a controlled set of capabilities.
+
+Ares does not perform network attacks itself. That responsibility belongs to Blitz. Instead, Ares acts as a decision engine. It maintains a structured knowledge base of device profiles, protocol behaviours, known attack surfaces, and tool mappings. When new information is discovered — open ports, banners, services, or vendor signatures — Ares classifies the device and builds a ranked plan of what should be tested next.
+
+The intelligence inside Ares is deliberately narrow and controlled. A fine-tuned language model is used only at decision points to choose the next tool. Surrounding that model is a deterministic loop that enforces workflow order, applies safety constraints, records every decision, and prevents repetition or unsafe behaviour. This design keeps the system autonomous without making it unpredictable.
+
+Because Ares understands IoT-specific context — cameras, brokers, routers, controllers, and their typical weaknesses — it can drive assessments that are more relevant and more efficient than generic scanning. The result is a system that can progress through discovery, fingerprinting, testing, and validation with minimal human intervention while remaining auditable and bounded.
+
+## What is the Ares Bridge
+
+The **Ares Bridge** is the controlled interface that sits between the intelligence layer (Ares) and the execution layer (Blitz). It is the component that makes the system modular, extensible, and safe.
+
+Ares never talks directly to Blitz. Every request from the AI must pass through the Bridge. This design creates a clear boundary: Ares can decide what should happen, but the Bridge decides whether that request is allowed to proceed and how it is translated into an actual action.
+
+During development, the Bridge was connected and tested with external AI systems such as **RedAmon** paired with **StrikeGPT**. This demonstrated that the same interface can accept decisions from different AI backends without changing the underlying execution engine. As a result, the Bridge makes it straightforward to connect Blitz to other AI APIs in the future — whether local models, cloud models, or specialised agents — while keeping the rest of the platform stable.
+
+Beyond AI integration, the Bridge also provides a clean path for connecting external systems such as SIEM platforms. Because all capability requests and results flow through a single, well-defined interface, events and findings can be forwarded to monitoring tools without tight coupling to the core assessment engine.
+
+In short, the Bridge exists for three reasons:
+
+- It enforces a safety and capability boundary between planning and execution.
+- It allows different AI systems to drive Blitz through a consistent interface.
+- It enables integration with external tools such as SIEMs without modifying the core platform.
+
+Without the Bridge, Ares and Blitz would be tightly coupled. With it, the platform remains modular, controllable, and ready for extension.
+
+## What type of Ollama LLM is in Blitz
+
+**Ollama** is the local model runtime that powers the intelligence inside Ares. It runs a fine-tuned language model specialised for IoT security decisions, keeping all inference private and on-premises.
+
+The model used by Blitz is a 1.7-billion-parameter Qwen3 variant that was fine-tuned specifically for IoT assessment planning. It does not attempt to plan entire attack chains or interact with the network. Its only role is to answer one focused question at each step: given the current state of a device, which tool should be used next.
+
+### How the Model Was Trained for IoT
+
+The model was fine-tuned using QLoRA on a carefully constructed dataset of 683 IoT-specific examples. The training data combined real session exports with synthetic scenarios built around common IoT device families — cameras, routers, MQTT brokers, controllers, and similar systems.
+
+Each training example presented the model with a compact device state (open ports, services, and basic context) and required it to select the most appropriate next tool from a fixed allowlist. The training process also included rationale distillation, so the model learned not only which tool to choose but why that choice made sense for a given device type.
+
+Because the task was narrowly scoped, the model converged quickly. Final evaluation loss reached 0.050, indicating strong consistency on held-out IoT scenarios. Once trained, the model was quantised and registered inside Ollama as `qwen3-iot:1.7b`, where it runs entirely on local GPU resources.
+
+This design keeps the AI contribution small, fast, and domain-specific. The model contributes judgment at decision points, while the surrounding deterministic systems in Ares handle sequencing, safety, persistence, and execution.
+
 
 ### Key Features
 
@@ -156,23 +211,6 @@ This separation of concerns (AI planning → gated capabilities → controlled e
 5.Build Plan → 6.Authorization Gate → 7.Execute → 8.Verify Result →
 9.Persist Evidence → 10.Generate Finding → 11.Remediate → 12.Re-validate ↺
 
-Every assessment in Blitz follows a strict, auditable 12-stage process:
-
-| Stage | Name | What Happens |
-|-------|------|--------------|
-| 1 | **Discover** | Multi-protocol discovery (ARP, mDNS, SSDP, ONVIF, TCP…) |
-| 2 | **Resolve Identity** | Confirm IP, MAC, and protocol evidence |
-| 3 | **Fingerprint Services** | Map protocol and authentication surfaces per device |
-| 4 | **Correlate Context** | Build rich per-device security context |
-| 5 | **Build Assessment Plan** | Ares generates a ranked, applicability-aware test plan |
-| 6 | **Authorization Gate** | Checks: Authorized? In scope? Capability allowed?<br>Any “No” → request is rejected, logged, and never executed |
-| 7 | **Execute Authorized Tests** | Prepare → Execute → Cleanup |
-| 8 | **Verify Result** | Clearly distinguishes “attempted” vs “proven” outcomes |
-| 9 | **Persist Evidence** | Stores target + module + result + state |
-| 10 | **Generate Finding** | Creates an evidence-backed, reviewable finding |
-| 11 | **Remediate** | Supports fixing the identified issue |
-| 12 | **Re-validate** | Confirms the fix actually held, then loops back to Discover |
-
 This closed-loop design is what makes Blitz fundamentally different from traditional scanners or open-ended AI agents.
 
 ---
@@ -192,15 +230,6 @@ Ares is the intelligence layer of Blitz. It is responsible for **thinking**, not
 
 **Important design rule:**  
 Ares never directly touches target devices. It only plans and requests. All actual execution is performed by Blitz Core after authorization.
-
----
-
-### Persistent State & Live Feedback
-
-| Component | Purpose |
-|-----------|---------|
-| **Persistent State** | Stores devices, jobs, findings, incidents, and the complete audit history |
-| **Live Event Stream** | Real-time WebSocket feed of progress, results, narratives, and state changes |
 
 Every decision, every test, and every result is recorded. The operator always has full visibility.
 
@@ -264,85 +293,6 @@ Blitz/
 
  ```
 ---
-
-### Technology Stack
-
-| Component | Role |
-|-----------|------|
-| **Ares** | IoT-specific AI reasoning and orchestration |
-| **Ollama** | Local large-language model runtime |
-| **Blitz Core** | Closed-loop assessment and execution engine |
-| **Python** | Core platform implementation |
-| **REST + WebSocket** | Control plane and live event streaming |
-| **Docker** | Reproducible and isolated deployment |
-
----
-
-## What is Blitz
-
-**Blitz** is a commercial automated red teaming and continuous assessment platform built specifically for IoT and OT environments.
-
-Most traditional red team tools were designed for Windows and Linux endpoints. They struggle with the realities of IoT — diverse protocols, constrained devices, fragile firmware, and the need for strict safety controls. Blitz was created to solve this gap.
-
-At its core, Blitz runs a controlled **12-stage closed-loop assessment lifecycle**. It begins by discovering devices and building real security context for each one. It then uses AI to generate intelligent assessment plans, enforces strict authorization before any test is allowed to run, executes only approved actions, verifies the results, stores evidence, generates findings, and can re-validate after remediation.
-
-Blitz is not a vulnerability scanner.  
-It is not a generic AI agent that freely interacts with devices.  
-It is an operational system that separates **intelligent planning** from **safe, authorized execution**.
-
-The platform consists of two main layers:
-
-- **Ares** — the IoT-specific AI reasoning and orchestration layer that plans assessments and decides what should be tested.
-- **Blitz Core** — the execution engine that carries out the assessment under strict controls, records evidence, and streams live results back to the operator.
-
-This design allows security teams to perform repeatable, auditable, and authorized adversary simulation against IoT and OT assets — without the operational risk that usually comes with testing these environments.
-
-## What is Ares
-
-**Ares** is the autonomous intelligence layer of the Blitz platform. It is the component that turns a collection of IoT security tools into a system capable of independent assessment.
-
-Most security tools require a human to decide what to scan, which credentials to try, which protocols to probe, and what to do next. Ares removes that dependency. It observes the current state of a target, reasons about what the device appears to be, and decides the next appropriate action from a controlled set of capabilities.
-
-Ares does not perform network attacks itself. That responsibility belongs to Blitz. Instead, Ares acts as a decision engine. It maintains a structured knowledge base of device profiles, protocol behaviours, known attack surfaces, and tool mappings. When new information is discovered — open ports, banners, services, or vendor signatures — Ares classifies the device and builds a ranked plan of what should be tested next.
-
-The intelligence inside Ares is deliberately narrow and controlled. A fine-tuned language model is used only at decision points to choose the next tool. Surrounding that model is a deterministic loop that enforces workflow order, applies safety constraints, records every decision, and prevents repetition or unsafe behaviour. This design keeps the system autonomous without making it unpredictable.
-
-Because Ares understands IoT-specific context — cameras, brokers, routers, controllers, and their typical weaknesses — it can drive assessments that are more relevant and more efficient than generic scanning. The result is a system that can progress through discovery, fingerprinting, testing, and validation with minimal human intervention while remaining auditable and bounded.
-
-## What is the Ares Bridge
-
-The **Ares Bridge** is the controlled interface that sits between the intelligence layer (Ares) and the execution layer (Blitz). It is the component that makes the system modular, extensible, and safe.
-
-Ares never talks directly to Blitz. Every request from the AI must pass through the Bridge. This design creates a clear boundary: Ares can decide what should happen, but the Bridge decides whether that request is allowed to proceed and how it is translated into an actual action.
-
-During development, the Bridge was connected and tested with external AI systems such as **RedAmon** paired with **StrikeGPT**. This demonstrated that the same interface can accept decisions from different AI backends without changing the underlying execution engine. As a result, the Bridge makes it straightforward to connect Blitz to other AI APIs in the future — whether local models, cloud models, or specialised agents — while keeping the rest of the platform stable.
-
-Beyond AI integration, the Bridge also provides a clean path for connecting external systems such as SIEM platforms. Because all capability requests and results flow through a single, well-defined interface, events and findings can be forwarded to monitoring tools without tight coupling to the core assessment engine.
-
-In short, the Bridge exists for three reasons:
-
-- It enforces a safety and capability boundary between planning and execution.
-- It allows different AI systems to drive Blitz through a consistent interface.
-- It enables integration with external tools such as SIEMs without modifying the core platform.
-
-Without the Bridge, Ares and Blitz would be tightly coupled. With it, the platform remains modular, controllable, and ready for extension.
-
-## What is Ollama in Blitz
-
-**Ollama** is the local model runtime that powers the intelligence inside Ares. It runs a fine-tuned language model specialised for IoT security decisions, keeping all inference private and on-premises.
-
-The model used by Blitz is a 1.7-billion-parameter Qwen3 variant that was fine-tuned specifically for IoT assessment planning. It does not attempt to plan entire attack chains or interact with the network. Its only role is to answer one focused question at each step: given the current state of a device, which tool should be used next.
-
-### How the Model Was Trained for IoT
-
-The model was fine-tuned using QLoRA on a carefully constructed dataset of 683 IoT-specific examples. The training data combined real session exports with synthetic scenarios built around common IoT device families — cameras, routers, MQTT brokers, controllers, and similar systems.
-
-Each training example presented the model with a compact device state (open ports, services, and basic context) and required it to select the most appropriate next tool from a fixed allowlist. The training process also included rationale distillation, so the model learned not only which tool to choose but why that choice made sense for a given device type.
-
-Because the task was narrowly scoped, the model converged quickly. Final evaluation loss reached 0.050, indicating strong consistency on held-out IoT scenarios. Once trained, the model was quantised and registered inside Ollama as `qwen3-iot:1.7b`, where it runs entirely on local GPU resources.
-
-This design keeps the AI contribution small, fast, and domain-specific. The model contributes judgment at decision points, while the surrounding deterministic systems in Ares handle sequencing, safety, persistence, and execution.
-
 
 
 ## Attack & Validation Capabilities
