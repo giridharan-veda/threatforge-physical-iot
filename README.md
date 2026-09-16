@@ -344,7 +344,10 @@ The same protocol-aware approach is applied across **HTTP/HTTPS, RTSP, ONVIF, MQ
 | **TLS** | Encryption, certificates and cryptographic configuration | HTTPS cameras, routers, gateways, MQTT services, APIs | Establishes a TLS connection, examines supported versions/ciphers and validates certificate and transport security. |
 
 
-### Capability Matrix
+### ATT&CK Matrix
+
+<img src="https://raw.githubusercontent.com/giridharan-veda/threatforge-physical-iot/main/aresai.png" width="100%" alt="Blitz — Automated IoT Red Teaming Platform powered by Ares">
+
 
 | # | Module | Protocol / Surface | What It Does |
 |---:|---|---|---|
