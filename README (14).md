@@ -85,7 +85,7 @@ That somewhere is **IoT and OT**: the cameras, sensors, controllers, and gateway
 
 </div>
 
-### Ares AI
+## Ares AI
 
 **Ares** is the autonomous intelligence layer of the Blitz platform. It is the component that turns a collection of IoT security tools into a system capable of independent assessment.
 
@@ -107,29 +107,19 @@ During development, the Bridge was connected and tested with external AI systems
 
 Beyond AI integration, the Bridge also provides a clean path for connecting external systems such as SIEM platforms. Because all capability requests and results flow through a single, well-defined interface, events and findings can be forwarded to monitoring tools without touching the core engine.
 
-In short, the Bridge exists for three reasons:
+## Ollama LLM in Blitz
 
-- It enforces a safety and capability boundary between planning and execution.
-- It allows different AI systems to drive Blitz through a consistent interface.
-- It enables integration with external tools such as SIEMs without modifying the core platform.
-
-Without the Bridge, Ares and Blitz would be tightly coupled. With it, the platform remains modular, controllable, and ready for extension.
-
-## What type of Ollama LLM is in Blitz
-
-**Ollama** is the local model runtime that powers the intelligence inside Ares. It runs a fine-tuned language model specialised for IoT security decisions, keeping all inference private and on-premises.
+**Ollama** is the local model runtime that powers the intelligence inside Ares. It runs a fine-tuned language model specialised for IoT security decisions.
 
 The model used by Blitz is a 1.7-billion-parameter Qwen3 variant that was fine-tuned specifically for IoT assessment planning. It does not attempt to plan entire attack chains or interact with the network. Its only role is to answer one focused question at each step: given the current state of a device, which tool should be used next.
 
 ### How the Model Was Trained for IoT
 
-The model was fine-tuned using QLoRA on a carefully constructed dataset of 683 IoT-specific examples. The training data combined real session exports with synthetic scenarios built around common IoT device families — cameras, routers, MQTT brokers, controllers, and similar systems.
+The model was fine-tuned using QLoRA on a dataset of 683 IoT-specific examples. The training data combined real session exports with synthetic scenarios built around common IoT device families — cameras, routers, MQTT brokers, controllers, and similar systems.
 
 Each training example presented the model with a compact device state (open ports, services, and basic context) and required it to select the most appropriate next tool from a fixed allowlist. The training process also included rationale distillation, so the model learned not only which tool to choose but why that choice made sense for a given device type.
 
-Because the task was narrowly scoped, the model converged quickly. Final evaluation loss reached 0.050, indicating strong consistency on held-out IoT scenarios. Once trained, the model was quantised and registered inside Ollama as `qwen3-iot:1.7b`, where it runs entirely on local GPU resources.
-
-This design keeps the AI contribution small, fast, and domain-specific. The model contributes judgment at decision points, while the surrounding deterministic systems in Ares handle sequencing, safety, persistence, and execution.
+This design of the LLM model contributes judgment at decision points, while the surrounding systems in Ares handle sequencing, thinking, persistence, and execution.
 
 
 ### Key Features
