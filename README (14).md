@@ -184,8 +184,6 @@ Blitz/
 └── requirements.txt              # Python dependencies
 
  ```
-It first determines what is actually present in the target environment—devices, ports, services, protocols, authentication mechanisms, and exposed interfaces—and then selects assessment modules relevant to those specific surfaces.
-
 ### Protocol-Specific Attack Coverage
 
 | Protocol | What It Tests | Common IoT Devices | Real-Time Validation |
