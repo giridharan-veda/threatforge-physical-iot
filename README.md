@@ -348,58 +348,6 @@ The same protocol-aware approach is applied across **HTTP/HTTPS, RTSP, ONVIF, MQ
 
 <img src="https://github.com/giridharan-veda/threatforge-physical-iot/blob/main/ares-attack-matrix.svg" width="100%" alt="Blitz — Automated IoT Red Teaming Platform powered by Ares">
 
-
-| # | Module | Protocol / Surface | What It Does |
-|---:|---|---|---|
-| 01 | **ARP Discovery** | Network | Finds live devices and maps IP addresses to MAC addresses. |
-| 02 | **TCP Discovery** | TCP | Finds reachable TCP ports and exposed services. |
-| 03 | **Device Fingerprinting** | Network | Identifies device vendor, model and device type from observed behaviour. |
-| 04 | **Service Fingerprinting** | TCP / UDP | Determines which protocol or service is running on a discovered port. |
-| 05 | **HTTP Discovery** | HTTP / HTTPS | Detects exposed web interfaces on IoT devices. |
-| 06 | **HTTP Path Discovery** | HTTP | Finds login, admin, status and configuration endpoints. |
-| 07 | **HTTP Authentication Test** | HTTP | Checks whether web interfaces require authentication and tests authorized credentials. |
-| 08 | **HTTP Access-Control Test** | HTTP | Verifies that protected web resources cannot be accessed without proper authorization. |
-| 09 | **HTTP Input Validation** | HTTP | Checks exposed parameters for unsafe input handling. |
-| 10 | **HTTP Configuration Check** | HTTP | Detects insecure web-server and management-interface configuration. |
-| 11 | **HTTP Information Disclosure** | HTTP | Identifies sensitive information revealed through responses, headers or errors. |
-| 12 | **RTSP Discovery** | RTSP | Detects RTSP services commonly used by cameras and NVRs. |
-| 13 | **RTSP Authentication Test** | RTSP | Checks whether video streams are properly protected by authentication. |
-| 14 | **RTSP Stream Enumeration** | RTSP | Identifies available video-stream endpoints. |
-| 15 | **RTSP Access-Control Test** | RTSP | Verifies whether restricted streams can be accessed without the required authorization. |
-| 16 | **RTSP Capability Enumeration** | RTSP | Identifies supported RTSP methods and service capabilities. |
-| 17 | **ONVIF Discovery** | ONVIF | Finds ONVIF-enabled cameras and their management interfaces. |
-| 18 | **ONVIF Service Enumeration** | ONVIF | Maps camera management services exposed through ONVIF. |
-| 19 | **ONVIF Device Enumeration** | ONVIF | Retrieves available camera identity and capability information. |
-| 20 | **ONVIF Authentication Test** | ONVIF | Checks whether ONVIF management functions are properly authenticated. |
-| 21 | **ONVIF Authorization Test** | ONVIF | Verifies that authenticated users only receive permitted camera operations. |
-| 22 | **ONVIF Profile Enumeration** | ONVIF | Identifies supported camera profiles and related functionality. |
-| 23 | **MQTT Broker Discovery** | MQTT | Detects reachable MQTT brokers used by IoT systems. |
-| 24 | **MQTT Authentication Test** | MQTT | Checks broker authentication requirements using authorized credentials. |
-| 25 | **MQTT Topic Enumeration** | MQTT | Identifies topics visible through the permitted MQTT interface. |
-| 26 | **MQTT Subscribe Test** | MQTT | Verifies whether restricted topics can be read by an unauthorized context. |
-| 27 | **MQTT Publish Test** | MQTT | Verifies whether clients can write to topics outside their intended permissions. |
-| 28 | **MQTT Transport Check** | MQTT / TLS | Checks whether MQTT communication is appropriately protected in transit. |
-| 29 | **UPnP / SSDP Discovery** | UPnP / SSDP | Discovers devices and services advertised through UPnP. |
-| 30 | **UPnP Service Enumeration** | UPnP | Maps exposed UPnP services and device functions. |
-| 31 | **UPnP Exposure Test** | UPnP | Checks for unnecessarily exposed control or management interfaces. |
-| 32 | **SNMP Assessment** | SNMP | Evaluates SNMP exposure, access controls and information available through management interfaces. |
-| 33 | **SSH Assessment** | SSH | Checks SSH exposure, authentication and remote-management configuration. |
-| 34 | **Telnet Assessment** | Telnet | Detects insecure Telnet administration and evaluates its authentication exposure. |
-| 35 | **CoAP Enumeration** | CoAP | Discovers CoAP endpoints and resources exposed by constrained IoT devices. |
-| 36 | **CoAP Access-Control Test** | CoAP | Verifies whether protected CoAP resources require the expected authorization. |
-| 37 | **TLS Configuration Test** | TLS | Checks TLS versions, cryptographic configuration and transport-security weaknesses. |
-| 38 | **Certificate Inspection** | TLS | Validates certificates, expiration, identity and other certificate issues. |
-| 39 | **Credential Validation** | Multiple | Tests supplied or authorized credentials against the correct device service. |
-| 40 | **DNS Enumeration** | DNS | Resolves device hostnames and related DNS information within scope. |
-| 41 | **Vulnerability Correlation** | Multiple | Correlates device, firmware and service information with known vulnerabilities. |
-| 42 | **Command-Injection Validation** | HTTP / Embedded Web | Safely checks whether an input is improperly interpreted as an OS command. |
-| 43 | **Path-Traversal Validation** | HTTP / Embedded Web | Checks whether file or path inputs can escape their intended resource boundary. |
-| 44 | **CGI / Web-Interface Validation** | HTTP | Validates security weaknesses in embedded CGI and management interfaces. |
-| 45 | **Passive Reconnaissance** | Network / DNS / TLS | Collects observable information without actively stressing the target. |
-| 46 | **Active Reconnaissance** | Multiple | Performs controlled protocol queries to expand the discovered attack surface. |
-| 47 | **Autonomous AutoPwn Validation** | Multiple | Ares chains authorized, non-destructive validation modules to confirm real security impact. |
-| 48 | **Re-Validation** | Multiple | Repeats confirmed checks after remediation to verify that the weakness is fixed. |
-
 ## How Ares Guides the Attack
 
 **Ares is Blitz's AI reasoning layer.** It analyses the target's devices, services, protocols and previous results, then guides Blitz toward the most relevant next action.
