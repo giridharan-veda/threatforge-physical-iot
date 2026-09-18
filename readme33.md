@@ -15,7 +15,7 @@
 [![LLM](https://img.shields.io/badge/LLM-Local%20%C2%B7%20Air--Gapped-purple)](#ares-ai-engine)
 [![License](https://img.shields.io/badge/License-Perpetual%20Commercial-red)](#licensing)
 
-**[ 📩 REQUEST A DEMO ](#contact)**  •  **[ 📄 REQUEST A QUOTE ](#contact)**  •  **[ 🔒 SECURITY DISCLOSURE ](#contact)**
+**[ REQUEST A DEMO ](#contact)**  •  **[ REQUEST A QUOTE ](#contact)**  •  **[ SECURITY DISCLOSURE ](#contact)**
 
 *Commercial Edition — for security teams, consultancies, regulated industries, and critical infrastructure.*
 
@@ -29,18 +29,18 @@ Blitz is an autonomous IoT/OT security assessment platform that discovers, class
 
 The platform is purpose-built for environments where manual penetration testing is insufficient: distributed IoT/OT fleets, regulated industries, air-gapped networks, and organizations required to demonstrate **continuous security assurance** rather than point-in-time compliance.
 
-**Core capabilities:**
+| Capability | Description |
+| :---: | :---: |
+| **Autonomous Discovery** | Continuous asset identification across 28 protocol categories |
+| **State-Driven Planning** | On-premises AI selects the next module based on device state |
+| **154 Attack Modules** | Every module has documented preconditions, side effects, and safety classification |
+| **Multi-Condition Safety Gate** | Scope, capability, and approval enforced before any action executes |
+| **Evidence-Backed Findings** | Strict separation between *attempted* and *proven* results |
+| **Automatic Re-Validation** | Remediated findings are re-tested without operator intervention |
+| **Complete Audit Trail** | Every decision, authorization, and execution is logged for compliance |
+| **Air-Gapped Operation** | No external telemetry, no cloud dependency, no per-token costs |
 
-- Autonomous discovery and classification of IoT/OT assets across 28 protocol categories
-- State-driven assessment planning via a fine-tuned, on-premises language model
-- 154 in-house attack modules with documented preconditions, side effects, and safety classification
-- Multi-condition authorization gate enforcing scope, capability, and approval before execution
-- Evidence-backed findings with strict separation between *attempted* and *proven* results
-- Automatic re-validation of remediated findings
-- Complete audit trail for compliance and forensic review
-- Fully air-gapped operation — no external telemetry, no cloud dependency, no per-token costs
-
-**Deployment model:** Self-hosted. Docker Compose for single-node; Kubernetes manifests for enterprise. No external network calls required for operation.
+**Deployment:** Self-hosted via Docker Compose or Kubernetes. No external network calls required for operation.
 
 **Licensing:** Perpetual commercial license. Enterprise, Government, and Academic tiers available.
 
@@ -56,10 +56,10 @@ The platform is purpose-built for environments where manual penetration testing 
 | [Deployment Options](#deployment-options) | On-premises, air-gapped, and VPC deployments |
 | [Operational Lifecycle](#operational-lifecycle) | The 12-stage assessment pipeline |
 | [Module Coverage](#module-coverage) | 154 modules across 28 categories |
-| [Ares AI Engine](#ares-ai-engine) | The decision layer, training, and retraining |
+| [Ares AI Engine](#ares-ai-engine) | Decision layer, training, and retraining |
 | [Integrations](#integrations) | SIEM, SOAR, ticketing, CI/CD, and API |
 | [Performance & Benchmarks](#performance--benchmarks) | Measured performance with methodology |
-| [Pricing & Licensing](#licensing) | Commercial tiers and volume licensing |
+| [Licensing](#licensing) | Commercial tiers and volume licensing |
 | [Support & SLA](#support--sla) | Support tiers and response commitments |
 | [Professional Services](#professional-services) | Deployment, training, and custom modules |
 | [Procurement Information](#procurement-information) | Security review, legal, and vendor documentation |
@@ -76,32 +76,36 @@ Enterprise security programs have matured significantly over the past two decade
 
 IoT and OT environments have not received the same investment, for three structural reasons:
 
-1. **Asset invisibility.** Most organizations cannot enumerate their connected devices, let alone their firmware versions, exposed services, or default configurations.
-2. **Lifecycle mismatch.** IoT/OT devices frequently have no vendor-supported update path. Known vulnerabilities persist for the operational life of the device — often 10 to 15 years.
-3. **Assessment difficulty.** Safe testing of these environments requires protocol-specific expertise, hardware interfaces, and an understanding of physical consequences that general-purpose security tooling does not provide.
+| Reason | Impact |
+| :---: | :---: |
+| **Asset invisibility** | Most organizations cannot enumerate their connected devices, let alone firmware versions, exposed services, or default configurations |
+| **Lifecycle mismatch** | IoT/OT devices frequently have no vendor-supported update path. Known vulnerabilities persist for 10–15 years |
+| **Assessment difficulty** | Safe testing requires protocol-specific expertise and hardware interfaces that general-purpose tooling does not provide |
 
 The result is a persistent, unmeasured risk surface that sits adjacent to — and often on the same network as — systems that do receive rigorous assessment.
 
 ### The Cost of Point-in-Time Assessment
 
-Annual penetration tests are effective at identifying risk at a moment in time. They are poorly suited to environments that change continuously:
+Annual penetration tests are effective at identifying risk at a moment in time. They are poorly suited to environments that change continuously.
 
-- New devices are deployed without security review
-- Firmware is updated — or not — without validation
-- Default credentials are re-introduced during device provisioning
-- Network segmentation drifts
-- Remediation is applied but rarely re-verified
+| Failure Mode | Consequence |
+| :---: | :---: |
+| New devices deployed without security review | Unknown attack surface grows silently |
+| Firmware updated — or not — without validation | Known CVEs persist undetected |
+| Default credentials re-introduced during provisioning | Trivial compromise path restored |
+| Network segmentation drifts | Lateral movement becomes possible |
+| Remediation applied but rarely re-verified | False sense of resolution |
 
 Continuous autonomous assessment addresses these gaps by applying the same rigor as a manual engagement, on a schedule you define, against a scope you control, with an auditable boundary between decision and action.
 
 ### Where Blitz Fits
 
-| Deployment Pattern | Typical Use Case | Organization Profile |
+| Deployment Pattern | Use Case | Organization Profile |
 | :---: | :---: | :---: |
-| **Continuous assurance** | Ongoing assessment of IoT/OT fleets | Organizations with 100+ IoT/OT devices |
+| **Continuous assurance** | Ongoing assessment of IoT/OT fleets | Organizations with 100+ connected devices |
 | **Pre-engagement scoping** | Rapid asset discovery before on-site testing | Consultancies and pentest firms |
 | **Firmware validation** | Assessing own products before release | Manufacturers and OEMs |
-| **Compliance evidence** | Generating audit-ready assessment artifacts | Regulated industries (medical, industrial, critical) |
+| **Compliance evidence** | Generating audit-ready assessment artifacts | Regulated industries |
 | **Lab and training** | Realistic offensive security environments | Academic and research institutions |
 
 ---
@@ -115,11 +119,23 @@ Blitz is composed of five discrete services, each with a single responsibility. 
 | Component | Function | Network Boundary |
 | :---: | :---: | :---: |
 | **Operator Console** | Human control plane — launch assessments, review proposals, approve or deny actions, monitor progress | User-facing |
-| **Ares Agent** | AI orchestration layer — profiles devices, plans assessments, selects modules from the catalog | No direct network access |
-| **Ares Bridge** | Capability gateway — enforces multi-condition authorization before any action reaches the executor | Enforcement boundary |
-| **Ollama Runtime** | Local model server — hosts the fine-tuned `ares` model, operates entirely offline | Internal only |
-| **Blitz Core** | Execution engine — runs approved modules, collects evidence, drives the lifecycle, exposes REST and WebSocket APIs | Target-facing |
-| **Persistent State** | Durable store — devices, jobs, findings, incidents, complete audit history | Internal only |
+| **Ares Agent** | AI orchestration — profiles devices, plans assessments, selects modules | No direct network access |
+| **Ares Bridge** | Capability gateway — enforces multi-condition authorization | Enforcement boundary |
+| **Ollama Runtime** | Local model server — hosts the fine-tuned `ares` model | Internal only |
+| **Blitz Core** | Execution engine — runs approved modules, collects evidence, exposes APIs | Target-facing |
+| **Persistent State** | Durable store — devices, jobs, findings, incidents, audit history | Internal only |
+
+### Enforcement Model
+
+Every action taken against a target device passes through three distinct stages:
+
+| Stage | Actor | Responsibility |
+| :---: | :---: | :---: |
+| **Proposal** | Ares Agent | Decides what should happen next, based on device state |
+| **Authorization** | Ares Bridge | Validates the proposal against scope, capability, and safety rules |
+| **Execution** | Blitz Core | Runs only what was authorized, with full evidence capture |
+
+Ares has no ability to execute. Blitz Core has no ability to decide. The Bridge has no ability to run anything itself.
 
 ### Data Flow
 
@@ -128,27 +144,16 @@ Operator Console
     ↓
 Ares Agent  ────────► Ares Bridge  ────────► Ollama Runtime
     │                     │                        │
-    │                     │                        │
     ▼                     ▼                        │
 Blitz Core  ◄─────────────┘                        │
     │                                              │
     ├──────► Target Devices                        │
-    │                                              │
     ├──────► Persistent State (audit + findings)   │
-    │                                              │
     └──────► Live Event Stream ◄───────────────────┘
                     │
                     ▼
               Operator Console
 ```
-
-Every action taken against a target device passes through three distinct stages:
-
-1. **Proposal** — Ares decides what should happen next, based on device state
-2. **Authorization** — Ares Bridge validates the proposal against scope, capability, and safety rules
-3. **Execution** — Blitz Core runs only what was authorized, with full evidence capture
-
-Ares has no ability to execute. Blitz Core has no ability to decide. The Bridge has no ability to run anything itself.
 
 ### Network Ports
 
@@ -175,16 +180,16 @@ Blitz is designed for environments with strict security review requirements.
 
 | Area | Implementation |
 | :---: | :---: |
-| **Data residency** | All processing occurs on customer-controlled hardware. No external network calls are made during operation. |
-| **Telemetry** | None. The platform does not transmit metrics, usage data, or crash reports externally. |
-| **Model inference** | Local via Ollama. No prompts, device context, or results leave the deployment. |
-| **Authentication** | Integrates with existing identity providers (OIDC, SAML) for operator access. |
-| **Authorization** | Role-based access control for console actions and API endpoints. |
-| **Audit logging** | Every action, decision, authorization, and result is logged with timestamps and actor attribution. |
-| **Encryption in transit** | TLS 1.3 for all inter-service and operator communications. |
-| **Encryption at rest** | Optional — compatible with standard volume encryption (LUKS, BitLocker, cloud provider). |
-| **Dependency management** | SBOM published for every release. Dependencies pinned and scanned. |
-| **Vulnerability disclosure** | Coordinated disclosure policy published. Security contact monitored. |
+| **Data residency** | All processing occurs on customer-controlled hardware. No external network calls during operation |
+| **Telemetry** | None. No metrics, usage data, or crash reports transmitted externally |
+| **Model inference** | Local via Ollama. No prompts, device context, or results leave the deployment |
+| **Authentication** | Integrates with existing identity providers (OIDC, SAML) |
+| **Authorization** | Role-based access control for console actions and API endpoints |
+| **Audit logging** | Every action, decision, authorization, and result logged with timestamps and actor attribution |
+| **Encryption in transit** | TLS 1.3 for all inter-service and operator communications |
+| **Encryption at rest** | Optional — compatible with LUKS, BitLocker, or cloud provider volume encryption |
+| **Dependency management** | SBOM published for every release. Dependencies pinned and scanned |
+| **Vulnerability disclosure** | Coordinated disclosure policy published. Security contact monitored |
 
 ### Compliance Alignment
 
@@ -193,11 +198,11 @@ Blitz supports evidence generation for the following frameworks. Mapping documen
 | Framework | Coverage |
 | :---: | :---: |
 | **IEC 62443** | Industrial automation and control systems security — assessment evidence for zones and conduits |
-| **EU Cyber Resilience Act** | Vulnerability management and continuous assessment obligations for products with digital elements |
+| **EU Cyber Resilience Act** | Vulnerability management and continuous assessment obligations |
 | **NIS2 Directive** | Critical infrastructure security — continuous assessment and incident detection |
-| **UK PSTI Act** | Connected product security requirements — default credential testing and exposure validation |
+| **UK PSTI Act** | Connected product security — default credential testing and exposure validation |
 | **US Cyber Trust Mark** | IoT device security labeling — assessment evidence for program participation |
-| **OWASP IoT Top 10** | Full mapping of all 154 modules to the Top 10 categories |
+| **OWASP IoT Top 10** | Full mapping of all 154 modules to Top 10 categories |
 | **MITRE ATT&CK for ICS** | Technique mapping for all offensive modules |
 | **NIST SP 800-53** | Control mapping for RA-5 and CA-8 |
 
@@ -205,14 +210,16 @@ Blitz supports evidence generation for the following frameworks. Mapping documen
 
 For compliance and forensic purposes, Blitz maintains:
 
-- Complete decision history for every assessment
-- Raw AI proposals before and after authorization review
-- Authorization decisions with the rule or condition that determined the outcome
-- Execution logs with full stdout/stderr capture
-- Evidence artifacts (files, hashes, timestamps) linked to every finding
-- Immutable audit log with optional external forwarding to SIEM
+| Artifact | Retention | Export Format |
+| :---: | :---: | :---: |
+| Decision history | Indefinite | JSON, CSV |
+| AI proposals (pre-authorization) | Indefinite | JSON |
+| Authorization decisions and rules applied | Indefinite | JSON, CSV |
+| Execution logs (stdout/stderr) | Configurable | Text, JSON |
+| Evidence artifacts (files, hashes, timestamps) | Indefinite | Binary + manifest |
+| Audit log (immutable) | Indefinite | JSON, CSV, CEF |
 
-Audit logs can be exported in JSON, CSV, or CEF format. Optional integration with Splunk, Elastic, or Microsoft Sentinel.
+Optional integration with Splunk, Elastic, or Microsoft Sentinel for external forwarding.
 
 ---
 
@@ -222,11 +229,11 @@ Audit logs can be exported in JSON, CSV, or CEF format. Optional integration wit
 
 | Topology | Description | Recommended For |
 | :---: | :---: | :---: |
-| **Single-node (Docker Compose)** | All services on one host. Simplest deployment. | Labs, POCs, small deployments |
-| **Multi-node (Kubernetes)** | Services distributed across hosts. High availability. | Production deployments, large fleets |
-| **Air-gapped** | Fully isolated from external networks. Image bundles provided on request. | Classified environments, critical infrastructure |
-| **Hybrid (sensor + central)** | Remote sensors collect data, central instance coordinates and reports | Distributed sites, branch offices |
-| **VPC deployment** | Standard deployment into AWS VPC, Azure VNet, or GCP VPC | Cloud-hosted enterprise environments |
+| **Single-node** | All services on one host via Docker Compose | Labs, POCs, small deployments |
+| **Multi-node** | Services distributed across hosts via Kubernetes | Production, large fleets |
+| **Air-gapped** | Fully isolated from external networks | Classified environments, critical infrastructure |
+| **Hybrid** | Remote sensors with central coordination | Distributed sites, branch offices |
+| **VPC** | Standard deployment into AWS, Azure, or GCP | Cloud-hosted enterprise environments |
 
 ### System Requirements
 
@@ -234,13 +241,13 @@ Audit logs can be exported in JSON, CSV, or CEF format. Optional integration wit
 | :---: | :---: | :---: | :---: |
 | **CPU** | 4 cores | 8 cores | 16 cores |
 | **RAM** | 8 GB | 16 GB | 32 GB |
-| **Storage** | 20 GB SSD | 40 GB SSD | 100 GB SSD (NVMe) |
+| **Storage** | 20 GB SSD | 40 GB SSD | 100 GB NVMe |
 | **Docker Engine** | 24.x | Latest stable | Latest LTS |
-| **Docker Compose** | v2 | v2 | v2 or Kubernetes 1.28+ |
+| **Orchestration** | Docker Compose v2 | Docker Compose v2 | Kubernetes 1.28+ |
 | **Python** | 3.11+ | 3.11+ | 3.11+ |
 | **GPU (optional)** | Not required | Not required | 8 GB VRAM (retraining only) |
 
-### Deployment Process
+### Installation
 
 **Standard installation:**
 
@@ -252,7 +259,7 @@ chmod +x blitz-setup.sh
 docker compose ps
 ```
 
-**Validation after deployment:**
+**Validation:**
 
 ```bash
 blitz verify                # Runs against bundled QEMU test devices
@@ -296,12 +303,12 @@ Blitz ships with 154 attack modules across 28 protocol and domain categories. Ev
 | Category | Modules | Notable Capabilities |
 | :---: | :---: | :---: |
 | **Network Protocols** | 48 | HTTP, RTSP, ONVIF, MQTT, CoAP, SNMP, SSH, Telnet, UPnP, post-exploitation |
-| **Firmware Analysis** | 28 | Extraction, secret scanning, credential extraction, SBOM, CVE matching, emulation, exploitation |
+| **Firmware Analysis** | 28 | Extraction, secret scanning, SBOM, CVE matching, emulation, exploitation |
 | **Wireless and RF** | 44 | BLE, Zigbee, Wi-Fi 802.11, Z-Wave, LoRaWAN, Matter, Thread |
 | **Hardware Interfaces** | 15 | UART, SPI, JTAG, SWD, I2C, CAN, voltage and clock glitching |
 | **Cloud IoT Platforms** | 5 | AWS IoT Core, Azure IoT Hub — fleet-level assessment |
 | **Voice Assistant Ecosystem** | 17 | Alexa, Google Home, audio injection, promptware |
-| **Mobile Companion Applications** | 3 | APK/IPA static analysis, embedded firmware, backend API testing |
+| **Mobile Companion Apps** | 3 | APK/IPA static analysis, embedded firmware, backend API testing |
 | **Smart Home Platforms** | 4 | SmartThings, HomeKit, Tuya, Xiaomi |
 | **OTA and Provisioning** | 2 | Firmware downgrade, signature verification bypass |
 | **Medical IoT** | 1 | DICOM enumeration |
@@ -350,22 +357,24 @@ Ares is the decision layer of Blitz. It observes device state, reasons about wha
 
 The full training pipeline ships with every license. Organizations can retrain the model on their own engagement data to improve routing accuracy for their specific device inventory.
 
-**Retraining workflow:**
-
-1. Export engagement data from your Blitz instance
-2. Run the included SFT, GRPO, RFT, and curriculum scripts
-3. Validate against your held-out evaluation set
-4. Deploy the updated adapter to Ollama
+| Step | Action |
+| :---: | :---: |
+| 1 | Export engagement data from your Blitz instance |
+| 2 | Run the included SFT, GRPO, RFT, and curriculum scripts |
+| 3 | Validate against your held-out evaluation set |
+| 4 | Deploy the updated adapter to Ollama |
 
 No cloud service, external API, or third-party data is required.
 
 ### Model Swapping
 
-The Ares Bridge supports connection to alternative model backends — including DeepSeek, Llama, Mistral, or a customer-hosted endpoint. This allows organizations to:
+The Ares Bridge supports connection to alternative model backends — including DeepSeek, Llama, Mistral, or a customer-hosted endpoint.
 
-- Evaluate different models against identical targets
-- Meet specific regulatory or sovereignty requirements
-- Use proprietary models developed internally
+| Benefit | Description |
+| :---: | :---: |
+| **Model evaluation** | Compare different models against identical targets |
+| **Regulatory compliance** | Meet specific sovereignty or residency requirements |
+| **Proprietary models** | Use internally developed models with the same execution engine |
 
 ---
 
@@ -379,7 +388,7 @@ The Ares Bridge supports connection to alternative model backends — including 
 | **Elastic** | Outbound | Forward logs and findings via Beats or API |
 | **Microsoft Sentinel** | Outbound | Log ingestion via Log Analytics workspace |
 | **IBM QRadar** | Outbound | Log forwarding via Syslog or API |
-| **Jira** | Bidirectional | Auto-create tickets for findings; update on re-validation |
+| **Jira** | Bidirectional | Auto-create tickets; update on re-validation |
 | **ServiceNow** | Bidirectional | Create incidents, update remediation status |
 | **Slack** | Outbound | Real-time alerts for critical findings |
 | **Microsoft Teams** | Outbound | Real-time alerts for critical findings |
@@ -391,12 +400,10 @@ The Ares Bridge supports connection to alternative model backends — including 
 
 ### API Access
 
-Blitz exposes a REST API and WebSocket event stream on the Blitz Core service.
-
 | Interface | Purpose |
 | :---: | :---: |
 | **REST API** | Programmatic control — launch scans, retrieve findings, manage scope |
-| **WebSocket** | Real-time event stream — assessment progress, findings, decisions |
+| **WebSocket** | Real-time event stream — progress, findings, decisions |
 | **MCP** | Model Context Protocol interface for AI agent integration |
 | **Webhooks** | Outbound event forwarding to customer endpoints |
 
@@ -412,18 +419,20 @@ The following figures were measured in a controlled lab environment. Full method
 
 | Metric | Blitz | Traditional Scanner | Manual Pentest |
 | :---: | :---: | :---: | :---: |
-| Time to first finding | **47 sec** | 15 min | 2 days |
-| Devices discovered per hour | **120** | 40 | 10 |
-| False positive rate | **<5%** | ~30% | ~10% |
-| Time to re-validate a patch | **Automatic** | Manual | Manual |
-| Operating cost per year | **$499 once** | $10,000+ | $25,000+ |
+| **Time to first finding** | 47 sec | 15 min | 2 days |
+| **Devices discovered per hour** | 120 | 40 | 10 |
+| **False positive rate** | <5% | ~30% | ~10% |
+| **Time to re-validate a patch** | Automatic | Manual | Manual |
+| **Operating cost per year** | $499 once | $10,000+ | $25,000+ |
 
 ### Lab Environment
 
-- Flat /24 network with mixed IoT devices
-- Hikvision DS-2CD camera, Dahua NVR, Raspberry Pi 4, ESP32, Philips Hue Bridge, Shelly Plug S
-- Ubuntu 22.04 LTS host, RTX 4060, 32 GB RAM
-- Blitz Enterprise, default configuration
+| Attribute | Detail |
+| :---: | :---: |
+| **Network** | Flat /24 with mixed IoT devices |
+| **Devices** | Hikvision DS-2CD, Dahua NVR, Raspberry Pi 4, ESP32, Philips Hue Bridge, Shelly Plug S |
+| **Host** | Ubuntu 22.04 LTS, RTX 4060, 32 GB RAM |
+| **Configuration** | Blitz Enterprise, default settings |
 
 Reproduction scripts and full lab documentation available on request.
 
@@ -442,34 +451,38 @@ Reproduction scripts and full lab documentation available on request.
 
 ### What Every Tier Includes
 
-- 154 attack modules
-- Ares AI model and full training pipeline
-- 12-stage operational lifecycle
-- Multi-condition authorization gate
-- Complete audit trail and evidence storage
-- REST API, WebSocket, and MCP interfaces
-- Lifetime updates and new modules
+| Included | Description |
+| :---: | :---: |
+| **154 attack modules** | Full catalog, lifetime updates |
+| **Ares AI model** | Fine-tuned model and complete training pipeline |
+| **12-stage lifecycle** | Full operational pipeline |
+| **Multi-condition gate** | Scope, capability, and approval enforcement |
+| **Audit and evidence** | Complete trail with artifact retention |
+| **API access** | REST, WebSocket, and MCP interfaces |
+| **Lifetime updates** | New modules, CVE profiles, and engine upgrades |
 
 ### Volume Licensing
 
 Volume discounts available for:
 
-- Multi-year commitments
-- Enterprise-wide deployments (10+ instances)
-- OEM and embedded licensing
-- Managed service provider agreements
+| Category | Description |
+| :---: | :---: |
+| **Multi-year commitments** | 2-year and 3-year terms |
+| **Enterprise-wide deployments** | 10+ instances |
+| **OEM and embedded** | Licensing for integration into other products |
+| **Managed service providers** | Agreements for use in customer engagements |
 
 Contact sales for a quote.
 
 ### What Is Not Included
 
-To be explicit about scope:
-
-- Hardware (Blitz runs on customer-provided infrastructure)
-- Cloud hosting (Blitz is self-hosted by design)
-- Professional services (available separately)
-- Custom module development (available separately)
-- Compliance certification (Blitz supports evidence generation; certification is customer-owned)
+| Item | Notes |
+| :---: | :---: |
+| **Hardware** | Blitz runs on customer-provided infrastructure |
+| **Cloud hosting** | Self-hosted by design |
+| **Professional services** | Available separately |
+| **Custom module development** | Available separately |
+| **Compliance certification** | Blitz supports evidence generation; certification is customer-owned |
 
 ---
 
@@ -495,19 +508,23 @@ To be explicit about scope:
 
 ### Included Support
 
-- New protocol modules and CVE profiles (lifetime)
-- Engine enhancements and bug fixes
-- Security patches
-- Documentation updates
-- Access to release notes and roadmap
+| Item | Description |
+| :---: | :---: |
+| **Module updates** | New protocol modules and CVE profiles (lifetime) |
+| **Engine updates** | Enhancements and bug fixes |
+| **Security patches** | Applied as released |
+| **Documentation** | Updated with each release |
+| **Roadmap access** | Release notes and upcoming features |
 
 ### Optional Support Add-ons
 
-- Dedicated technical account manager
-- Quarterly business reviews
-- On-site troubleshooting
-- Custom module development
-- Training and certification
+| Add-on | Description |
+| :---: | :---: |
+| **Technical account manager** | Dedicated point of contact |
+| **Quarterly business reviews** | Strategic alignment sessions |
+| **On-site troubleshooting** | Physical presence for critical issues |
+| **Custom module development** | New modules for proprietary protocols |
+| **Training and certification** | Operator enablement programs |
 
 ---
 
@@ -519,9 +536,9 @@ For organizations requiring accelerated deployment or customization, ApexPredato
 | :---: | :---: | :---: |
 | **Deployment assistance** | Remote or on-site installation, configuration, and validation | 2–5 days |
 | **Integration services** | SIEM, SOAR, ticketing, and CI/CD integration | 3–10 days |
-| **Model retraining** | Custom model training on organization-specific engagement data | 5–10 days |
+| **Model retraining** | Custom training on organization-specific engagement data | 5–10 days |
 | **Custom module development** | New attack modules for proprietary protocols or devices | 1–4 weeks per module |
-| **Operator training** | Training for security teams on autonomous assessment workflows | 2 days |
+| **Operator training** | Enablement for security teams on autonomous assessment workflows | 2 days |
 | **Assessment-as-a-Service** | Managed assessment engagements using Blitz | Custom scope |
 
 Contact sales for scoping and pricing.
@@ -532,24 +549,26 @@ Contact sales for scoping and pricing.
 
 ### Documentation Available on Request
 
-- Security whitepaper
-- Architecture and design documentation
-- SBOM for current release
-- Penetration test report (third-party)
-- Data handling and processing documentation
-- Business continuity and disaster recovery plan
-- Insurance certificates
-- Financial stability documentation
+| Document | Purpose |
+| :---: | :---: |
+| **Security whitepaper** | Detailed security architecture and controls |
+| **Architecture documentation** | Design reference and deployment guidance |
+| **SBOM** | Full software bill of materials for current release |
+| **Penetration test report** | Third-party assessment of the platform itself |
+| **Data handling documentation** | Processing, storage, and residency details |
+| **Business continuity plan** | Operational resilience documentation |
+| **Insurance certificates** | Cyber liability and E&O coverage |
+| **Financial stability** | Corporate and financial documentation |
 
 ### Legal
 
 | Area | Detail |
 | :---: | :---: |
 | **License agreement** | Commercial End User License Agreement provided with purchase |
-| **Data processing** | No customer data is processed by ApexPredator Security & Labs. All processing occurs on customer infrastructure. |
-| **Export control** | Blitz contains cryptographic functionality and is subject to applicable export regulations. Customer is responsible for compliance. |
-| **Warranty** | Standard commercial warranty provided. Extended warranty available under Enterprise tier. |
-| **Indemnification** | Available under Enterprise tier. |
+| **Data processing** | No customer data is processed by ApexPredator Security & Labs. All processing occurs on customer infrastructure |
+| **Export control** | Blitz contains cryptographic functionality and is subject to applicable export regulations. Customer is responsible for compliance |
+| **Warranty** | Standard commercial warranty provided. Extended warranty available under Enterprise tier |
+| **Indemnification** | Available under Enterprise tier |
 
 ### Vendor Information
 
@@ -605,7 +624,7 @@ The Ares Bridge authorization gate enforces scope at the tool level. It does not
 
 *Continuous autonomous security assessment for IoT and OT environments.*
 
-**[ 📩 REQUEST A DEMO ](#contact)**  •  **[ 📄 REQUEST A QUOTE ](#contact)**  •  **[ 🔒 SECURITY DISCLOSURE ](#contact)**
+**[ REQUEST A DEMO ](#contact)**  •  **[ REQUEST A QUOTE ](#contact)**  •  **[ SECURITY DISCLOSURE ](#contact)**
 
 *Commercial Edition · Perpetual License · Air-Gapped by Design*
 
