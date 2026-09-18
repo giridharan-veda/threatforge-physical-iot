@@ -79,6 +79,7 @@ Every competitor's README says "autonomous testing." **Blitz shows you what that
 <td width="50%" valign="top">
 
 ### 🔬 Security Researchers
+
 Study how LLMs perform on real IoT attack planning. The full training pipeline — SFT, GRPO, RFT, curriculum — is documented and reproducible. Retrain on your own data with a single 8 GB GPU.
 
 **Start here →** [Ares AI training pipeline](#ares-ai)
@@ -87,6 +88,7 @@ Study how LLMs perform on real IoT attack planning. The full training pipeline �
 <td width="50%" valign="top">
 
 ### 🏢 Enterprise Security Teams
+
 Replace $25,000 annual engagements with continuous automated assessment. Every finding is evidence-backed. Every fix is automatically re-validated. No data leaves your network.
 
 **Start here →** [Why Blitz vs. pentests](#pricing)
@@ -97,6 +99,7 @@ Replace $25,000 annual engagements with continuous automated assessment. Every f
 <td width="50%" valign="top">
 
 ### 🛠️ Red Teams & Consultants
+
 154 modules across firmware, wireless, cloud, mobile, and voice assistants — no other tool covers this much of the IoT attack surface. No new hardware required for network testing.
 
 **Start here →** [Attack surface coverage](#protocol-specific-attack-coverage)
@@ -105,6 +108,7 @@ Replace $25,000 annual engagements with continuous automated assessment. Every f
 <td width="50%" valign="top">
 
 ### 🎯 Lab & CTF Enthusiasts
+
 Deploy against QEMU device farms or your own home lab. Every module documents its preconditions. Safe to run against devices you own.
 
 **Start here →** [Installation](#installation--system-requirements)
@@ -121,15 +125,17 @@ Deploy against QEMU device farms or your own home lab. Every module documents it
 
 That somewhere is **IoT and OT**: the cameras, sensors, controllers, and gateways quietly running your buildings, your factories, your hospitals. They're on the same network as everything you actually protect — but almost none of the same rigor applies to them. Here's what that gap looks like in practice:
 
-- 🕵️ **You can't defend what you can't see.** Most orgs don't have a full inventory of their IoT/OT assets.
-- 🔑 **The manufacturer's password is still the password.** `admin:admin`, default and unchanged, for the life of the device.
-- 🚪 **Services that require no authentication.** Video streams, control interfaces, and management panels built to "just work," without a security layer.
-- 📡 **The traffic is unprotected.** No encryption means anything on the wire — credentials, keys — is visible to anyone with access to it.
-- 🧱 **"Segmented" is just a belief.** Flat networks and misconfigured VLANs turn one compromised device into a path to everything else.
-- 🛠️ **Nothing here gets patched.** No update lifecycle exists for most embedded firmware; known weaknesses just persist.
-- 🙈 **Detection tooling doesn't cover this layer.** Built for IT traffic, blind to IoT/OT — compromise here often goes unnoticed.
-- 🎯 **The riskiest devices are tested the least**, because testing them safely takes expertise most teams don't staff for.
-- ✅❌ **"Fixed" is usually an assumption, not a fact.** Fixes rarely get re-verified, so "resolved" risk often isn't.
+| The Gap                            | What It Looks Like in Practice                                                  |
+| :--------------------------------- | :------------------------------------------------------------------------------ |
+| 🕵️ **Invisible inventory**         | Most orgs don't have a full inventory of their IoT/OT assets.                   |
+| 🔑 **Default passwords**           | `admin:admin`, default and unchanged, for the life of the device.               |
+| 🚪 **Unauthenticated services**    | Video streams, control interfaces, and management panels built to "just work."  |
+| 📡 **Plaintext traffic**           | No encryption means anything on the wire — credentials, keys — is visible.      |
+| 🧱 **"Segmented" is a belief**     | Flat networks and misconfigured VLANs turn one device into a path to everything. |
+| 🛠️ **Nothing gets patched**        | No update lifecycle exists for most embedded firmware; known weaknesses persist. |
+| 🙈 **Detection blind spots**       | IT security tooling is blind to IoT/OT — compromise often goes unnoticed.       |
+| 🎯 **Riskiest, tested least**      | Testing these safely takes expertise most teams don't staff for.                |
+| ✅❌ **"Fixed" is assumed**        | Fixes rarely get re-verified, so "resolved" risk often isn't.                    |
 
 > 🚨 **This is the default state of every IoT/OT network — including yours.** The devices you trust most are the ones you've tested least.
 
@@ -170,15 +176,15 @@ Discovering an RTSP service, for example, is only the beginning. Blitz identifie
 
 <div align="center">
 
-| Component | Role | Description |
-|---|---|---|
-| 🎛️ **Operator Console** | Human control plane for launching assessments and monitoring live results | The interface where a human stays in the loop — launching new assessments, reviewing what Ares is proposing, and approving or denying actions before they run. This is where authorization decisions happen. |
-| 🧠 **Ares Agent** | AI orchestration layer that plans and sequences assessments | Profiles each discovered device, reasons about what's actually worth testing on it, and plans an intelligent, prioritized sequence of actions — rather than running a fixed checklist against everything it finds. |
-| 🔒 **Ares Bridge** | Capability gateway that enforces what Ares is allowed to request | Sits between Ares and the execution engine as a hard boundary — every action Ares wants to take is checked against strict, multi-condition rules before it ever reaches a real device. This is what keeps autonomy safe. |
-| 🖥️ **Ollama** | Local model runtime for private, on-premises AI inference | Runs the AI models that power Ares entirely on-premises — no data or device context ever has to leave your environment to generate an assessment plan. |
-| ⚙️ **Blitz Core** | Assessment & execution engine (REST + WebSocket) that runs the full closed-loop lifecycle | The engine that executes approved actions, collects evidence, and drives the full lifecycle from discovery through proof — exposed via REST and WebSocket so every stage can be tracked and integrated. |
-| 🗄️ **Persistent State** | Stores devices, jobs, findings, incidents, and complete audit history | The system of record — every device ever seen, every job ever run, every finding and incident — kept as a durable, auditable history rather than a one-time report that gets filed away. |
-| 📡 **Live Event Stream** | Real-time WebSocket feed of progress, results, and narratives to the operator GUI | Streams what's happening as it happens — progress updates, results, plain-language narratives — so the operator watches the assessment unfold live instead of waiting for a final report. |
+| Component                  | Role                                                              | Description                                                                                                                                                                                                                     |
+| :------------------------- | :---------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 🎛️ **Operator Console**   | Human control plane for launching assessments and monitoring live results | The interface where a human stays in the loop — launching new assessments, reviewing what Ares is proposing, and approving or denying actions before they run. This is where authorization decisions happen.                      |
+| 🧠 **Ares Agent**          | AI orchestration layer that plans and sequences assessments       | Profiles each discovered device, reasons about what's actually worth testing on it, and plans an intelligent, prioritized sequence of actions — rather than running a fixed checklist against everything it finds.               |
+| 🔒 **Ares Bridge**         | Capability gateway that enforces what Ares is allowed to request  | Sits between Ares and the execution engine as a hard boundary — every action Ares wants to take is checked against strict, multi-condition rules before it ever reaches a real device. This is what keeps autonomy safe.          |
+| 🖥️ **Ollama**             | Local model runtime for private, on-premises AI inference        | Runs the AI models that power Ares entirely on-premises — no data or device context ever has to leave your environment to generate an assessment plan.                                                                           |
+| ⚙️ **Blitz Core**          | Assessment & execution engine (REST + WebSocket)                  | The engine that executes approved actions, collects evidence, and drives the full lifecycle from discovery through proof — exposed via REST and WebSocket so every stage can be tracked and integrated.                          |
+| 🗄️ **Persistent State**   | Stores devices, jobs, findings, incidents, and complete audit history | The system of record — every device ever seen, every job ever run, every finding and incident — kept as a durable, auditable history rather than a one-time report that gets filed away.                                          |
+| 📡 **Live Event Stream**   | Real-time WebSocket feed to the operator GUI                      | Streams what's happening as it happens — progress updates, results, plain-language narratives — so the operator watches the assessment unfold live instead of waiting for a final report.                                        |
 
 </div>
 
@@ -215,14 +221,16 @@ Because the model runs locally via Ollama, **device context and reasoning never 
 
 The model was trained in **four stages**, each documented and reproducible on a single 8 GB GPU in under 3 hours. The full pipeline ships with Blitz in `/training/`.
 
-**Stage 1 — Supervised Fine-Tuning (SFT)**
+#### Stage 1 — Supervised Fine-Tuning (SFT)
+
 - Base model: `unsloth/Qwen3-1.7B`
 - Dataset: 638 curated examples spanning all 154 modules
 - Method: QLoRA (rank 16, alpha 32, 4-bit base)
 - Training time: ~25 min on an RTX 4060
 - Result: ~85% correct module routing
 
-**Stage 2 — GRPO (Group Relative Policy Optimization)**
+#### Stage 2 — GRPO (Group Relative Policy Optimization)
+
 - Rule-based reward function enforcing:
   - Valid JSON output (`+1.0`)
   - Module ID in known catalog (`+2.0`)
@@ -232,12 +240,14 @@ The model was trained in **four stages**, each documented and reproducible on a 
 - Generates multiple candidates per prompt; reinforces high-scoring trajectories
 - Result: ~98% valid JSON, ~92% correct routing, 100% safety-refusal accuracy
 
-**Stage 3 — Rejection Sampling Fine-Tuning (RFT)**
+#### Stage 3 — Rejection Sampling Fine-Tuning (RFT)
+
 - Self-improvement loop: generates 3 candidates per prompt, keeps the best
 - Expands the training set from 638 → ~1,000 examples with no new human labels
 - No teacher model required — the model improves itself
 
-**Stage 4 — Curriculum Learning**
+#### Stage 4 — Curriculum Learning
+
 - Training data sorted by difficulty (short routing → multi-turn chains → refusal cases)
 - Smoother gradient flow, lower training variance
 - Result: +1–3% final accuracy and more consistent outputs
@@ -277,15 +287,15 @@ Blitz is designed as a **closed-loop automated red teaming system** built specif
 
 ### Data Flow & Ports
 
-| Hop | Protocol / Port | Description |
-|-----|------------------|-------------|
-| Operator → Ares Agent | Internal | Assessment request and high-level job launch |
-| Ares Agent → Ares Bridge | Internal (`:8089`) | Capability requests are gated and authorized |
-| Ares Bridge → Ollama | Internal (`:11435`) | Local model inference for reasoning and planning |
-| Ares → Blitz Core | REST (`:8088`) | Only approved assessment plans are submitted |
-| Blitz Core → Target Devices | Multi-protocol (ARP, mDNS, SSDP, ONVIF, TCP, etc.) | Discovery, fingerprinting, and authorized test execution |
-| Blitz Core → Persistent State | Internal | Devices, jobs, findings, incidents, and full audit trail |
-| Blitz Core → Operator | WebSocket | Live events, progress, narratives, and results |
+| Hop                          | Protocol / Port                                     | Description                                                          |
+| :--------------------------- | :-------------------------------------------------- | :------------------------------------------------------------------- |
+| Operator → Ares Agent        | Internal                                            | Assessment request and high-level job launch                         |
+| Ares Agent → Ares Bridge     | Internal (`:8089`)                                  | Capability requests are gated and authorized                         |
+| Ares Bridge → Ollama         | Internal (`:11435`)                                 | Local model inference for reasoning and planning                     |
+| Ares → Blitz Core            | REST (`:8088`)                                      | Only approved assessment plans are submitted                         |
+| Blitz Core → Target Devices  | Multi-protocol (ARP, mDNS, SSDP, ONVIF, TCP, etc.)  | Discovery, fingerprinting, and authorized test execution             |
+| Blitz Core → Persistent State | Internal                                           | Devices, jobs, findings, incidents, and full audit trail             |
+| Blitz Core → Operator        | WebSocket                                           | Live events, progress, narratives, and results                       |
 
 ---
 
@@ -364,24 +374,24 @@ Blitz covers **every layer** where IoT devices have been shown to be exploitable
 
 ### 🌐 Network Protocols (48 modules)
 
-| Protocol | Modules | What It Tests | Real-Time Validation |
-|---|---|---|---|
-| **HTTP / HTTPS** | 6 | Web login, admin pages, access control, input and configuration flaws | Finds web services and paths, sends controlled requests, tests authentication, verifies access restrictions. |
-| **RTSP** | 5 | Video-stream exposure and authentication | Connects to RTSP, discovers streams, checks authentication, verifies restricted stream accessibility. |
-| **ONVIF** | 6 | Camera management and authorization | Discovers ONVIF services, identifies capabilities, verifies auth and management permissions. |
-| **MQTT** | 6 | Broker security, topic access, publish/subscribe permissions | Connects to broker, checks authentication, discovers permitted topics, validates read/write ACLs. |
-| **CoAP** | 4 | Resource exposure and access control | Discovers CoAP resources, sends controlled requests, verifies protected resource accessibility. |
-| **SNMP** | 4 | Management access and information exposure | Identifies SNMP, tests community strings, checks accessible management info. |
-| **SSH** | 6 | Remote administration and authentication | Identifies SSH, checks configuration and auth, validates authorized remote access. |
-| **Telnet** | 2 | Insecure remote administration | Detects Telnet, evaluates auth, confirms plaintext admin exposure. |
-| **UPnP / SSDP** | 4 | Device discovery and exposed control services | Discovers devices, maps services, checks for unnecessarily exposed control interfaces. |
-| **Post-Exploit** | 7 | Credential replay, persistence, lateral movement | Chains compromised access into broader environment control. |
+| Protocol            | Modules | What It Tests                                              | Real-Time Validation                                                                                          |
+| :------------------ | :-----: | :--------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------ |
+| **HTTP / HTTPS**    |    6    | Web login, admin pages, access control, input flaws        | Finds web services and paths, sends controlled requests, tests authentication, verifies access restrictions.  |
+| **RTSP**            |    5    | Video-stream exposure and authentication                   | Connects to RTSP, discovers streams, checks authentication, verifies restricted stream accessibility.         |
+| **ONVIF**           |    6    | Camera management and authorization                        | Discovers ONVIF services, identifies capabilities, verifies auth and management permissions.                  |
+| **MQTT**            |    6    | Broker security, topic access, pub/sub permissions         | Connects to broker, checks authentication, discovers permitted topics, validates read/write ACLs.             |
+| **CoAP**            |    4    | Resource exposure and access control                       | Discovers CoAP resources, sends controlled requests, verifies protected resource accessibility.               |
+| **SNMP**            |    4    | Management access and information exposure                 | Identifies SNMP, tests community strings, checks accessible management info.                                  |
+| **SSH**             |    6    | Remote administration and authentication                   | Identifies SSH, checks configuration and auth, validates authorized remote access.                            |
+| **Telnet**          |    2    | Insecure remote administration                             | Detects Telnet, evaluates auth, confirms plaintext admin exposure.                                            |
+| **UPnP / SSDP**     |    4    | Device discovery and exposed control services              | Discovers devices, maps services, checks for unnecessarily exposed control interfaces.                        |
+| **Post-Exploit**    |    7    | Credential replay, persistence, lateral movement           | Chains compromised access into broader environment control.                                                   |
 
 ### 🔬 Firmware Analysis (28 modules)
 
 Full lifecycle: extract → analyze → emulate → exploit.
 
-- **Extraction:** binwalk, unblob (30+ formats), SquashFS/CramFS/UBIFS/JFFS2, mount, filesystem carving
+- **Extraction:** binwalk, unblob (30+ formats), SquashFS / CramFS / UBIFS / JFFS2, mount, filesystem carving
 - **Analysis:** entropy analysis, secret scanning, credential extraction, SBOM generation, CVE matching, unsafe function detection
 - **Emulation:** FirmAE, Firmadyne, config extraction, emulated network scanning, web fuzzing, service fuzzing
 - **Runtime:** GDB attach, Frida hooking, strace tracing
@@ -389,25 +399,25 @@ Full lifecycle: extract → analyze → emulate → exploit.
 
 ### 📡 Wireless & RF (44 modules)
 
-| Subcategory | Modules | Coverage |
-|---|---|---|
-| **BLE** | 12 | Scan, GATT enumeration, characteristic read/write, pairing downgrade, sniffing, replay, cracking, jamming, spoofing, notifications |
-| **Zigbee** | 8 | Network scan, sniffing, key extraction, frame replay, Touchlink abuse, ZCL injection, factory reset |
-| **Wi-Fi 802.11** | 8 | Deauth, handshake capture, PMKID, WPS brute, PMKID+bruteforce, KTO deauth, WPA3 downgrade, transition-mode twin |
-| **Additional RF** | 4 | Z-Wave S0 downgrade, LoRaWAN join replay, Matter DoS, Thread border router attack |
+| Subcategory         | Modules | Coverage                                                                                                                        |
+| :------------------ | :-----: | :------------------------------------------------------------------------------------------------------------------------------ |
+| **BLE**             |   12    | Scan, GATT enumeration, characteristic read/write, pairing downgrade, sniffing, replay, cracking, jamming, spoofing, notifications |
+| **Zigbee**          |    8    | Network scan, sniffing, key extraction, frame replay, Touchlink abuse, ZCL injection, factory reset                             |
+| **Wi-Fi 802.11**    |    8    | Deauth, handshake capture, PMKID, WPS brute, PMKID+bruteforce, KTO deauth, WPA3 downgrade, transition-mode twin                  |
+| **Additional RF**   |    4    | Z-Wave S0 downgrade, LoRaWAN join replay, Matter DoS, Thread border router attack                                                |
 
 ### 🔌 Hardware Interfaces (15 modules)
 
-| Interface | Coverage |
-|---|---|
-| **UART** | Baud detection, boot log capture, interactive console |
-| **SPI** | Flash dump, integrity verification |
-| **JTAG** | Chain scan, memory dump |
-| **SWD** | ARM Cortex memory dump |
-| **I2C** | Bus scan, EEPROM dump |
-| **CAN** | Bus sniffing, frame injection |
-| **Glitching** | ChipWhisperer voltage/clock glitching, parameter sweep |
-| **Probe** | Automated hardware detection |
+| Interface       | Coverage                                                           |
+| :-------------- | :----------------------------------------------------------------- |
+| **UART**        | Baud detection, boot log capture, interactive console              |
+| **SPI**         | Flash dump, integrity verification                                 |
+| **JTAG**        | Chain scan, memory dump                                            |
+| **SWD**         | ARM Cortex memory dump                                             |
+| **I2C**         | Bus scan, EEPROM dump                                              |
+| **CAN**         | Bus sniffing, frame injection                                      |
+| **Glitching**   | ChipWhisperer voltage/clock glitching, parameter sweep             |
+| **Probe**       | Automated hardware detection                                       |
 
 ### ☁️ Cloud IoT Platforms (5 modules)
 
@@ -429,12 +439,12 @@ Full lifecycle: extract → analyze → emulate → exploit.
 
 ### 🏠 Additional Categories (24 modules)
 
-| Category | Modules | Coverage |
-|---|---|---|
-| **Smart Home Platforms** | 4 | SmartThings (CVE-2025-2233), HomeKit Pair-Setup, Tuya CloudCutter, Xiaomi cloud tokens |
-| **OTA / Provisioning** | 2 | Firmware downgrade, signature stripping (CVE-2026-1122) |
-| **Medical IoT** | 1 | DICOM C-FIND patient enumeration |
-| **Botnet / Telnet** | 1 | Mirai-style default credential bruteforce |
+| Category                    | Modules | Coverage                                                                       |
+| :-------------------------- | :-----: | :----------------------------------------------------------------------------- |
+| **Smart Home Platforms**    |    4    | SmartThings (CVE-2025-2233), HomeKit Pair-Setup, Tuya CloudCutter, Xiaomi tokens |
+| **OTA / Provisioning**      |    2    | Firmware downgrade, signature stripping (CVE-2026-1122)                        |
+| **Medical IoT**             |    1    | DICOM C-FIND patient enumeration                                               |
+| **Botnet / Telnet**         |    1    | Mirai-style default credential bruteforce                                      |
 
 **Total: 154 modules. Every major IoT attack surface documented in security research is covered.**
 
@@ -446,6 +456,8 @@ Full lifecycle: extract → analyze → emulate → exploit.
 
 *The techniques above map Blitz's autonomous testing activity — discovery, credential access, protocol abuse, impact validation — against the stages a real IoT/OT intrusion would follow, so results can be read in attacker terms, not just scan output.*
 
+---
+
 ## 🎯 Capabilities
 
 ### The Ultimate Autonomous IoT Red Teaming Arsenal
@@ -454,70 +466,90 @@ Blitz transforms fragmented IoT assessment work into a single high-speed, automa
 
 ### Operational Modes Matrix
 
-| Mode / Feature | Primary Target Surface | Autonomy Level | Primary Output |
-|---|---|---|---|
-| **Autonomous AutoPwn** | Multi-protocol IoT subnets | Fully autonomous | Chained compromise proofs |
-| **Protocol Fuzzing** | MQTT, CoAP, RTSP, ONVIF | Configurable concurrency | Crash logs & input boundary flaws |
-| **Firmware Carving** | Raw embedded binary images | Automated batch | Extracted secrets & CGI vulnerabilities |
-| **Ghost Recon** | Layer 2 broadcast domains | Passive to high-throughput | Device topology & identity maps |
-| **BYO-Brain Engine** | Planning & reasoning layer | AI-directed | Execution plans & tool selection |
-| **CTF Arena Mode** | Staging labs & QEMU images | Real-time interactive | Live streaming WebSocket feed |
-| **Re-Validation Loop** | Post-remediation targets | Targeted automated replay | Fix attestation & regression reports |
-| **Physical & Wireless** | BLE, Zigbee, Wi-Fi, UART, SPI, JTAG, I2C, CAN | Hardware-dependent | Full physical attack surface coverage |
-| **Cloud & Companion App** | AWS IoT, Azure IoT, mobile apps | Credential-driven | Fleet-wide compromise chains |
-| **Voice Assistant & AI** | Alexa, Google Home, LLM pipelines | Signal and prompt injection | Cross-ecosystem lateral movement |
+| Mode / Feature              | Primary Target Surface                          | Autonomy Level              | Primary Output                      |
+| :-------------------------- | :---------------------------------------------- | :-------------------------- | :---------------------------------- |
+| **Autonomous AutoPwn**      | Multi-protocol IoT subnets                      | Fully autonomous            | Chained compromise proofs           |
+| **Protocol Fuzzing**        | MQTT, CoAP, RTSP, ONVIF                         | Configurable concurrency    | Crash logs & input boundary flaws   |
+| **Firmware Carving**        | Raw embedded binary images                      | Automated batch             | Extracted secrets & CGI vulns       |
+| **Ghost Recon**             | Layer 2 broadcast domains                       | Passive to high-throughput  | Device topology & identity maps     |
+| **BYO-Brain Engine**        | Planning & reasoning layer                      | AI-directed                 | Execution plans & tool selection    |
+| **CTF Arena Mode**          | Staging labs & QEMU images                      | Real-time interactive       | Live streaming WebSocket feed       |
+| **Re-Validation Loop**      | Post-remediation targets                        | Targeted automated replay   | Fix attestation & regression reports |
+| **Physical & Wireless**     | BLE, Zigbee, Wi-Fi, UART, SPI, JTAG, I2C, CAN   | Hardware-dependent          | Full physical attack surface        |
+| **Cloud & Companion App**   | AWS IoT, Azure IoT, mobile apps                 | Credential-driven           | Fleet-wide compromise chains        |
+| **Voice Assistant & AI**    | Alexa, Google Home, LLM pipelines               | Signal and prompt injection | Cross-ecosystem lateral movement    |
 
 ---
 
 ### 1. Autonomous AutoPwn & Exploit Chaining Loop
+
 Eliminates disjointed scripts and manual credential handoffs. The Ares reasoning engine analyzes device state, correlates exposure vectors, and chains multi-stage validation paths automatically:
+
 - **Dynamic Pivoting:** Ares identifies an anonymous MQTT broker, subscribes to wildcard topics (`#`), extracts credentials from broadcast device telemetry, and validates access against exposed administrative or RTSP services on adjacent subnets.
 - **Impact Verification:** Extracts cryptographic and operational proof (video frame captures, broker ACL write confirmations, directory listings) into persistent state storage without human intervention.
 
 ### 2. Multi-Protocol Chaos Fuzzing Engine
+
 Generic web scanners fail against constrained hardware protocols. Blitz runs native protocol engines across its full library of specialized testing modules simultaneously:
+
 - **Protocol Diversity:** Native query and assessment engines for MQTT, CoAP, RTSP, ONVIF, UPnP/SSDP, embedded CGI, raw TCP sockets, and legacy Telnet/SSH services.
 - **Boundary Validation:** Detects malformed packet handling, memory exhaustion conditions, and logic flaws across embedded network stacks (lwIP, FreeRTOS, Zephyr, and others).
 
 ### 3. Automated Firmware Decapitation & Taint Mining
+
 Ingests raw `.bin`, `.img`, or firmware packages directly into the analysis pipeline for automated inspection:
+
 - **Automated Extraction:** Decompresses and extracts standard embedded filesystems, including SquashFS, CramFS, UBIFS, and JFFS2.
 - **Secret & Vulnerability Extraction:** Scans the extracted root filesystem for hardcoded private cryptographic keys, embedded credentials, default tokens, and debug CGI binaries.
 - **Cloud Chain Discovery:** When cloud credentials are found in firmware, they automatically feed the AWS IoT Core and Azure IoT Hub modules — turning a firmware finding into a fleet-wide compromise.
 
 ### 4. Ghost Recon (Zero-Noise Stealth to High-Velocity Sweeps)
+
 Discovery intensity is configurable from silent listening to high-throughput active scanning:
+
 - **Passive Listener Mode:** Passively maps the local environment by monitoring ambient mDNS, UPnP, SSDP, and ARP broadcasts without transmitting packets.
 - **High-Speed Network Sweep:** Executes parallel multi-protocol host discovery with Layer 2 adjacency, identifying device vendor, model, firmware revision, and exposed surfaces.
 
 ### 5. BYO-Brain: Hot-Swappable AI Model Engine
+
 Ares runs on an open, modular capability bridge rather than a locked-in AI provider:
+
 - **Air-Gapped Local Inference:** Ships configured with the fine-tuned **`ares`** model, running offline via local Ollama (`:11435`) for zero external telemetry and zero per-token API costs.
 - **Model Hot-Swapping:** Route requests through the Ares Bridge (`:8089`) to alternate local or remote model endpoints (such as DeepSeek-Coder, Llama, or Mistral) to evaluate different reasoning models against identical targets.
 - **Retrain on Your Data:** The full SFT + GRPO + RFT + curriculum pipeline is included. Retrain on your own engagements with an 8 GB GPU.
 
 ### 6. Hardware Lab & CTF Arena Mode
+
 Built for repeatable experimentation in staging and competitive environments:
+
 - **Live WebSocket Telemetry:** Streams raw operational decision graphs and execution telemetry directly to terminal consoles or custom dashboards over WebSocket port `:8088`.
 - **Target Emulation Compatibility:** Deploy against virtualized or physical targets (Docker, QEMU, or hardware test benches) to run repeatable attack simulations against simulated camera arrays, smart meters, and industrial IoT controllers.
 
 ### 7. Instant Proof-of-Impact & Remediation Diffs
+
 Converts automated test data into verifiable technical artifacts:
+
 - **Attempted vs. Proven Telemetry:** Strictly separates an initial service probe from a cryptographically or functionally confirmed vulnerability — no speculative findings.
 - **Closed-Loop Re-Validation:** After remediation, Stage 12 (**Re-validate**) automatically replays the verified exploit chain to confirm whether the vulnerability was actually mitigated — without re-running a full scan.
 
 ### 8. Physical & Wireless Attack Surface
+
 Covers the layers that network-only tools can't reach:
+
 - **Wireless:** BLE GATT enumeration and characteristic exploitation, Zigbee network key extraction, Wi-Fi handshake capture and PMKID attacks, Z-Wave S0 downgrade.
 - **Hardware:** Full UART / SPI / JTAG / SWD / I2C / CAN bus analysis and injection; voltage and clock glitching via ChipWhisperer.
 
 ### 9. Cloud IoT & Companion App Testing
+
 Attacks the cloud backend that manages the fleet — the layer where one compromised credential means thousands of compromised devices:
+
 - **AWS IoT Core / Azure IoT Hub:** Fleet enumeration, device shadow injection for RCE, wildcard MQTT subscription for fleet-wide telemetry harvest.
 - **Companion Mobile Apps:** APK/IPA static analysis for hardcoded cloud credentials, embedded firmware extraction, backend API IDOR and auth bypass.
 
 ### 10. Voice Assistant & AI Attack Surface
+
 The newest and fastest-moving attack class — how attackers reach IoT devices through the AI layer that controls them:
+
 - **Alexa / Google Home Cloud:** OAuth CSRF, rogue account linking, DNS rebinding, prompt injection.
 - **Signal Injection:** Ultrasonic (NUIT 1/2) and laser (LightCommands, LCMA) command injection.
 - **Promptware:** Indirect prompt injection against LLM-integrated IoT devices.
@@ -527,22 +559,22 @@ The newest and fastest-moving attack class — how attackers reach IoT devices t
 <a name="comparison"></a>
 ## ⚔️ Blitz vs. Established Open-Source IoT Security Tools
 
-| Capability | 🛠️ RouterSploit | 🏠 HomePwn | 💥 EXPLIoT | 🤖 IoTHackBot | ⚡ Blitz |
-|---|---|---|---|---|---|
-| **Category** | Embedded/router exploitation framework | Local-proximity IoT pentest toolkit | IoT security testing & exploitation framework | AI-assisted IoT recon & hardware toolkit | Autonomous IoT/OT red-teaming platform |
-| **Runs without a human at the keyboard** | ❌ Manual, one session at a time | ❌ Manual, one session at a time | ❌ Manual, one session at a time | ❌ Human/AI, command-by-command | ✅ **Fully autonomous, continuous operation** |
-| **Finds new devices on its own** | ❌ You point it at a known target | ❌ You run discovery modules yourself | ❌ You select a target manually | ❌ You run `wsdiscovery` per session | ✅ **Continuous, automatic discovery** |
-| **Decides what's worth testing** | ❌ You choose the exploit module | ❌ You choose the module | ❌ You choose the plugin | ⚠️ AI-assisted, but you drive it | ✅ **Ares plans the assessment itself** |
-| **Stops unsafe actions before they run** | ❌ No gating — a misfire can crash the device | ❌ No gating | ❌ No gating | ⚠️ Disclaimer only, not enforced | ✅ **Multi-condition authorization gate, every action** |
-| **Proves impact instead of guessing** | ❌ Pass/fail, no evidence trail | ❌ Manual write-up | ❌ Manual write-up | ❌ Manual output review | ✅ **"Attempted vs. Proven," evidence-backed** |
-| **Confirms a fix actually worked** | ❌ Requires a fresh manual run | ❌ Requires a fresh manual run | ❌ Requires a fresh manual run | ❌ Requires a fresh manual run | ✅ **Automatic re-validation** |
-| **Protocol coverage** | HTTP, Telnet, SNMP | BLE, WiFi, SSDP, mDNS, NFC | Broad, plugin-extensible | ONVIF, network traffic, firmware | **154 modules across 28 categories** |
-| **Firmware analysis** | ❌ | ❌ | ⚠️ | ✅ | ✅ **Full lifecycle — extraction to exploitation** |
-| **Wireless (BLE / Zigbee / Wi-Fi)** | ❌ | ⚠️ | ⚠️ | ❌ | ✅ **44 wireless modules** |
-| **Cloud IoT (AWS / Azure)** | ❌ | ❌ | ❌ | ❌ | ✅ **Fleet-level exploitation** |
-| **Voice assistant attacks** | ❌ | ❌ | ❌ | ❌ | ✅ **Alexa / Google Home / prompt injection** |
-| **Hardware access (UART / SPI / JTAG / I2C / CAN)** | ❌ | ❌ | ✅ | ✅ | ✅ **15 hardware modules + glitching** |
-| **Local LLM (no cloud, no per-token costs)** | ❌ | ❌ | ❌ | ❌ | ✅ **Air-gapped `ares` model via Ollama** |
+| Capability                                    | 🛠️ RouterSploit                  | 🏠 HomePwn                        | 💥 EXPLIoT                        | 🤖 IoTHackBot                     | ⚡ Blitz                                  |
+| :-------------------------------------------- | :-------------------------------- | :-------------------------------- | :-------------------------------- | :-------------------------------- | :---------------------------------------- |
+| **Category**                                  | Embedded/router exploitation      | Local-proximity IoT pentest       | IoT security testing & exploitation | AI-assisted IoT recon & hardware | Autonomous IoT/OT red-teaming platform    |
+| **Runs without a human at the keyboard**      | ❌ Manual, one session at a time  | ❌ Manual, one session at a time  | ❌ Manual, one session at a time  | ❌ Human/AI, command-by-command   | ✅ **Fully autonomous, continuous**       |
+| **Finds new devices on its own**              | ❌ You point it at a known target | ❌ You run discovery yourself     | ❌ You select a target manually   | ❌ You run `wsdiscovery` per session | ✅ **Continuous, automatic discovery**  |
+| **Decides what's worth testing**              | ❌ You choose the exploit module  | ❌ You choose the module          | ❌ You choose the plugin          | ⚠️ AI-assisted, but you drive it  | ✅ **Ares plans the assessment itself**   |
+| **Stops unsafe actions before they run**      | ❌ No gating                      | ❌ No gating                      | ❌ No gating                      | ⚠️ Disclaimer only, not enforced  | ✅ **Multi-condition auth gate**          |
+| **Proves impact instead of guessing**         | ❌ Pass/fail, no evidence         | ❌ Manual write-up                | ❌ Manual write-up                | ❌ Manual output review           | ✅ **"Attempted vs. Proven"**             |
+| **Confirms a fix actually worked**            | ❌ Fresh manual run               | ❌ Fresh manual run               | ❌ Fresh manual run               | ❌ Fresh manual run               | ✅ **Automatic re-validation**            |
+| **Protocol coverage**                         | HTTP, Telnet, SNMP                | BLE, WiFi, SSDP, mDNS, NFC        | Broad, plugin-extensible          | ONVIF, network traffic, firmware  | **154 modules across 28 categories**      |
+| **Firmware analysis**                         | ❌                                | ❌                                | ⚠️                                | ✅                                | ✅ **Full extraction-to-exploitation**    |
+| **Wireless (BLE / Zigbee / Wi-Fi)**           | ❌                                | ⚠️                                | ⚠️                                | ❌                                | ✅ **44 wireless modules**                |
+| **Cloud IoT (AWS / Azure)**                   | ❌                                | ❌                                | ❌                                | ❌                                | ✅ **Fleet-level exploitation**           |
+| **Voice assistant attacks**                   | ❌                                | ❌                                | ❌                                | ❌                                | ✅ **Alexa / Google Home / promptware**   |
+| **Hardware (UART / SPI / JTAG / I2C / CAN)**  | ❌                                | ❌                                | ✅                                | ✅                                | ✅ **15 hardware modules + glitching**    |
+| **Local LLM (no cloud, no per-token costs)**  | ❌                                | ❌                                | ❌                                | ❌                                | ✅ **Air-gapped `ares` via Ollama**       |
 
 *Comparison based on each project's public documentation and repositories as of the date of this README; open-source tools evolve, so verify current capabilities against their latest releases.*
 
@@ -551,15 +583,15 @@ The newest and fastest-moving attack class — how attackers reach IoT devices t
 <a name="pricing"></a>
 ## 💰 The Real Cost of Waiting for Your Next Pentest
 
-| | 🧑‍💻 Standard IT Pentest | 🔌 IoT/OT-Specific Pentest | 🎯 Red-Team-Level IoT Engagement | ⚡ Blitz |
-|---|:---:|:---:|:---:|:---:|
-| **Cost** | $5,000 – $100,000+ (commonly cited industry estimate) | **$10,000 – $40,000** per engagement | **$30,000 – $150,000+** | **$299 — once, early adopter** |
-| **Billing model** | Per engagement | Per engagement, higher due to firmware/hardware work | $120–$350+/hr, senior tester day rates | Flat, one-time |
-| **What you actually get** | One report, one point in time | One report — firmware analysis, protocol testing, one snapshot | Deep manual exploitation, still just one snapshot | **Continuous testing**, every device, as it appears |
-| **Valid for how long?** | Stale the moment scope changes | Stale the moment a new device joins the network | Stale the day it's delivered | **Never goes stale — always running** |
-| **Re-testing after a fix** | Rarely included, extra cost | Rarely included, extra cost | Rarely included, extra cost | ✅ **Automatic, included, always** |
-| **Frequency you can realistically afford** | Once a year, if budget allows | Once a year, if at all | Once, maybe never repeated | **Every day** |
-| **Cost vs. Blitz** | ~98% more expensive | **~97–99% more expensive** | **~99–99.8% more expensive** | **The baseline** |
+|                                                   | 🧑‍💻 Standard IT Pentest                      | 🔌 IoT/OT-Specific Pentest                                | 🎯 Red-Team-Level IoT Engagement                  | ⚡ Blitz                                    |
+| :------------------------------------------------ | :--------------------------------------------- | :-------------------------------------------------------- | :------------------------------------------------ | :------------------------------------------ |
+| **Cost**                                          | $5,000 – $100,000+ (industry estimate)          | **$10,000 – $40,000** per engagement                      | **$30,000 – $150,000+**                           | **$299 — once, early adopter**              |
+| **Billing model**                                 | Per engagement                                  | Per engagement, higher due to firmware/hardware work      | $120–$350+/hr, senior tester day rates            | Flat, one-time                              |
+| **What you actually get**                         | One report, one point in time                   | One report — firmware, protocol testing, one snapshot     | Deep manual exploitation, still one snapshot      | **Continuous testing, every device**        |
+| **Valid for how long?**                           | Stale the moment scope changes                  | Stale the moment a new device joins                       | Stale the day it's delivered                      | **Never goes stale — always running**       |
+| **Re-testing after a fix**                        | Rarely included, extra cost                     | Rarely included, extra cost                               | Rarely included, extra cost                       | ✅ **Automatic, included, always**          |
+| **Frequency you can realistically afford**        | Once a year, if budget allows                   | Once a year, if at all                                    | Once, maybe never repeated                        | **Every day**                               |
+| **Cost vs. Blitz**                                | ~98% more expensive                             | **~97–99% more expensive**                                | **~99–99.8% more expensive**                      | **The baseline**                            |
 
 > 🧮 **The honest math:** even against the *cheapest* IoT pentest quote on the market ($10,000), Blitz's early-adopter price costs **~97% less**. Against a realistic mid-range engagement ($25,000), that's **~99% less** — and unlike every row to its left, it doesn't stop working the day after you pay.
 
@@ -567,6 +599,7 @@ The newest and fastest-moving attack class — how attackers reach IoT devices t
 > **You're choosing between paying once for a moment — or paying once for a process that never stops checking.**
 
 **What your license actually buys you:**
+
 - ✅ Continuous discovery — not a once-a-year snapshot
 - 🧠 AI-driven, protocol-aware planning — Ares profiles before it acts
 - 🔒 Gated, safe execution — nothing runs without clearance
@@ -584,11 +617,11 @@ Blitz is distributed as an enterprise-grade, perpetual commercial package under 
 
 ### License Tiers & Real-Time Availability
 
-| Tier | Price | Availability | License Scope |
-|---|---|---|---|
-| **Early Adopter Cohort** | **$299** ~~$499~~ | **Active now** (code `EARLYBIRD`) | First 25 licenses only • Perpetual commercial rights |
-| **Standard Commercial** | **$499** | Standard list price | Perpetual commercial rights • Unlimited targets & audits |
-| **Enterprise** | *Contact us* | Custom | + SLA, + custom modules, + dedicated support |
+| Tier                       | Price              | Availability                    | License Scope                                                  |
+| :------------------------- | :----------------- | :------------------------------ | :------------------------------------------------------------- |
+| **Early Adopter Cohort**   | **$299** ~~$499~~  | **Active now** (code `EARLYBIRD`) | First 25 licenses only • Perpetual commercial rights            |
+| **Standard Commercial**    | **$499**           | Standard list price             | Perpetual commercial rights • Unlimited targets & audits        |
+| **Enterprise**             | *Contact us*       | Custom                          | + SLA, + custom modules, + dedicated support                    |
 
 [![Purchase Blitz Commercial License](https://img.shields.io/badge/Purchase%20Blitz-%24299%20Early%20Adopter-brightgreen?style=for-the-badge&logo=github)](https://polar.sh/apexpredator-security/products/blitz?discount_code=EARLYBIRD)
 
@@ -671,16 +704,16 @@ Blitz is built and maintained by **ApexPredator Security & Labs**, the research 
 
 ### 🖥️ System Requirements
 
-| Requirement | Minimum | Recommended | Why It Matters |
-|---|---|---|---|
-| **OS** | Linux / macOS / Windows (WSL2) | Ubuntu 22.04 LTS | Blitz's core services and Docker networking are tested and most stable on Linux; WSL2 gives Windows users the same kernel-level container support. Ubuntu 22.04 LTS is the reference environment for long-term compatibility and support. |
-| **CPU** | 4 cores | 8 cores | Ares' reasoning layer, Blitz Core's execution engine, and concurrent protocol scans (RTSP, ONVIF, MQTT, etc.) run as parallel workloads — more cores mean faster assessment cycles and the ability to test multiple devices simultaneously without queuing. |
-| **RAM** | 8 GB | 16 GB | Local AI inference (via Ollama), persistent state storage, and live WebSocket event streaming all hold data in memory. 16 GB gives headroom for larger device inventories and longer-running continuous assessments without swapping. |
-| **Disk** | 20 GB free | 40 GB free (SSD) | Persistent state (devices, jobs, findings, audit history) and locally-run AI models take real disk space — SSD is recommended because model loading and database I/O are latency-sensitive, especially under continuous operation. |
-| **Docker Engine** | 24.x | Latest stable | Blitz's components (Operator Console, Ares Agent, Ares Bridge, Blitz Core) run as containerized services — Docker Engine is the runtime that isolates and orchestrates them. |
-| **Docker Compose** | v2 | v2 | Used to define and launch the full multi-container stack (Console, Agent, Bridge, Core, Ollama) as a single coordinated deployment. |
-| **Python** | 3.11+ | 3.11+ | Required for Blitz Core and supporting tooling — 3.11+ ensures compatibility with current dependency versions and performance improvements over earlier releases. |
-| **GPU (optional, for retraining only)** | 6 GB VRAM | 8 GB VRAM | Not required for running Blitz. Required only if you want to retrain the `ares` model on your own engagement data. |
+| Requirement         | Minimum                                   | Recommended              | Why It Matters                                                                                                                                                                                              |
+| :------------------ | :---------------------------------------- | :----------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **OS**              | Linux / macOS / Windows (WSL2)            | Ubuntu 22.04 LTS         | Blitz's core services and Docker networking are tested and most stable on Linux; WSL2 gives Windows users the same kernel-level container support. Ubuntu 22.04 LTS is the reference environment.           |
+| **CPU**             | 4 cores                                   | 8 cores                  | Ares' reasoning layer, Blitz Core's execution engine, and concurrent protocol scans run as parallel workloads — more cores mean faster cycles and the ability to test multiple devices simultaneously.       |
+| **RAM**             | 8 GB                                      | 16 GB                    | Local AI inference (via Ollama), persistent state storage, and live WebSocket event streaming all hold data in memory. 16 GB gives headroom for larger inventories and longer-running assessments.            |
+| **Disk**            | 20 GB free                                | 40 GB free (SSD)         | Persistent state (devices, jobs, findings, audit history) and locally-run AI models take real disk space — SSD is recommended because model loading and database I/O are latency-sensitive.                  |
+| **Docker Engine**   | 24.x                                      | Latest stable            | Blitz's components run as containerized services — Docker Engine is the runtime that isolates and orchestrates them.                                                                                        |
+| **Docker Compose**  | v2                                        | v2                       | Used to define and launch the full multi-container stack (Console, Agent, Bridge, Core, Ollama) as a single coordinated deployment.                                                                          |
+| **Python**          | 3.11+                                     | 3.11+                    | Required for Blitz Core and supporting tooling — 3.11+ ensures compatibility with current dependency versions and performance improvements over earlier releases.                                            |
+| **GPU (optional)**  | 6 GB VRAM                                 | 8 GB VRAM                | Not required for running Blitz. Required only if you want to retrain the `ares` model on your own engagement data.                                                                                          |
 
 ### Two Ways to Install Blitz
 
